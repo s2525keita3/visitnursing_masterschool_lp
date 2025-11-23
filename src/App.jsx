@@ -470,8 +470,8 @@ const LandingPage = () => {
                 color: 'from-slate-800 to-slate-900',
                 url: 'https://eme-houkan.com/',
                 video: 'https://youtu.be/-3gkNUKq5WM',
-                photo: '/eme訪問看護代表.png',
-                thumbnail: '/卒業生　北山さん　動画サムネイル .png'
+                photo: '/eme-houkan-daihyo.png',
+                thumbnail: '/kitayama-thumbnail.png'
               },
               {
                 label: 'Case Study 02',
@@ -486,8 +486,8 @@ const LandingPage = () => {
                 color: 'from-slate-800 to-slate-900',
                 url: 'https://first1105-nada.com/',
                 video: 'https://youtu.be/P6UeyhoTKgM',
-                photo: '/ファースト訪問看護代表.png',
-                thumbnail: '/卒業生　髙橋さん　動画サムネイル.png'
+                photo: '/first-houkan-daihyo.png',
+                thumbnail: '/takahashi-thumbnail.png'
               },
               {
                 label: 'Case Study 03',
@@ -502,8 +502,8 @@ const LandingPage = () => {
                 color: 'from-slate-800 to-slate-900',
                 url: 'https://recruit.gojo-inc.jp/',
                 video: null,
-                photo: '/あしなら訪問看護代表.png',
-                thumbnail: '/卒業生　中村さん　動画サムネイル.png'
+                photo: '/ashinara-houkan-daihyo.png',
+                thumbnail: '/nakamura-thumbnail.png'
               }
             ].map((caseStudy, i) => (
               <div key={i} className={`bg-slate-800 rounded-3xl p-8 md:p-10 border-2 border-slate-700 hover:border-[#06C755] shadow-xl hover:shadow-2xl transition-all duration-300`}>
