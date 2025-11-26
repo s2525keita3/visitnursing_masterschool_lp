@@ -205,7 +205,7 @@ const LandingPage = () => {
               suffix="%" 
               label="12ヶ月黒字化率" 
               delay={0}
-              shouldAnimate={isVisible['section-hero']}
+              shouldAnimate={false}
             />
             <StatCard 
               icon={DollarSign} 
@@ -213,7 +213,7 @@ const LandingPage = () => {
               suffix="万円" 
               label="平均融資額" 
               delay={200}
-              shouldAnimate={isVisible['section-hero']}
+              shouldAnimate={false}
             />
             <StatCard 
               icon={TrendingUp} 
@@ -221,7 +221,7 @@ const LandingPage = () => {
               suffix="%" 
               label="融資承認率" 
               delay={400}
-              shouldAnimate={isVisible['section-hero']}
+              shouldAnimate={false}
             />
             <StatCard 
               icon={Building} 
@@ -229,7 +229,7 @@ const LandingPage = () => {
               suffix="社+" 
               label="開業支援実績" 
               delay={600}
-              shouldAnimate={isVisible['section-hero']}
+              shouldAnimate={false}
             />
           </div>
 
