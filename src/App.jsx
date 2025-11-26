@@ -690,7 +690,7 @@ const LandingPage = () => {
             <div className="order-1 md:order-2">
               <div className="bg-white rounded-xl p-6 border-2 border-baum-200 shadow-card h-full flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/講師じょん　写真.png" 
+                  src="/koushi-jon-photo.png" 
                   alt="講師プロフィール写真" 
                   className="w-full h-auto rounded-xl object-cover shadow-card"
                 />
