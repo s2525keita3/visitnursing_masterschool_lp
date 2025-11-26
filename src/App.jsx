@@ -319,8 +319,8 @@ const LandingPage = () => {
                   </ul>
                 </div>
       <div>
-                  <p className="text-gray-800 mb-2 font-bold">📍 ケース② 市場規模不足</p>
-                  <ul className="space-y-1 text-gray-700 text-sm font-semibold">
+                  <p className="text-text-primary mb-2 font-bold">📍 ケース② 市場規模不足</p>
+                  <ul className="space-y-1 text-text-secondary text-sm font-semibold">
                     <li className="flex items-start gap-2">
                       <AlertCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
                       <span>総人口1万人、取引先30ヶ所のみ</span>
@@ -384,7 +384,7 @@ const LandingPage = () => {
                 title: '小規模事業所の「10人の壁」', 
                 desc: '「小規模なら安心」は過去の話。倒産した事業所の9割以上が小規模運営です。人材の定着と規模拡大に失敗したステーションから市場を退出しています。',
                 stat: '倒産の94%が従業員10人未満※2',
-                color: 'bg-slate-800',
+                color: 'bg-white',
                 border: 'border-amber-500'
               },
               { 
@@ -392,7 +392,7 @@ const LandingPage = () => {
                 title: '「黒字倒産」を引き起こす採用難', 
                 desc: '依頼はあるのに断らざるを得ない「機会損失」が常態化。売上が作れない根本原因は、営業力不足ではなく「看護師が採用できないこと」にあります。',
                 stat: '倒産原因の8割が「販売不振」※2',
-                color: 'bg-slate-800',
+                color: 'bg-white',
                 border: 'border-orange-500'
               }
             ].map((item, i) => (
@@ -612,28 +612,28 @@ const LandingPage = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   { region: '北海道', count: '5社', color: 'bg-white' },
-                  { region: '茨城県', count: '1社', examples: ['ロンフィール訪問看護リハビリステーション'], url: 'https://lonfiel.com/', color: 'bg-slate-700' },
-                  { region: '長野県', count: '1社', color: 'bg-slate-700' },
-                  { region: '福島県', count: '2社', examples: ['訪問看護リハビリステーションぽっかぽか'], url: 'https://www.pokkapoka-iwaki.com/', color: 'bg-slate-700' },
-                  { region: '群馬県', count: '2社', examples: ['訪問看護ステーションこはる'], url: 'https://recruit.coharu-st.com/', color: 'bg-slate-700' },
-                  { region: '山梨県', count: '1社', examples: ['あおぞら訪問看護リハビリステーション'], url: 'https://aozora-houkan.net/', color: 'bg-slate-700' },
-                  { region: '新潟県', count: '1社', examples: ['訪問看護ステーションラポ'], url: 'https://keanasrapo.com/', color: 'bg-slate-700' },
-                  { region: '東京都', count: '7社', examples: ['きずな訪問看護ステーション', 'ひまわり訪問看護ステーション', '訪問看護ステーションスマイル', 'あしなら訪問看護ステーション'], url: 'https://recruit.gojo-inc.jp/', color: 'bg-slate-700' },
-                  { region: '神奈川県', count: '5社', examples: ['とまと訪問看護リハビリステーション', 'てんど訪問看護ステーション'], url: 'https://lifetend.jp/', color: 'bg-slate-700' },
-                  { region: '千葉県', count: '4社', color: 'bg-slate-700' },
-                  { region: '埼玉県', count: '2社', examples: ['ぽぷら訪問看護ステーション'], url: 'https://www.populus-ns.com/', color: 'bg-slate-700' },
-                  { region: '愛知県', count: '3社', color: 'bg-slate-700' },
-                  { region: '大阪府', count: '5社', examples: ['ひかり訪問看護ステーション', 'ウィル訪問看護ステーション大阪'], url: 'https://wyl.co.jp/station-i/osaka', color: 'bg-slate-700' },
-                  { region: '兵庫県', count: '1社', examples: ['ファースト訪問看護ステーション灘'], url: 'https://first1105-nada.com/', color: 'bg-slate-700' },
-                  { region: '和歌山県', count: '1社', examples: ['えめ訪問看護ステーション和歌山'], url: 'https://eme-houkan.com/', color: 'bg-slate-700' },
-                  { region: '岡山県', count: '2社', examples: ['訪問看護ステーションPLUS'], url: 'https://plus-act-oka.com/', color: 'bg-slate-700' },
-                  { region: '広島県', count: '1社', color: 'bg-slate-700' },
-                  { region: '山口県', count: '3社', examples: ['きみいろ訪問看護ステーション', 'いろどり訪問看護ステーション', 'でいご訪問看護リハビリステーション'], url: 'https://deigo-simcover.com/', color: 'bg-slate-700' },
-                  { region: '香川県', count: '1社', examples: ['訪問看護ステーションシェアハート'], url: 'https://share810.com/', color: 'bg-slate-700' },
-                  { region: '福岡県', count: '3社', color: 'bg-slate-700' },
-                  { region: '熊本県', count: '1社', examples: ['訪問看護ステーションさくら'], url: 'https://www.houkan-sakura.com/', color: 'bg-slate-700' },
-                  { region: '大分県', count: '1社', color: 'bg-slate-700' },
-                  { region: '宮崎県', count: '1社', color: 'bg-slate-700' }
+                  { region: '茨城県', count: '1社', examples: ['ロンフィール訪問看護リハビリステーション'], url: 'https://lonfiel.com/', color: 'bg-white' },
+                  { region: '長野県', count: '1社', color: 'bg-white' },
+                  { region: '福島県', count: '2社', examples: ['訪問看護リハビリステーションぽっかぽか'], url: 'https://www.pokkapoka-iwaki.com/', color: 'bg-white' },
+                  { region: '群馬県', count: '2社', examples: ['訪問看護ステーションこはる'], url: 'https://recruit.coharu-st.com/', color: 'bg-white' },
+                  { region: '山梨県', count: '1社', examples: ['あおぞら訪問看護リハビリステーション'], url: 'https://aozora-houkan.net/', color: 'bg-white' },
+                  { region: '新潟県', count: '1社', examples: ['訪問看護ステーションラポ'], url: 'https://keanasrapo.com/', color: 'bg-white' },
+                  { region: '東京都', count: '7社', examples: ['きずな訪問看護ステーション', 'ひまわり訪問看護ステーション', '訪問看護ステーションスマイル', 'あしなら訪問看護ステーション'], url: 'https://recruit.gojo-inc.jp/', color: 'bg-white' },
+                  { region: '神奈川県', count: '5社', examples: ['とまと訪問看護リハビリステーション', 'てんど訪問看護ステーション'], url: 'https://lifetend.jp/', color: 'bg-white' },
+                  { region: '千葉県', count: '4社', color: 'bg-white' },
+                  { region: '埼玉県', count: '2社', examples: ['ぽぷら訪問看護ステーション'], url: 'https://www.populus-ns.com/', color: 'bg-white' },
+                  { region: '愛知県', count: '3社', color: 'bg-white' },
+                  { region: '大阪府', count: '5社', examples: ['ひかり訪問看護ステーション', 'ウィル訪問看護ステーション大阪'], url: 'https://wyl.co.jp/station-i/osaka', color: 'bg-white' },
+                  { region: '兵庫県', count: '1社', examples: ['ファースト訪問看護ステーション灘'], url: 'https://first1105-nada.com/', color: 'bg-white' },
+                  { region: '和歌山県', count: '1社', examples: ['えめ訪問看護ステーション和歌山'], url: 'https://eme-houkan.com/', color: 'bg-white' },
+                  { region: '岡山県', count: '2社', examples: ['訪問看護ステーションPLUS'], url: 'https://plus-act-oka.com/', color: 'bg-white' },
+                  { region: '広島県', count: '1社', color: 'bg-white' },
+                  { region: '山口県', count: '3社', examples: ['きみいろ訪問看護ステーション', 'いろどり訪問看護ステーション', 'でいご訪問看護リハビリステーション'], url: 'https://deigo-simcover.com/', color: 'bg-white' },
+                  { region: '香川県', count: '1社', examples: ['訪問看護ステーションシェアハート'], url: 'https://share810.com/', color: 'bg-white' },
+                  { region: '福岡県', count: '3社', color: 'bg-white' },
+                  { region: '熊本県', count: '1社', examples: ['訪問看護ステーションさくら'], url: 'https://www.houkan-sakura.com/', color: 'bg-white' },
+                  { region: '大分県', count: '1社', color: 'bg-white' },
+                  { region: '宮崎県', count: '1社', color: 'bg-white' }
                 ].map((area, i) => (
                   <div key={i} className={`${area.color} rounded-xl p-4 hover:shadow-card-hover transition-all border-2 border-baum-200 shadow-card`}>
                     <div className="flex items-center justify-between mb-2">
@@ -866,8 +866,8 @@ const LandingPage = () => {
 
           {/* 6 Recovery Methods */}
           <div className="mb-12">
-            <h3 className="text-3xl md:text-4xl font-black text-center mb-12 text-white">
-              <span className="text-[#06C755]">6つの投資回収方法</span>
+            <h3 className="text-3xl md:text-4xl font-black text-center mb-12 text-text-primary">
+              <span className="text-baum-500">6つの投資回収方法</span>
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
