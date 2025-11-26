@@ -4,6 +4,7 @@ import { ChevronDown, Check, X, TrendingUp, AlertCircle, Target, Users, BookOpen
 const LandingPage = () => {
   const [isVisible, setIsVisible] = useState({});
   const [showMobileCTA, setShowMobileCTA] = useState(false);
+  const [expandedRegions, setExpandedRegions] = useState({});
   const observerRef = useRef(null);
 
   // Intersection Observer for scroll animations
@@ -608,47 +609,109 @@ const LandingPage = () => {
               北海道から沖縄まで、全国で開業・運営支援を実施
             </p>
             <div className="bg-bg-cream rounded-xl p-6 md:p-8 border-2 border-baum-200">
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { region: '北海道', count: '5社', color: 'bg-white' },
-                  { region: '茨城県', count: '1社', examples: ['ロンフィール訪問看護リハビリステーション'], url: 'https://lonfiel.com/', color: 'bg-white' },
-                  { region: '長野県', count: '1社', color: 'bg-white' },
-                  { region: '福島県', count: '2社', examples: ['訪問看護リハビリステーションぽっかぽか'], url: 'https://www.pokkapoka-iwaki.com/', color: 'bg-white' },
-                  { region: '群馬県', count: '2社', examples: ['訪問看護ステーションこはる'], url: 'https://recruit.coharu-st.com/', color: 'bg-white' },
-                  { region: '山梨県', count: '1社', examples: ['あおぞら訪問看護リハビリステーション'], url: 'https://aozora-houkan.net/', color: 'bg-white' },
-                  { region: '新潟県', count: '1社', examples: ['訪問看護ステーションラポ'], url: 'https://keanasrapo.com/', color: 'bg-white' },
-                  { region: '東京都', count: '7社', examples: ['きずな訪問看護ステーション', 'ひまわり訪問看護ステーション', '訪問看護ステーションスマイル', 'あしなら訪問看護ステーション'], url: 'https://recruit.gojo-inc.jp/', color: 'bg-white' },
-                  { region: '神奈川県', count: '5社', examples: ['とまと訪問看護リハビリステーション', 'てんど訪問看護ステーション'], url: 'https://lifetend.jp/', color: 'bg-white' },
-                  { region: '千葉県', count: '4社', color: 'bg-white' },
-                  { region: '埼玉県', count: '2社', examples: ['ぽぷら訪問看護ステーション'], url: 'https://www.populus-ns.com/', color: 'bg-white' },
-                  { region: '愛知県', count: '3社', color: 'bg-white' },
-                  { region: '大阪府', count: '5社', examples: ['ひかり訪問看護ステーション', 'ウィル訪問看護ステーション大阪'], url: 'https://wyl.co.jp/station-i/osaka', color: 'bg-white' },
-                  { region: '兵庫県', count: '1社', examples: ['ファースト訪問看護ステーション灘'], url: 'https://first1105-nada.com/', color: 'bg-white' },
-                  { region: '和歌山県', count: '1社', examples: ['えめ訪問看護ステーション和歌山'], url: 'https://eme-houkan.com/', color: 'bg-white' },
-                  { region: '岡山県', count: '2社', examples: ['訪問看護ステーションPLUS'], url: 'https://plus-act-oka.com/', color: 'bg-white' },
-                  { region: '広島県', count: '1社', color: 'bg-white' },
-                  { region: '山口県', count: '3社', examples: ['きみいろ訪問看護ステーション', 'いろどり訪問看護ステーション', 'でいご訪問看護リハビリステーション'], url: 'https://deigo-simcover.com/', color: 'bg-white' },
-                  { region: '香川県', count: '1社', examples: ['訪問看護ステーションシェアハート'], url: 'https://share810.com/', color: 'bg-white' },
-                  { region: '福岡県', count: '3社', color: 'bg-white' },
-                  { region: '熊本県', count: '1社', examples: ['訪問看護ステーションさくら'], url: 'https://www.houkan-sakura.com/', color: 'bg-white' },
-                  { region: '大分県', count: '1社', color: 'bg-white' },
-                  { region: '宮崎県', count: '1社', color: 'bg-white' }
-                ].map((area, i) => (
-                  <div key={i} className={`${area.color} rounded-xl p-4 hover:shadow-card-hover transition-all border-2 border-baum-200 shadow-card`}>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-black text-lg text-text-primary">{area.region}</span>
-                      <span className="text-baum-500 font-black text-2xl">{area.count}</span>
-                    </div>
-                    {area.examples && (
-                      <div className="text-xs text-text-tertiary space-y-1 font-semibold">
-                        {area.examples.map((ex, j) => (
-                          <p key={j}>・{ex}</p>
+              {[
+                {
+                  blockName: '北海道・東北',
+                  areas: [
+                    { region: '北海道', count: '5社', color: 'bg-white' },
+                    { region: '福島県', count: '2社', examples: ['訪問看護リハビリステーションぽっかぽか'], url: 'https://www.pokkapoka-iwaki.com/', color: 'bg-white' }
+                  ]
+                },
+                {
+                  blockName: '関東',
+                  areas: [
+                    { region: '東京都', count: '7社', examples: ['きずな訪問看護ステーション', 'ひまわり訪問看護ステーション', '訪問看護ステーションスマイル', 'あしなら訪問看護ステーション'], url: 'https://recruit.gojo-inc.jp/', color: 'bg-white' },
+                    { region: '神奈川県', count: '5社', examples: ['とまと訪問看護リハビリステーション', 'てんど訪問看護ステーション'], url: 'https://lifetend.jp/', color: 'bg-white' },
+                    { region: '千葉県', count: '4社', color: 'bg-white' },
+                    { region: '埼玉県', count: '2社', examples: ['ぽぷら訪問看護ステーション'], url: 'https://www.populus-ns.com/', color: 'bg-white' },
+                    { region: '茨城県', count: '1社', examples: ['ロンフィール訪問看護リハビリステーション'], url: 'https://lonfiel.com/', color: 'bg-white' },
+                    { region: '群馬県', count: '2社', examples: ['訪問看護ステーションこはる'], url: 'https://recruit.coharu-st.com/', color: 'bg-white' }
+                  ]
+                },
+                {
+                  blockName: '中部',
+                  areas: [
+                    { region: '愛知県', count: '3社', color: 'bg-white' },
+                    { region: '長野県', count: '1社', color: 'bg-white' },
+                    { region: '山梨県', count: '1社', examples: ['あおぞら訪問看護リハビリステーション'], url: 'https://aozora-houkan.net/', color: 'bg-white' },
+                    { region: '新潟県', count: '1社', examples: ['訪問看護ステーションラポ'], url: 'https://keanasrapo.com/', color: 'bg-white' }
+                  ]
+                },
+                {
+                  blockName: '関西',
+                  areas: [
+                    { region: '大阪府', count: '5社', examples: ['ひかり訪問看護ステーション', 'ウィル訪問看護ステーション大阪'], url: 'https://wyl.co.jp/station-i/osaka', color: 'bg-white' },
+                    { region: '兵庫県', count: '1社', examples: ['ファースト訪問看護ステーション灘'], url: 'https://first1105-nada.com/', color: 'bg-white' },
+                    { region: '和歌山県', count: '1社', examples: ['えめ訪問看護ステーション和歌山'], url: 'https://eme-houkan.com/', color: 'bg-white' }
+                  ]
+                },
+                {
+                  blockName: '中国・四国',
+                  areas: [
+                    { region: '岡山県', count: '2社', examples: ['訪問看護ステーションPLUS'], url: 'https://plus-act-oka.com/', color: 'bg-white' },
+                    { region: '広島県', count: '1社', color: 'bg-white' },
+                    { region: '山口県', count: '3社', examples: ['きみいろ訪問看護ステーション', 'いろどり訪問看護ステーション', 'でいご訪問看護リハビリステーション'], url: 'https://deigo-simcover.com/', color: 'bg-white' },
+                    { region: '香川県', count: '1社', examples: ['訪問看護ステーションシェアハート'], url: 'https://share810.com/', color: 'bg-white' }
+                  ]
+                },
+                {
+                  blockName: '九州・沖縄',
+                  areas: [
+                    { region: '福岡県', count: '3社', color: 'bg-white' },
+                    { region: '熊本県', count: '1社', examples: ['訪問看護ステーションさくら'], url: 'https://www.houkan-sakura.com/', color: 'bg-white' },
+                    { region: '大分県', count: '1社', color: 'bg-white' },
+                    { region: '宮崎県', count: '1社', color: 'bg-white' }
+                  ]
+                }
+              ].map((block, blockIndex) => {
+                const isExpanded = expandedRegions[block.blockName] || false;
+                const totalCount = block.areas.reduce((sum, area) => {
+                  const count = parseInt(area.count.replace('社', ''));
+                  return sum + count;
+                }, 0);
+                
+                return (
+                  <div key={blockIndex} className="mb-6 last:mb-0">
+                    <button
+                      onClick={() => setExpandedRegions(prev => ({
+                        ...prev,
+                        [block.blockName]: !prev[block.blockName]
+                      }))}
+                      className="w-full bg-white rounded-xl p-4 border-2 border-baum-200 hover:border-baum-500 shadow-card hover:shadow-card-hover transition-all duration-300 flex items-center justify-between group"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center shadow-md">
+                          <Building className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="text-left">
+                          <h4 className="text-xl font-black text-text-primary">{block.blockName}</h4>
+                          <p className="text-sm text-text-tertiary font-semibold">{block.areas.length}都道府県 / 合計{totalCount}社</p>
+                        </div>
+                      </div>
+                      <ChevronDown className={`w-6 h-6 text-baum-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                    </button>
+                    {isExpanded && (
+                      <div className="mt-4 grid md:grid-cols-3 gap-6 animate-fade-up">
+                        {block.areas.map((area, i) => (
+                          <div key={i} className={`${area.color} rounded-xl p-4 hover:shadow-card-hover transition-all border-2 border-baum-200 shadow-card`}>
+                            <div className="flex items-center justify-between mb-2">
+                              <span className="font-black text-lg text-text-primary">{area.region}</span>
+                              <span className="text-baum-500 font-black text-2xl">{area.count}</span>
+                            </div>
+                            {area.examples && (
+                              <div className="text-xs text-text-tertiary space-y-1 font-semibold">
+                                {area.examples.map((ex, j) => (
+                                  <p key={j}>・{ex}</p>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         ))}
                       </div>
                     )}
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
