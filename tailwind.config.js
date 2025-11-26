@@ -21,6 +21,15 @@ export default {
           800: '#A33F00',
           900: '#6B2A00',
         },
+        // テキストカラー（直接使用可能）
+        'text-primary': '#000000',
+        'text-secondary': '#333333',
+        'text-tertiary': '#666666',
+        'text-light': '#999999',
+        // 背景カラー（直接使用可能）
+        'bg-cream': '#FFF8F0',
+        'bg-orange-light': '#FFF5EB',
+        // 後方互換性のため、ネスト構造も保持
         text: {
           primary: '#000000',
           secondary: '#333333',

@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+/* カスタムカラーの確実な適用のためのCSS変数 */
+:root {
+  /* バウムブルーム カラーパレット */
+  --color-baum-50: #FFF8F0;
+  --color-baum-100: #FFF5EB;
+  --color-baum-200: #FFE6CC;
+  --color-baum-300: #FFD6AD;
+  --color-baum-400: #FFB570;
+  --color-baum-500: #FF6B00;
+  --color-baum-550: #FF8533;
+  --color-baum-600: #E55A00;
+  --color-baum-700: #CC5000;
+  --color-baum-800: #A33F00;
+  --color-baum-900: #6B2A00;
+  
+  /* テキストカラー */
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #666666;
+  --color-text-light: #999999;
+  
+  /* 背景カラー */
+  --color-bg-cream: #FFF8F0;
+  --color-bg-orange-light: #FFF5EB;
+  
+  /* シャドウ */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-cta: 0 8px 24px rgba(255, 107, 0, 0.3);
+  --shadow-cta-hover: 0 12px 32px rgba(255, 107, 0, 0.4);
+}
