@@ -490,7 +490,7 @@ const LandingPage = () => {
                 staff: '30名体制',
                 color: 'from-slate-800 to-slate-900',
                 url: 'https://recruit.gojo-inc.jp/',
-                video: null,
+                video: 'https://youtu.be/ciZIPSAzg6Y',
                 photo: '/ashinara-houkan-daihyo.png',
                 thumbnail: '/nakamura-thumbnail.png'
               }
@@ -532,20 +532,6 @@ const LandingPage = () => {
                             <p className="text-xl font-black">{caseStudy.company}</p>
                             <p className="text-sm mt-2 font-semibold">{caseStudy.station}</p>
                           </div>
-                        </div>
-                      )}
-                      
-                      {/* 動画の下に卒業生の顔写真を配置 */}
-                      {caseStudy.photo && (
-                        <div className="mt-4 flex justify-center md:justify-start">
-                          <img 
-                            src={caseStudy.photo} 
-                            alt={`${caseStudy.representative}の写真`}
-                            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-baum-200 shadow-card"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
                         </div>
                       )}
                     </div>
