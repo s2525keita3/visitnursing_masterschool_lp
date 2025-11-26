@@ -15,6 +15,7 @@ export default {
           300: '#FFD6AD',
           400: '#FFB570',
           500: '#FF6B00',  // メインカラー
+          550: '#FF8533',  // グラデーション用
           600: '#E55A00',
           700: '#CC5000',
           800: '#A33F00',
@@ -65,6 +66,7 @@ export default {
         'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
         'slide-in-right': 'slideInRight 0.6s ease-out forwards',
         'scale-in': 'scaleIn 0.5s ease-out forwards',
+        'gradient-shift': 'gradientShift 3s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -109,6 +111,14 @@ export default {
           '100%': { 
             opacity: '1', 
             transform: 'scale(1)' 
+          },
+        },
+        gradientShift: {
+          '0%, 100%': { 
+            backgroundPosition: '0% 50%' 
+          },
+          '50%': { 
+            backgroundPosition: '100% 50%' 
           },
         },
       },

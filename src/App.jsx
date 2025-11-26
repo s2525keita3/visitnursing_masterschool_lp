@@ -66,8 +66,8 @@ const LandingPage = () => {
         className="bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transform hover:-translate-y-2 transition-all duration-300 animate-fade-up"
         style={{ animationDelay: `${delay}ms` }}
       >
-        <div className="w-16 h-16 bg-gradient-to-br from-baum-500 to-baum-600 rounded-xl flex items-center justify-center mb-4">
-          <Icon className="w-8 h-8 text-white" />
+        <div className="w-20 h-20 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center mb-4 shadow-md">
+          <Icon className="w-10 h-10 text-white" />
         </div>
         <div className="text-4xl font-bold text-text-primary mb-2">
           {displayValue}{suffix}
@@ -90,7 +90,7 @@ const LandingPage = () => {
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
         className={`
-          bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 
+          bg-gradient-to-br from-baum-500 to-baum-550 hover:from-baum-550 hover:to-baum-600 
           text-white font-bold rounded-full
           shadow-cta hover:shadow-cta-hover 
           transform hover:-translate-y-0.5 transition-all duration-300 
@@ -99,7 +99,7 @@ const LandingPage = () => {
           ${className}
         `}
         style={{
-          background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+          background: 'linear-gradient(135deg, #FF6B00 0%, #FF8533 100%)',
           boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
         }}
       >
@@ -584,7 +584,7 @@ const LandingPage = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-black rounded-full px-6 py-3 transition-all group shadow-cta hover:shadow-cta-hover transform hover:-translate-y-0.5"
                         style={{
-                          background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+                          background: 'linear-gradient(135deg, #FF6B00 0%, #FF8533 100%)',
                           boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
                         }}
                       >
@@ -598,7 +598,7 @@ const LandingPage = () => {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-black rounded-full px-6 py-3 transition-all group shadow-cta hover:shadow-cta-hover transform hover:-translate-y-0.5"
                           style={{
-                            background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+                            background: 'linear-gradient(135deg, #FF6B00 0%, #FF8533 100%)',
                             boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
                           }}
                         >
@@ -1116,7 +1116,7 @@ const LandingPage = () => {
                 type="submit" 
                 className="w-full bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-black rounded-full px-8 py-4 text-lg shadow-cta hover:shadow-cta-hover transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 group"
                 style={{
-                  background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+                  background: 'linear-gradient(135deg, #FF6B00 0%, #FF8533 100%)',
                   boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
                 }}
               >
