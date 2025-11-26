@@ -37,7 +37,7 @@ const LandingPage = () => {
 
   // Count-up animation hook
   const useCountUp = (end, duration = 2000, shouldStart = true) => {
-    // shouldStartがfalseの場合は即座にendを返す
+    // shouldStartがfalseの場合は常にendを返す（アニメーションなし）
     const [count, setCount] = useState(shouldStart ? 0 : end);
     useEffect(() => {
       if (!shouldStart) {
@@ -53,7 +53,8 @@ const LandingPage = () => {
       };
       requestAnimationFrame(animate);
     }, [end, duration, shouldStart]);
-    return count;
+    // shouldStartがfalseの場合は常にendを返す
+    return shouldStart ? count : end;
   };
 
   const StatCard = ({ icon: Icon, value, suffix = '', label, delay = 0, shouldAnimate = true }) => {
