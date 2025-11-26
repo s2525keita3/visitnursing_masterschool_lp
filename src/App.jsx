@@ -252,7 +252,7 @@ const LandingPage = () => {
       </section>
 
       {/* Honest Results Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-bg-cream">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-bg-orange-light border border-baum-200 rounded-full px-8 py-3 mb-6 shadow-md">
@@ -347,10 +347,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <SectionCTA text="失敗を回避する方法を今すぐ知る" className="bg-bg-cream" />
+      <SectionCTA text="失敗を回避する方法を今すぐ知る" className="bg-white" />
 
       {/* Fear Section - UPDATED with Statistics */}
-      <section id="section-fear" className="py-20 px-4 bg-white">
+      <section id="section-fear" className="py-20 px-4 bg-bg-cream">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-bg-orange-light border border-red-500 rounded-full px-8 py-3 mb-6 shadow-md">
@@ -424,7 +424,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <SectionCTA text="成功メソッドを無料面談で聞く" className="bg-bg-cream" />
+      <SectionCTA text="成功メソッドを無料面談で聞く" className="bg-white" />
 
       {/* Case Studies Section - VIDEO EMPHASIS */}
       <section id="section-cases" className="py-20 px-4 bg-bg-cream">
@@ -654,10 +654,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <SectionCTA text="成功事例の詳細を無料面談で聞く" className="bg-white" />
+      <SectionCTA text="成功事例の詳細を無料面談で聞く" className="bg-bg-cream" />
 
       {/* Instructor Profile - COMPLETE REWRITE */}
-      <section id="section-instructor" className="py-20 px-4 bg-white">
+      <section id="section-instructor" className="py-20 px-4 bg-bg-cream">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-bg-orange-light border border-baum-500 rounded-full px-8 py-3 mb-6 shadow-md">
@@ -805,21 +805,20 @@ const LandingPage = () => {
       <section id="section-pricing" className="py-20 px-4 bg-bg-cream">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-up">
-            <div className="inline-flex items-center gap-2 bg-bg-orange-light border border-baum-500 rounded-full px-8 py-3 mb-6 shadow-md">
-              <DollarSign className="w-6 h-6 text-baum-500" />
-              <span className="text-text-primary font-bold text-lg">受講料とROI</span>
+            <div className="inline-block bg-bg-orange-light border border-baum-200 rounded-full px-6 py-2 mb-6 shadow-sm">
+              <span className="text-baum-600 font-bold text-sm">HIGH ROI & COST PERFORMANCE</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-text-primary">
-              かけた費用に対して回収できるのか
+              受講料とROI（投資対効果）
             </h2>
-            <div className="inline-block bg-baum-100 border-2 border-baum-500 rounded-xl px-8 py-4 mb-6 shadow-md">
-              <p className="text-baum-600 font-black text-xl md:text-2xl">
-                経営者・社長の時給は1万円以上だと思え！
+            <p className="text-2xl md:text-3xl font-bold mb-6 text-text-primary">
+              かけた費用に対して回収できるのか？
+            </p>
+            <div className="inline-block bg-white border-2 border-baum-200 rounded-xl px-8 py-4 mb-6 shadow-card">
+              <p className="text-text-primary font-black text-xl md:text-2xl">
+                経営者・社長の時給は<span className="text-baum-500">1万円以上</span>だと思ってください
               </p>
             </div>
-            <p className="text-xl text-text-tertiary font-semibold">
-              受講料は<span className="text-baum-500 font-black text-2xl">最短3ヶ月で完全回収可能</span>
-            </p>
           </div>
 
           {/* Main Price Display - RICH */}
@@ -863,89 +862,92 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* 6 Recovery Methods */}
+          {/* Break Even Point */}
+          <div className="bg-white rounded-xl p-8 mb-12 shadow-card border-2 border-baum-200">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center shadow-md">
+                <DollarSign className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-text-tertiary mb-1">BREAK EVEN POINT</p>
+                <p className="text-2xl md:text-3xl font-black text-text-primary">
+                  利用者<span className="text-baum-500">1名</span>獲得で<span className="text-baum-500">4ヶ月分</span>の費用回収が可能
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5 Recovery Methods */}
           <div className="mb-12">
-            <h3 className="text-3xl md:text-4xl font-black text-center mb-12 text-text-primary">
-              <span className="text-baum-500">6つの投資回収方法</span>
-            </h3>
+            <div className="flex items-center gap-3 mb-8 justify-center">
+              <Clock className="w-8 h-8 text-baum-500" />
+              <h3 className="text-3xl md:text-4xl font-black text-text-primary">
+                5つの投資回収方法
+              </h3>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   number: '01',
-                  title: '営業利益で回収',
-                  amount: '88万円',
-                  period: '3ヶ月',
-                  desc: '黒字化達成で営業利益から回収',
-                  icon: TrendingUp,
+                  title: 'テンプレート価値',
+                  amount: '10万円',
+                  desc: '実務で使えるテンプレート群',
+                  icon: FileText,
                   color: 'bg-white',
                   border: 'border-baum-200'
                 },
                 {
                   number: '02',
-                  title: '採用コスト削減',
-                  amount: '100万円',
-                  period: '初年度',
-                  desc: '人材紹介会社への手数料をゼロに',
-                  icon: Users,
-                  color: 'bg-white',
-                  border: 'border-baum-200'
-                },
-                {
-                  number: '03',
                   title: '融資額最大化',
-                  amount: '+100万円',
-                  period: '初期',
+                  amount: '100万円',
                   desc: '融資額を100万円以上増額',
                   icon: DollarSign,
                   color: 'bg-white',
                   border: 'border-baum-200'
                 },
                 {
-                  number: '04',
-                  title: '士業紹介で節約',
-                  amount: '45万円',
-                  period: '初年度',
-                  desc: '税理士・社労士費用を大幅削減',
-                  icon: Briefcase,
+                  number: '03',
+                  title: '営業利益',
+                  amount: '30万円',
+                  desc: '黒字化達成で営業利益から回収',
+                  icon: TrendingUp,
                   color: 'bg-white',
                   border: 'border-baum-200'
                 },
                 {
-                  number: '05',
+                  number: '04',
                   title: '新規顧客獲得',
-                  amount: '93.6万円',
-                  period: '6ヶ月',
-                  desc: '13名の新規利用者獲得で達成',
+                  amount: '30万円',
+                  desc: '新規利用者獲得で達成',
                   icon: Target,
                   color: 'bg-white',
                   border: 'border-baum-200'
                 },
                 {
-                  number: '06',
-                  title: 'テンプレート価値',
-                  amount: '88万円',
-                  period: '即時',
-                  desc: '40種以上のテンプレートの市場価値',
-                  icon: FileText,
+                  number: '05',
+                  title: '採用コスト削減+紹介',
+                  amount: '200万円',
+                  desc: '人材紹介会社への手数料削減&信頼できる士業紹介',
+                  icon: Users,
                   color: 'bg-white',
                   border: 'border-baum-200'
                 }
               ].map((method, i) => (
-                <div key={i} className={`${method.color} rounded-xl p-6 border-2 ${method.border} shadow-card hover:shadow-card-hover hover:border-baum-500 transition-all duration-300 transform hover:-translate-y-1 group`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <method.icon className="w-10 h-10 text-baum-500 group-hover:scale-110 transition-transform" />
-                    <span className="text-5xl font-black text-baum-100">{method.number}</span>
+                <div key={i} className={`${method.color} rounded-xl p-6 border-2 ${method.border} shadow-card hover:shadow-card-hover hover:border-baum-500 transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden`}>
+                  {/* 背景の大きな数字 */}
+                  <span className="absolute top-4 right-4 text-7xl font-black text-baum-50 opacity-60 leading-none">{method.number}</span>
+                  <div className="relative z-10">
+                    <div className="flex items-start justify-between mb-4">
+                      <method.icon className="w-10 h-10 text-baum-500 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h4 className="text-xl font-black mb-3 text-text-primary">{method.title}</h4>
+                    <div className="text-4xl font-black mb-3">
+                      <span className="text-baum-500">
+                        {method.amount}
+                      </span>
+                    </div>
+                    <p className="text-text-tertiary text-sm leading-relaxed font-semibold">{method.desc}</p>
                   </div>
-                  <h4 className="text-xl font-black mb-2 text-text-primary">{method.title}</h4>
-                  <div className="text-4xl font-black mb-2">
-                    <span className="text-baum-500">
-                      {method.amount}
-                    </span>
-                  </div>
-                  <div className="inline-block bg-bg-orange-light rounded-full px-3 py-1 mb-3 border border-baum-200">
-                    <span className="text-sm font-black text-text-primary">{method.period}</span>
-                  </div>
-                  <p className="text-text-tertiary text-sm leading-relaxed font-semibold">{method.desc}</p>
                 </div>
               ))}
             </div>
@@ -996,10 +998,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <SectionCTA text="投資回収プランを無料面談で相談する" className="bg-white" />
+      <SectionCTA text="投資回収プランを無料面談で相談する" className="bg-bg-cream" />
 
       {/* Application Section */}
-      <section id="apply" className="py-20 px-4 bg-bg-cream">
+      <section id="apply" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-bg-orange-light border border-baum-500 rounded-full px-8 py-3 mb-6 shadow-md">
