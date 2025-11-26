@@ -90,13 +90,18 @@ const LandingPage = () => {
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
         className={`
-          bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-bold rounded-full
+          bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 
+          text-white font-bold rounded-full
           shadow-cta hover:shadow-cta-hover 
           transform hover:-translate-y-0.5 transition-all duration-300 
-          inline-flex items-center gap-3 group
+          inline-flex items-center justify-center gap-3 group
           ${sizeClasses[size]}
           ${className}
         `}
+        style={{
+          background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+          boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
+        }}
       >
         {children}
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -577,17 +582,25 @@ const LandingPage = () => {
                         href={caseStudy.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-bg-orange-light hover:bg-baum-100 rounded-full px-6 py-3 transition-all group border border-baum-200 shadow-md"
+                        className="inline-flex items-center gap-2 bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-black rounded-full px-6 py-3 transition-all group shadow-cta hover:shadow-cta-hover transform hover:-translate-y-0.5"
+                        style={{
+                          background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+                          boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
+                        }}
                       >
-                        <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform text-text-primary" />
-                        <span className="text-sm font-black text-text-primary">公式サイト</span>
+                        <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform text-white" />
+                        <span className="text-sm font-black text-white">公式サイト</span>
                       </a>
                       {caseStudy.video && (
                         <a 
                           href={caseStudy.video} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-baum-500 hover:bg-baum-600 rounded-full px-6 py-3 transition-all group shadow-cta"
+                          className="inline-flex items-center gap-2 bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-black rounded-full px-6 py-3 transition-all group shadow-cta hover:shadow-cta-hover transform hover:-translate-y-0.5"
+                          style={{
+                            background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+                            boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
+                          }}
                         >
                           <Play className="w-4 h-4 group-hover:scale-110 transition-transform text-white" />
                           <span className="text-sm font-black text-white">動画を見る</span>
@@ -1102,6 +1115,10 @@ const LandingPage = () => {
               <button 
                 type="submit" 
                 className="w-full bg-gradient-to-br from-baum-500 to-baum-600 hover:from-baum-600 hover:to-baum-700 text-white font-black rounded-full px-8 py-4 text-lg shadow-cta hover:shadow-cta-hover transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 group"
+                style={{
+                  background: 'linear-gradient(135deg, #FF6B00 0%, #E55A00 100%)',
+                  boxShadow: '0 8px 24px rgba(255, 107, 0, 0.3)'
+                }}
               >
                 送信する
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
