@@ -64,16 +64,16 @@ const LandingPage = () => {
     const displayValue = shouldAnimate ? animatedValue : value;
     return (
       <div 
-        className="bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transform hover:-translate-y-2 transition-all duration-300 animate-fade-up"
+        className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-6 border-2 border-baum-200 shadow-card hover:shadow-card-hover transform hover:-translate-y-2 transition-all duration-300 animate-fade-up"
         style={{ animationDelay: `${delay}ms` }}
       >
-        <div className="w-20 h-20 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center mb-4 shadow-md">
+        <div className="w-20 h-20 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center mb-4 shadow-cta">
           <Icon className="w-10 h-10 text-white" />
         </div>
         <div className="text-4xl font-bold text-text-primary mb-2">
           {displayValue}{suffix}
         </div>
-        <div className="text-text-tertiary text-sm font-semibold">{label}</div>
+        <div className="text-text-secondary text-sm font-semibold">{label}</div>
       </div>
     );
   };
@@ -224,9 +224,9 @@ const LandingPage = () => {
           </div>
 
           {/* Key Numbers - RICH Display */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 border-4 border-baum-200 shadow-card-hover">
+          <div className="bg-gradient-to-br from-bg-orange-light via-white to-bg-orange-light rounded-3xl p-8 md:p-12 border-4 border-baum-300 shadow-card-hover">
             <div className="text-center">
-              <p className="text-text-secondary text-lg mb-4 font-bold">業界最高水準の成功実績</p>
+              <p className="text-text-primary text-lg mb-4 font-bold">業界最高水準の成功実績</p>
               <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
                 <div className="text-center">
                   <div className="text-6xl md:text-8xl font-black mb-2">
@@ -235,7 +235,7 @@ const LandingPage = () => {
                     </span>
                     <span className="text-5xl md:text-7xl text-baum-500">%</span>
                   </div>
-                  <p className="text-text-secondary font-black text-lg">融資承認率</p>
+                  <p className="text-text-primary font-black text-lg">融資承認率</p>
                 </div>
                 <div className="text-center">
                   <div className="text-6xl md:text-8xl font-black mb-2">
@@ -244,7 +244,7 @@ const LandingPage = () => {
                     </span>
                     <span className="text-5xl md:text-7xl text-baum-500">%</span>
                   </div>
-                  <p className="text-text-secondary font-black text-lg">12ヶ月黒字化率</p>
+                  <p className="text-text-primary font-black text-lg">12ヶ月黒字化率</p>
                 </div>
               </div>
             </div>
@@ -271,30 +271,36 @@ const LandingPage = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* 融資否認2% */}
-            <div className="bg-white rounded-xl p-8 border-2 border-red-500 shadow-card hover:shadow-card-hover transition-all">
+            <div className="bg-gradient-to-br from-red-50 to-white rounded-xl p-8 border-2 border-red-500 shadow-card hover:shadow-card-hover transition-all">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-16 h-16 rounded-full bg-red-900 flex items-center justify-center border-2 border-red-500">
-                  <span className="text-3xl font-black text-red-400">2%</span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center border-2 border-red-500 shadow-md">
+                  <span className="text-3xl font-black text-white">2%</span>
                 </div>
-                <h3 className="text-2xl font-black text-red-400">融資否認の実態</h3>
+                <h3 className="text-2xl font-black text-red-600">融資否認の実態</h3>
               </div>
-              <div className="bg-bg-cream rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-gradient-to-br from-white to-bg-cream rounded-xl p-6 border-2 border-red-200 shadow-sm">
                 <p className="text-text-primary mb-4 font-bold">📍 愛知県 1社</p>
                 <ul className="space-y-2 text-text-secondary text-sm font-semibold">
                   <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="w-3 h-3 text-white" />
+                    </div>
                     <span>資料の作り込みなし</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="w-3 h-3 text-white" />
+                    </div>
                     <span>説明時も手元資料無し</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="w-3 h-3 text-white" />
+                    </div>
                     <span>想定面談実施せず</span>
                   </li>
                 </ul>
-                <div className="mt-4 bg-green-100 rounded-lg p-3 border-2 border-green-300">
+                <div className="mt-4 bg-gradient-to-br from-green-100 to-green-50 rounded-lg p-3 border-2 border-green-400 shadow-sm">
                   <p className="text-green-700 text-sm font-bold">
                     💡 準備を怠らなければ98%は融資承認されます
                   </p>
@@ -303,23 +309,27 @@ const LandingPage = () => {
             </div>
 
             {/* 黒字化未達成10% */}
-            <div className="bg-white rounded-xl p-8 border-2 border-amber-500 shadow-card hover:shadow-card-hover transition-all">
+            <div className="bg-gradient-to-br from-amber-50 to-white rounded-xl p-8 border-2 border-amber-500 shadow-card hover:shadow-card-hover transition-all">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-16 h-16 rounded-full bg-amber-900 flex items-center justify-center border-2 border-amber-500">
-                  <span className="text-3xl font-black text-amber-400">10%</span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center border-2 border-amber-500 shadow-md">
+                  <span className="text-3xl font-black text-white">10%</span>
                 </div>
-                <h3 className="text-2xl font-black text-amber-400">黒字化未達成</h3>
+                <h3 className="text-2xl font-black text-amber-600">黒字化未達成</h3>
               </div>
-              <div className="bg-bg-cream rounded-xl p-6 border-2 border-orange-200 space-y-4">
+              <div className="bg-gradient-to-br from-white to-bg-cream rounded-xl p-6 border-2 border-amber-200 shadow-sm space-y-4">
                 <div>
                   <p className="text-text-primary mb-2 font-bold">📍 ケース① 地域選定ミス</p>
                   <ul className="space-y-1 text-text-secondary text-sm font-semibold">
                     <li className="flex items-start gap-2">
-                      <AlertCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <div className="w-5 h-5 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <AlertCircle className="w-3 h-3 text-white" />
+                      </div>
                       <span>本人の会社以外1社しかステーション無し</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <AlertCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <div className="w-5 h-5 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <AlertCircle className="w-3 h-3 text-white" />
+                      </div>
                       <span>暗黙の了解で依頼が既存1社に限定</span>
                     </li>
                   </ul>
@@ -328,16 +338,20 @@ const LandingPage = () => {
                   <p className="text-text-primary mb-2 font-bold">📍 ケース② 市場規模不足</p>
                   <ul className="space-y-1 text-text-secondary text-sm font-semibold">
                     <li className="flex items-start gap-2">
-                      <AlertCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <div className="w-5 h-5 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <AlertCircle className="w-3 h-3 text-white" />
+                      </div>
                       <span>総人口1万人、取引先30ヶ所のみ</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <AlertCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <div className="w-5 h-5 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <AlertCircle className="w-3 h-3 text-white" />
+                      </div>
                       <span>資金ショート2ヶ月前に音信不通</span>
                     </li>
                   </ul>
                 </div>
-                <div className="bg-green-100 rounded-lg p-3 border-2 border-green-300">
+                <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg p-3 border-2 border-green-400 shadow-sm">
                   <p className="text-green-700 text-sm font-bold">
                     💡 市場調査と地域選定の重要性を徹底指導します
                   </p>
@@ -402,12 +416,14 @@ const LandingPage = () => {
                 border: 'border-orange-500'
               }
             ].map((item, i) => (
-              <div key={i} className={`${item.color} rounded-xl p-6 border-2 ${item.border} shadow-card hover:shadow-card-hover transition-all duration-300 group`}>
-                <item.icon className="w-12 h-12 text-red-500 mb-4 group-hover:scale-110 transition-transform" />
+              <div key={i} className={`bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-6 border-2 ${item.border} shadow-card hover:shadow-card-hover transition-all duration-300 group`}>
+                <div className="w-14 h-14 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center mb-4 shadow-md">
+                  <item.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+                </div>
                 <h3 className="text-2xl font-black mb-3 text-text-primary">{item.title}</h3>
-                <p className="text-text-tertiary mb-4 leading-relaxed font-semibold">{item.desc}</p>
-                <div className="bg-bg-orange-light rounded-lg px-4 py-2 inline-block border border-baum-200">
-                  <span className="text-text-secondary font-black text-sm">{item.stat}</span>
+                <p className="text-text-secondary mb-4 leading-relaxed font-semibold">{item.desc}</p>
+                <div className="bg-white rounded-lg px-4 py-2 inline-block border-2 border-baum-200 shadow-sm">
+                  <span className="text-text-primary font-black text-sm">{item.stat}</span>
                 </div>
               </div>
             ))}
@@ -496,7 +512,7 @@ const LandingPage = () => {
                 thumbnail: '/nakamura-thumbnail.png'
               }
             ].map((caseStudy, i) => (
-              <div key={i} className={`bg-white rounded-xl p-8 md:p-10 border-2 border-baum-200 hover:border-baum-500 shadow-card hover:shadow-card-hover transition-all duration-300`}>
+              <div key={i} className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 md:p-10 border-2 border-baum-300 hover:border-baum-500 shadow-card hover:shadow-card-hover transition-all duration-300">
                 <div className="flex flex-col md:flex-row gap-8">
                   {/* サムネイル画像のみ表示 - テキストなし */}
                   <div className="md:w-1/3">
@@ -601,14 +617,14 @@ const LandingPage = () => {
           </div>
 
           {/* Support Record - ALL 50+ Companies */}
-          <div className="mt-16 bg-white rounded-3xl p-8 md:p-12 border-4 border-baum-200 shadow-card-hover">
+          <div className="mt-16 bg-gradient-to-br from-bg-orange-light to-white rounded-3xl p-8 md:p-12 border-4 border-baum-300 shadow-card-hover">
             <h3 className="text-3xl font-black text-center mb-4 text-text-primary">
               <span className="text-baum-500">開業支援実績 全国50社以上</span>
             </h3>
-            <p className="text-center text-xl text-text-tertiary mb-8 font-semibold">
+            <p className="text-center text-xl text-text-secondary mb-8 font-semibold">
               北海道から沖縄まで、全国で開業・運営支援を実施
             </p>
-            <div className="bg-bg-cream rounded-xl p-6 md:p-8 border-2 border-baum-200">
+            <div className="bg-white rounded-xl p-6 md:p-8 border-2 border-baum-200 shadow-sm">
               {[
                 {
                   blockName: '北海道・東北',
@@ -677,23 +693,31 @@ const LandingPage = () => {
                         ...prev,
                         [block.blockName]: !prev[block.blockName]
                       }))}
-                      className="w-full bg-white rounded-xl p-4 border-2 border-baum-200 hover:border-baum-500 shadow-card hover:shadow-card-hover transition-all duration-300 flex items-center justify-between group"
+                      className={`w-full rounded-xl p-4 border-2 transition-all duration-300 flex items-center justify-between group ${
+                        isExpanded 
+                          ? 'bg-gradient-to-r from-baum-500 to-baum-550 border-baum-600 shadow-cta-hover' 
+                          : 'bg-bg-orange-light border-baum-200 hover:border-baum-500 shadow-card hover:shadow-card-hover'
+                      }`}
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center shadow-md">
-                          <Building className="w-6 h-6 text-white" />
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-md ${
+                          isExpanded 
+                            ? 'bg-white/20 backdrop-blur-sm' 
+                            : 'bg-gradient-to-br from-baum-500 to-baum-550'
+                        }`}>
+                          <Building className={`w-6 h-6 ${isExpanded ? 'text-white' : 'text-white'}`} />
                         </div>
                         <div className="text-left">
-                          <h4 className="text-xl font-black text-text-primary">{block.blockName}</h4>
-                          <p className="text-sm text-text-tertiary font-semibold">{block.areas.length}都道府県 / 合計{totalCount}社</p>
+                          <h4 className={`text-xl font-black ${isExpanded ? 'text-white' : 'text-text-primary'}`}>{block.blockName}</h4>
+                          <p className={`text-sm font-semibold ${isExpanded ? 'text-white/90' : 'text-text-tertiary'}`}>{block.areas.length}都道府県 / 合計{totalCount}社</p>
                         </div>
                       </div>
-                      <ChevronDown className={`w-6 h-6 text-baum-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-white' : 'text-baum-500'}`} />
                     </button>
                     {isExpanded && (
                       <div className="mt-4 grid md:grid-cols-3 gap-6 animate-fade-up">
                         {block.areas.map((area, i) => (
-                          <div key={i} className={`${area.color} rounded-xl p-4 hover:shadow-card-hover transition-all border-2 border-baum-200 shadow-card`}>
+                          <div key={i} className="bg-white rounded-xl p-4 hover:shadow-card-hover transition-all border-2 border-baum-200 shadow-card hover:border-baum-400">
                             <div className="flex items-center justify-between mb-2">
                               <span className="font-black text-lg text-text-primary">{area.region}</span>
                               <span className="text-baum-500 font-black text-2xl">{area.count}</span>
@@ -738,20 +762,20 @@ const LandingPage = () => {
           {/* 講師写真と紹介文 */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="order-2 md:order-1">
-              <div className="bg-white rounded-xl p-8 md:p-12 border-2 border-baum-200 shadow-card h-full">
-                <p className="text-xl text-text-tertiary leading-relaxed mb-8 font-semibold">
+              <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 md:p-12 border-2 border-baum-300 shadow-card h-full">
+                <p className="text-xl text-text-secondary leading-relaxed mb-8 font-semibold">
                   多くのコンサルが過去の経験則や教科書的な理論を語る中、私は<span className="text-baum-500 font-black text-2xl">「今の現場」で通用する生きたノウハウ</span>しか教えません。
                 </p>
-                <p className="text-xl text-text-tertiary leading-relaxed mb-8 font-semibold">
+                <p className="text-xl text-text-secondary leading-relaxed mb-8 font-semibold">
                   採用難と言われるこの時代に常勤スタッフ50名を抱え、月間3,500件の訪問を回し続ける<span className="text-text-primary font-black text-2xl">「組織作りの極意」</span>。そして、総フォロワー11万人を熱狂させ、広告費に頼らずとも人とお金を集める<span className="text-text-primary font-black text-2xl">「Webマーケティングの正解」</span>。
                 </p>
-                <p className="text-xl text-text-tertiary leading-relaxed font-semibold">
+                <p className="text-xl text-text-secondary leading-relaxed font-semibold">
                   自身の事業で実証し、さらに全国50社以上の支援先で再現されてきた<span className="text-baum-500 font-black text-2xl">「失敗しない開業メソッド」</span>を、あなたにすべて継承します。
                 </p>
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <div className="bg-white rounded-xl p-6 border-2 border-baum-200 shadow-card h-full flex items-center justify-center overflow-hidden">
+              <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-6 border-2 border-baum-300 shadow-card h-full flex items-center justify-center overflow-hidden">
                 <img 
                   src="/koushi-jon-photo.png" 
                   alt="講師プロフィール写真" 
@@ -765,13 +789,13 @@ const LandingPage = () => {
           {/* 3つの権威性ブロック */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* ❶ 圧倒的な「現場」実績 */}
-            <div className="bg-white rounded-xl p-8 border-2 border-baum-200 shadow-card hover:shadow-card-hover transition-all">
+            <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 border-2 border-baum-300 shadow-card hover:shadow-card-hover transition-all">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-baum-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-cta">
+                <div className="w-20 h-20 bg-gradient-to-br from-baum-500 to-baum-550 rounded-full flex items-center justify-center mx-auto mb-4 shadow-cta">
                   <span className="text-4xl font-black text-white">❶</span>
                 </div>
                 <h3 className="text-2xl font-black text-text-primary mb-2">圧倒的な「現場」実績</h3>
-                <p className="text-sm text-text-tertiary font-semibold">机上の理論ではなく、泥臭い現場で磨き上げた数字です。</p>
+                <p className="text-sm text-text-secondary font-semibold">机上の理論ではなく、泥臭い現場で磨き上げた数字です。</p>
               </div>
               <ul className="space-y-4">
                 {[
@@ -780,12 +804,12 @@ const LandingPage = () => {
                   { icon: Users, label: '組織力', value: '常勤スタッフ50名' },
                   { icon: Heart, label: '訪問数', value: '月間3,500件超' }
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 bg-bg-orange-light rounded-xl p-3 border border-baum-200">
-                    <div className="w-10 h-10 rounded-full bg-baum-500/20 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-baum-500" />
+                  <li key={i} className="flex items-center gap-3 bg-white rounded-xl p-3 border-2 border-baum-200 shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-baum-500 to-baum-550 flex items-center justify-center flex-shrink-0 shadow-md">
+                      <item.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs text-text-light font-semibold">{item.label}</p>
+                      <p className="text-xs text-text-tertiary font-semibold">{item.label}</p>
                       <p className="text-lg font-black text-text-primary">{item.value}</p>
                     </div>
                   </li>
@@ -794,48 +818,48 @@ const LandingPage = () => {
             </div>
 
             {/* ❷ 業界最強の「集客・採用」発信力 */}
-            <div className="bg-white rounded-xl p-8 border-2 border-baum-200 shadow-card hover:shadow-card-hover transition-all">
+            <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 border-2 border-baum-300 shadow-card hover:shadow-card-hover transition-all">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-bg-orange-light rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <span className="text-4xl font-black text-text-primary">❷</span>
+                <div className="w-20 h-20 bg-gradient-to-br from-baum-500 to-baum-550 rounded-full flex items-center justify-center mx-auto mb-4 shadow-cta">
+                  <span className="text-4xl font-black text-white">❷</span>
                 </div>
                 <h3 className="text-2xl font-black text-text-primary mb-2">業界最強の発信力</h3>
-                <p className="text-sm text-text-tertiary font-semibold">「見られ方」「顧客心理」「人が動く導線」を熟知</p>
+                <p className="text-sm text-text-secondary font-semibold">「見られ方」「顧客心理」「人が動く導線」を熟知</p>
               </div>
-              <div className="bg-bg-orange-light rounded-xl p-6 mb-4 border-2 border-baum-500 shadow-md">
+              <div className="bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl p-6 mb-4 border-2 border-baum-600 shadow-cta">
                 <div className="text-center">
-                  <p className="text-6xl font-black text-text-primary mb-2">11万+</p>
-                  <p className="text-text-primary font-bold text-lg">総SNSフォロワー</p>
+                  <p className="text-6xl font-black text-white mb-2">11万+</p>
+                  <p className="text-white font-bold text-lg">総SNSフォロワー</p>
                 </div>
               </div>
               <ul className="space-y-3 text-sm">
-                <li className="flex items-center justify-between bg-bg-orange-light rounded-lg p-3 border border-baum-200">
-                  <span className="text-text-tertiary font-semibold">YouTube</span>
-                  <span className="text-text-primary font-black text-lg">2.2万</span>
+                <li className="flex items-center justify-between bg-white rounded-lg p-3 border-2 border-baum-200 shadow-sm">
+                  <span className="text-text-secondary font-semibold">YouTube</span>
+                  <span className="text-baum-500 font-black text-lg">2.2万</span>
                 </li>
-                <li className="flex items-center justify-between bg-bg-orange-light rounded-lg p-3 border border-baum-200">
-                  <span className="text-text-tertiary font-semibold">TikTok</span>
-                  <span className="text-text-primary font-black text-lg">6万</span>
+                <li className="flex items-center justify-between bg-white rounded-lg p-3 border-2 border-baum-200 shadow-sm">
+                  <span className="text-text-secondary font-semibold">TikTok</span>
+                  <span className="text-baum-500 font-black text-lg">6万</span>
                 </li>
-                <li className="flex items-center justify-between bg-bg-orange-light rounded-lg p-3 border border-baum-200">
-                  <span className="text-text-tertiary font-semibold">Instagram</span>
-                  <span className="text-text-primary font-black text-lg">3万</span>
+                <li className="flex items-center justify-between bg-white rounded-lg p-3 border-2 border-baum-200 shadow-sm">
+                  <span className="text-text-secondary font-semibold">Instagram</span>
+                  <span className="text-baum-500 font-black text-lg">3万</span>
                 </li>
-                <li className="flex items-center justify-between bg-bg-orange-light rounded-lg p-3 border border-baum-200">
-                  <span className="text-text-tertiary font-semibold">X (Twitter)</span>
-                  <span className="text-text-primary font-black text-lg">4千</span>
+                <li className="flex items-center justify-between bg-white rounded-lg p-3 border-2 border-baum-200 shadow-sm">
+                  <span className="text-text-secondary font-semibold">X (Twitter)</span>
+                  <span className="text-baum-500 font-black text-lg">4千</span>
                 </li>
               </ul>
             </div>
 
             {/* ❸ 再現性のある「指導」実績 */}
-            <div className="bg-white rounded-xl p-8 border-2 border-baum-200 shadow-card hover:shadow-card-hover transition-all">
+            <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 border-2 border-baum-300 shadow-card hover:shadow-card-hover transition-all">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-bg-orange-light rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <span className="text-4xl font-black text-text-primary">❸</span>
+                <div className="w-20 h-20 bg-gradient-to-br from-baum-500 to-baum-550 rounded-full flex items-center justify-center mx-auto mb-4 shadow-cta">
+                  <span className="text-4xl font-black text-white">❸</span>
                 </div>
                 <h3 className="text-2xl font-black text-text-primary mb-2">再現性のある指導</h3>
-                <p className="text-sm text-text-tertiary font-semibold">私だけができたわけではありません。</p>
+                <p className="text-sm text-text-secondary font-semibold">私だけができたわけではありません。</p>
               </div>
               <ul className="space-y-4">
                 {[
@@ -843,19 +867,19 @@ const LandingPage = () => {
                   { icon: Target, label: '支援エリア', value: '北海道〜沖縄' },
                   { icon: Shield, label: 'モットー', value: '失敗しない開業' }
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 bg-bg-orange-light rounded-xl p-4 border border-baum-200">
-                    <div className="w-12 h-12 rounded-full bg-baum-500 flex items-center justify-center flex-shrink-0">
+                  <li key={i} className="flex items-center gap-3 bg-white rounded-xl p-4 border-2 border-baum-200 shadow-sm">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-baum-500 to-baum-550 flex items-center justify-center flex-shrink-0 shadow-md">
                       <item.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs text-text-light font-semibold">{item.label}</p>
+                      <p className="text-xs text-text-tertiary font-semibold">{item.label}</p>
                       <p className="text-lg font-black text-text-primary">{item.value}</p>
                     </div>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 bg-bg-orange-light rounded-xl p-4 border-2 border-baum-500 shadow-md">
-                <p className="text-text-primary font-black text-center text-sm leading-relaxed">
+              <div className="mt-6 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl p-4 border-2 border-baum-600 shadow-cta">
+                <p className="text-white font-black text-center text-sm leading-relaxed">
                   私のノウハウをインストールした未経験者たちが、次々と結果を出しています。
                 </p>
               </div>
@@ -885,7 +909,7 @@ const LandingPage = () => {
           </div>
 
           {/* Main Price Display - RICH */}
-          <div className="bg-white rounded-3xl p-8 md:p-16 border-4 border-baum-200 mb-12 relative overflow-hidden shadow-card-hover">
+          <div className="bg-gradient-to-br from-bg-orange-light via-white to-bg-orange-light rounded-3xl p-8 md:p-16 border-4 border-baum-300 mb-12 relative overflow-hidden shadow-card-hover">
             <div className="relative z-10 text-center">
               <div className="inline-block bg-baum-500 text-white rounded-xl px-8 py-3 mb-6 shadow-cta">
                 <p className="font-black text-2xl">🔥 リリース記念キャンペーン 🔥</p>
@@ -926,13 +950,13 @@ const LandingPage = () => {
           </div>
 
           {/* Break Even Point */}
-          <div className="bg-white rounded-xl p-8 mb-12 shadow-card border-2 border-baum-200">
+          <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 mb-12 shadow-card border-2 border-baum-300">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center shadow-md">
+              <div className="w-16 h-16 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center shadow-cta">
                 <DollarSign className="w-8 h-8 text-white" />
               </div>
               <div>
-                <p className="text-sm font-bold text-text-tertiary mb-1">BREAK EVEN POINT</p>
+                <p className="text-sm font-bold text-text-secondary mb-1">BREAK EVEN POINT</p>
                 <p className="text-2xl md:text-3xl font-black text-text-primary">
                   利用者<span className="text-baum-500">1名</span>獲得で<span className="text-baum-500">4ヶ月分</span>の費用回収が可能
                 </p>
@@ -996,12 +1020,14 @@ const LandingPage = () => {
                   border: 'border-baum-200'
                 }
               ].map((method, i) => (
-                <div key={i} className={`${method.color} rounded-xl p-6 border-2 ${method.border} shadow-card hover:shadow-card-hover hover:border-baum-500 transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden`}>
+                <div key={i} className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-6 border-2 border-baum-200 shadow-card hover:shadow-card-hover hover:border-baum-500 transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
                   {/* 背景の大きな数字 */}
-                  <span className="absolute top-4 right-4 text-7xl font-black text-baum-50 opacity-60 leading-none">{method.number}</span>
+                  <span className="absolute top-4 right-4 text-7xl font-black text-baum-100 opacity-50 leading-none">{method.number}</span>
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-4">
-                      <method.icon className="w-10 h-10 text-baum-500 group-hover:scale-110 transition-transform" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center shadow-md">
+                        <method.icon className="w-7 h-7 text-white group-hover:scale-110 transition-transform" />
+                      </div>
                     </div>
                     <h4 className="text-xl font-black mb-3 text-text-primary">{method.title}</h4>
                     <div className="text-4xl font-black mb-3">
@@ -1009,7 +1035,7 @@ const LandingPage = () => {
                         {method.amount}
                       </span>
                     </div>
-                    <p className="text-text-tertiary text-sm leading-relaxed font-semibold">{method.desc}</p>
+                    <p className="text-text-secondary text-sm leading-relaxed font-semibold">{method.desc}</p>
                   </div>
                 </div>
               ))}
@@ -1017,23 +1043,23 @@ const LandingPage = () => {
           </div>
 
           {/* ROI Timeline */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 border-2 border-baum-200 shadow-card">
+          <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-3xl p-8 md:p-12 border-2 border-baum-300 shadow-card">
             <h3 className="text-3xl font-black text-center mb-8 text-text-primary">
               投資回収タイムライン
             </h3>
             <div className="space-y-4">
               {[
-                { time: '即時', method: 'テンプレート価値', amount: '88万円', total: '88万円', color: 'bg-bg-orange-light' },
-                { time: '初期', method: '融資額最大化', amount: '+100万円', total: '188万円', color: 'bg-bg-orange-light' },
-                { time: '3ヶ月', method: '営業利益', amount: '88万円', total: '276万円', color: 'bg-bg-orange-light' },
-                { time: '6ヶ月', method: '新規顧客獲得', amount: '93.6万円', total: '369.6万円', color: 'bg-bg-orange-light' },
-                { time: '1年', method: '採用コスト削減+士業紹介', amount: '145万円', total: '514.6万円', color: 'bg-bg-orange-light' }
+                { time: '即時', method: 'テンプレート価値', amount: '88万円', total: '88万円', color: 'bg-white' },
+                { time: '初期', method: '融資額最大化', amount: '+100万円', total: '188万円', color: 'bg-white' },
+                { time: '3ヶ月', method: '営業利益', amount: '88万円', total: '276万円', color: 'bg-white' },
+                { time: '6ヶ月', method: '新規顧客獲得', amount: '93.6万円', total: '369.6万円', color: 'bg-white' },
+                { time: '1年', method: '採用コスト削減+士業紹介', amount: '145万円', total: '514.6万円', color: 'bg-white' }
               ].map((item, i) => (
-                <div key={i} className={`${item.color} rounded-xl p-6 border-2 border-baum-200 hover:border-baum-500 hover:shadow-card transition-all`}>
+                <div key={i} className="bg-white rounded-xl p-6 border-2 border-baum-200 hover:border-baum-500 hover:shadow-card transition-all shadow-sm">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-baum-500/20 flex items-center justify-center flex-shrink-0 border-2 border-baum-500">
-                        <span className="text-xl font-black text-text-primary">{item.time}</span>
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-baum-500 to-baum-550 flex items-center justify-center flex-shrink-0 border-2 border-baum-600 shadow-md">
+                        <span className="text-xl font-black text-white">{item.time}</span>
                       </div>
                       <div>
                         <h4 className="text-lg font-black text-text-primary">{item.method}</h4>
@@ -1049,12 +1075,12 @@ const LandingPage = () => {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <div className="inline-block bg-baum-100 border-2 border-baum-500 rounded-xl px-8 py-6 shadow-md">
-                <p className="text-text-primary text-xl mb-2 font-bold">1年後の投資効果</p>
-                <p className="text-5xl font-black text-baum-500">
+              <div className="inline-block bg-gradient-to-br from-baum-500 to-baum-550 border-2 border-baum-600 rounded-xl px-8 py-6 shadow-cta">
+                <p className="text-white text-xl mb-2 font-bold">1年後の投資効果</p>
+                <p className="text-5xl font-black text-white">
                   514.6万円
                 </p>
-                <p className="text-text-primary mt-2 font-bold">受講料の<span className="font-black text-2xl text-red-500">5.8倍</span>のリターン</p>
+                <p className="text-white mt-2 font-bold">受講料の<span className="font-black text-2xl text-amber-300">5.8倍</span>のリターン</p>
               </div>
             </div>
           </div>
@@ -1089,15 +1115,15 @@ const LandingPage = () => {
           </div>
 
           {/* Application Method */}
-          <div className="bg-white rounded-xl p-8 md:p-12 border-2 border-baum-500 hover:border-baum-600 transition-all duration-300 transform hover:-translate-y-1 mb-8 shadow-card-hover">
+          <div className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 md:p-12 border-2 border-baum-500 hover:border-baum-600 transition-all duration-300 transform hover:-translate-y-1 mb-8 shadow-card-hover">
             <div className="text-center">
-              <div className="w-24 h-24 bg-baum-500 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-cta">
+              <div className="w-24 h-24 bg-gradient-to-br from-baum-500 to-baum-550 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-cta">
                 <Calendar className="w-16 h-16 text-white" />
               </div>
               <h3 className="text-3xl font-black mb-4 text-text-primary">無料面談を予約する</h3>
-              <p className="text-text-tertiary mb-8 text-lg font-semibold">
+              <p className="text-text-secondary mb-8 text-lg font-semibold">
                 オンラインで60分、あなたの開業プランを徹底サポート<br />
-                <span className="text-sm text-text-light">(推奨)</span>
+                <span className="text-sm text-text-tertiary">(推奨)</span>
               </p>
               <CTAButton 
                 className="w-full justify-center mb-6" 
@@ -1113,7 +1139,7 @@ const LandingPage = () => {
           </div>
 
           {/* Email Form */}
-          <div id="email-form" className="bg-white rounded-xl p-8 md:p-10 border-2 border-baum-200 shadow-card">
+          <div id="email-form" className="bg-gradient-to-br from-bg-orange-light to-white rounded-xl p-8 md:p-10 border-2 border-baum-300 shadow-card">
             <h3 className="text-2xl font-black mb-2 text-center text-text-primary">メールでのお問い合わせ</h3>
             <p className="text-center text-text-tertiary mb-6 text-sm font-semibold">
               メールアドレス: <a href="mailto:info@jnhc-mra.or.jp" className="text-baum-500 hover:underline font-bold">info@jnhc-mra.or.jp</a>
@@ -1179,7 +1205,7 @@ const LandingPage = () => {
 
           {/* Final Message */}
           <div className="mt-12 text-center">
-            <div className="inline-block bg-white rounded-xl px-8 py-6 border-2 border-baum-200 shadow-card">
+            <div className="inline-block bg-gradient-to-br from-bg-orange-light to-white rounded-xl px-8 py-6 border-2 border-baum-300 shadow-card">
               <p className="text-xl text-text-primary leading-relaxed font-semibold">
                 <span className="text-baum-500 font-black text-2xl">あなたの開業成功</span>を全力でサポートします。<br />
                 まずは無料面談で、不安や疑問をすべて解消してください。
