@@ -53,7 +53,7 @@ const AiAdvisor = () => {
     <Section>
       <div className="text-center space-y-4 animate-fade-up">
         <Pill icon={Bot}>AI Advisor</Pill>
-        <h2 className="text-4xl font-serif leading-tight">
+        <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
           <span className="text-brand-dark">AIアドバイザーでその場で</span>
           <span className="text-brand-orange">疑問を解決</span>
         </h2>

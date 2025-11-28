@@ -13,7 +13,7 @@ const Founder = () => (
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className="space-y-6 animate-fade-up">
         <Pill>Founder's Message</Pill>
-        <h2 className="text-4xl font-serif leading-tight">
+        <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
           <span className="text-brand-dark">「机上の空論」ではなく、</span>
           <span className="text-brand-orange">現場の数字で語る</span>
         </h2>

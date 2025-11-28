@@ -30,7 +30,7 @@ const Testimonials = () => (
   <Section>
     <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={Quote}>Client Stories</Pill>
-      <h2 className="text-4xl font-serif leading-tight">
+      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">数字で語る</span>
         <span className="text-brand-orange">卒業生の声</span>
       </h2>

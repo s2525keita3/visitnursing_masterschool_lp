@@ -31,7 +31,7 @@ const Benefits = () => (
       <Pill icon={CheckCircle2} variant="gold">
         Baum Bloom Method
       </Pill>
-      <h2 className="text-4xl font-serif leading-tight">
+      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">黒字化を逆算する</span>
         <span className="text-brand-orange">5つの伴走</span>
       </h2>

@@ -24,7 +24,7 @@ const Problems = () => (
   <Section tone="muted">
     <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={AlertTriangle}>業界の厳しい現実</Pill>
-      <h2 className="text-4xl font-serif leading-tight">
+      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">「倒産件数、過去最多」の衝撃。</span>
         <br />
         <span className="text-brand-orange">なぜ、訪問看護ステーションの淘汰が止まらないのか?</span>

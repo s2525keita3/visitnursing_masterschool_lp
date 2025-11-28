@@ -14,7 +14,7 @@ const RoiSection = () => (
       <Pill icon={ArrowUpRight} variant="gold">
         ROI & Cost Performance
       </Pill>
-      <h2 className="text-4xl font-serif leading-tight">
+      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">88万円の投資で得られる</span>
         <span className="text-brand-orange">リターン</span>
       </h2>
