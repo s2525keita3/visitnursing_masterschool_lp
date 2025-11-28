@@ -9,20 +9,17 @@ const Hero = () => {
         className="relative min-h-screen flex items-center justify-center py-12 overflow-hidden"
         style={{
           backgroundImage: 'url("/Gemini_Generated_Image_d3aqqed3aqqed3aq.png")',
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* 背景画像の上にオーバーレイ（必要に応じて調整） */}
-        <div className="absolute inset-0 bg-white/0 pointer-events-none" />
-        
-        {/* 中央のメインコンテンツ */}
+        {/* 中央のメインコンテンツ - カードなし、直接配置 */}
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6">
-          <div className="bg-white/95 rounded-[48px] shadow-card border border-brand-dark/5 p-10 md:p-16 space-y-8 animate-fade-up backdrop-blur-sm">
+          <div className="space-y-6 md:space-y-8 animate-fade-up">
             {/* 上部ターゲット文 */}
             <div className="text-center animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              <p className="text-base md:text-lg text-brand-muted font-medium">訪問看護の開業準備に迷いがある方へ</p>
+              <p className="text-base md:text-lg text-brand-dark font-medium">訪問看護の開業準備に迷いがある方へ</p>
             </div>
 
             {/* メインタイトル */}
@@ -44,9 +41,9 @@ const Hero = () => {
               <span className="text-sm font-semibold text-brand-orange">無料説明会にご参加の方限定 融資が通る！事業計画書テンプレートをプレゼント！</span>
             </div>
 
-            {/* CTAボタン - プルプルアニメーション付き */}
+            {/* CTAボタン - プルプルアニメーション付き（ゆっくり） */}
             <div className="flex flex-col items-center space-y-3 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <CTAButton href="#contact" size="large" className="w-full max-w-md animate-shake">
+              <CTAButton href="#contact" size="large" className="w-full max-w-md animate-shake-slow">
                 無料説明会に申し込む
               </CTAButton>
             </div>

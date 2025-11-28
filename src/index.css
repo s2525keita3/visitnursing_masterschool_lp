@@ -119,6 +119,18 @@
   }
 }
 
+@keyframes shakeSlow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px);
+  }
+}
+
 .animate-fade-up {
   animation: fadeUp 0.8s ease-out forwards;
 }
@@ -141,6 +153,10 @@
 
 .animate-shake {
   animation: shake 0.5s ease-in-out infinite;
+}
+
+.animate-shake-slow {
+  animation: shakeSlow 1.5s ease-in-out infinite;
 }
 
 /* ホバーエフェクト - より強いリフト効果 */
