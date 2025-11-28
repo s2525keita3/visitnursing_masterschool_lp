@@ -22,7 +22,7 @@ const data = [
 
 const Problems = () => (
   <Section tone="muted">
-    <div className="text-center space-y-6">
+    <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={AlertTriangle}>業界の厳しい現実</Pill>
       <h2 className="text-4xl font-serif text-brand-dark">
         <span className="text-brand-orange">「倒産件数、過去最多」</span>の衝撃。<br />
@@ -34,8 +34,12 @@ const Problems = () => (
       </p>
     </div>
     <div className="grid md:grid-cols-3 gap-6">
-      {data.map((item) => (
-        <div key={item.title} className="rounded-2xl bg-white p-8 border border-brand-dark/10 shadow-card-soft space-y-4">
+      {data.map((item, index) => (
+        <div
+          key={item.title}
+          className="rounded-2xl bg-white p-8 border border-brand-dark/10 shadow-card hover-lift space-y-4 animate-fade-up"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
           <h3 className="text-xl font-semibold text-brand-dark">{item.title}</h3>
           <p className="text-brand-muted leading-relaxed">{item.description}</p>
           <div className="mt-4 pt-4 border-t border-brand-dark/10">

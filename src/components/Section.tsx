@@ -8,8 +8,8 @@ type SectionProps = {
 
 const backgrounds: Record<NonNullable<SectionProps["tone"]>, string> = {
   plain: "bg-transparent",
-  muted: "bg-brand-light/40",
-  surface: "bg-white/90 backdrop-blur",
+  muted: "bg-bg-cream",
+  surface: "gradient-bg",
 };
 
 export const Section = ({ children, tone = "plain", id }: SectionProps) => (

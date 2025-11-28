@@ -23,7 +23,7 @@ const failures = [
 
 const Achievements = () => (
   <Section tone="muted">
-    <div className="text-center space-y-6">
+    <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={ShieldAlert}>正直な実績開示</Pill>
       <h2 className="text-4xl font-serif text-brand-dark">成功も失敗もすべて公開します</h2>
       <p className="text-brand-muted max-w-3xl mx-auto">
@@ -31,7 +31,7 @@ const Achievements = () => (
       </p>
     </div>
     <div className="grid lg:grid-cols-2 gap-8">
-      <div className="rounded-3xl bg-white/90 border border-brand-dark/10 shadow-card p-8">
+      <div className="rounded-3xl bg-white/90 border border-brand-dark/10 shadow-card hover-lift p-8 animate-fade-up">
         <div className="mb-6">
           <p className="text-sm font-semibold text-brand-muted tracking-wide">SUCCESS x REALITY</p>
         </div>
@@ -62,9 +62,13 @@ const Achievements = () => (
           実運用データ 50社分をもとにした平均曲線。業界平均とのギャップを常にモニタリングしています。
         </p>
       </div>
-      <div className="rounded-3xl bg-brand-light/70 border border-brand-dark/10 shadow-card p-8 space-y-6">
-        {failures.map((item) => (
-          <div key={item.title} className="bg-white/95 rounded-2xl border border-brand-dark/5 p-6 shadow-card-subtle space-y-2">
+      <div className="rounded-3xl bg-brand-light/70 border border-brand-dark/10 shadow-card p-8 space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        {failures.map((item, index) => (
+          <div
+            key={item.title}
+            className="bg-white/95 rounded-2xl border border-brand-dark/5 p-6 shadow-card-subtle hover-lift space-y-2"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <p className="text-sm font-semibold tracking-wide text-brand-dark">{item.title}</p>
             <p className="text-brand-muted leading-relaxed">{item.description}</p>
           </div>

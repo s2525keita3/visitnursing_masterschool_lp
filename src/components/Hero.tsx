@@ -36,7 +36,7 @@ const useCountUp = (end: number, duration = 1800) => {
 const MetricCard = ({ metric }: { metric: Metric }) => {
   const value = useCountUp(metric.value);
   return (
-    <div className="rounded-2xl p-6 text-center border border-brand-dark/10 bg-white/90 shadow-card-soft">
+    <div className="rounded-2xl p-6 text-center border border-brand-dark/10 bg-white/90 shadow-card hover-lift">
       <p className="text-3xl md:text-4xl font-serif font-semibold text-brand-dark">
         {value}
         {metric.suffix}
@@ -49,17 +49,12 @@ const MetricCard = ({ metric }: { metric: Metric }) => {
 
 const Hero = () => (
   <Section tone="surface">
-    <div
-      className="rounded-[36px] p-12 relative overflow-hidden shadow-card"
-      style={{
-        background: "linear-gradient(135deg, rgba(239,236,230,0.9) 0%, rgba(249,248,246,0.95) 60%, rgba(233,225,215,0.85) 100%)",
-      }}
-    >
+    <div className="rounded-[36px] p-12 relative overflow-hidden shadow-card gradient-bg">
       <div className="absolute inset-0 pointer-events-none opacity-60">
-        <div className="absolute -top-10 right-0 w-64 h-64 bg-brand-gold/30 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-orange/25 blur-3xl" />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-brand-orange opacity-5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-brand-orange opacity-10 rounded-full blur-3xl" />
       </div>
-      <div className="relative text-center space-y-8">
+      <div className="relative text-center space-y-8 animate-fade-up">
         <Pill icon={Sparkles}>90%が12ヶ月以内に黒字化達成</Pill>
         <h1 className="text-4xl md:text-6xl font-serif font-semibold text-brand-dark leading-tight">
           看護師が疲弊しない
@@ -75,8 +70,10 @@ const Hero = () => (
           <span className="text-sm font-semibold text-brand-dark/70">⚠️ 毎月5社限定 / オンライン60分</span>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-          {metrics.map((metric) => (
-            <MetricCard key={metric.label} metric={metric} />
+          {metrics.map((metric, index) => (
+            <div key={metric.label} style={{ animationDelay: `${index * 0.1}s` }} className="animate-fade-up">
+              <MetricCard metric={metric} />
+            </div>
           ))}
         </div>
       </div>

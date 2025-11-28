@@ -51,19 +51,19 @@ const AiAdvisor = () => {
 
   return (
     <Section>
-      <div className="text-center space-y-4">
+      <div className="text-center space-y-4 animate-fade-up">
         <Pill icon={Bot}>AI Advisor</Pill>
         <h2 className="text-4xl font-serif text-brand-dark">AIアドバイザーでその場で疑問を解決</h2>
         <p className="text-brand-muted max-w-3xl mx-auto">
           Gemini APIを使ったAIが、訪問看護の事業計画・採用・集客の質問にリアルタイムで回答します。
         </p>
       </div>
-      <form onSubmit={handleAsk} className="rounded-3xl border border-brand-dark/10 bg-white shadow-card p-8 space-y-4">
+      <form onSubmit={handleAsk} className="rounded-3xl border border-brand-dark/10 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
         <textarea
           rows={3}
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          className="w-full rounded-2xl border border-brand-dark/15 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-orange/30"
+          className="w-full rounded-2xl border border-brand-dark/15 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           placeholder="例: 採用コストを抑えるために今すぐできる施策は？"
         />
         <div className="flex justify-end">
@@ -76,9 +76,10 @@ const AiAdvisor = () => {
         {messages.map((message, index) => (
           <div
             key={`${message.role}-${index}`}
-            className={`rounded-2xl border px-6 py-4 ${
+            className={`rounded-2xl border px-6 py-4 hover-lift animate-fade-up ${
               message.role === "assistant" ? "border-brand-gold bg-brand-light/50" : "border-brand-dark/10 bg-white"
             }`}
+            style={{ animationDelay: `${index * 0.05}s` }}
           >
             <p className="text-sm font-semibold text-brand-muted mb-1">{message.role === "assistant" ? "AI" : "あなた"}</p>
             <p className="text-brand-dark leading-relaxed whitespace-pre-line">{message.content}</p>

@@ -28,14 +28,18 @@ const testimonials = [
 
 const Testimonials = () => (
   <Section>
-    <div className="text-center space-y-6">
+    <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={Quote}>Client Stories</Pill>
       <h2 className="text-4xl font-serif text-brand-dark">数字で語る卒業生の声</h2>
       <p className="text-brand-muted max-w-3xl mx-auto">定量的な成果と定性的な学びの両方を可視化し、再現性を証明します。</p>
     </div>
     <div className="grid md:grid-cols-3 gap-6">
-      {testimonials.map((item) => (
-        <div key={item.company} className="rounded-2xl border border-brand-dark/10 bg-white p-8 shadow-card-soft space-y-4">
+      {testimonials.map((item, index) => (
+        <div
+          key={item.company}
+          className="rounded-2xl border border-brand-dark/10 bg-white p-8 shadow-card hover-lift space-y-4 animate-fade-up"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
           <p className="text-xs font-semibold text-brand-muted tracking-wide">{item.result}</p>
           <h3 className="text-xl font-serif text-brand-dark">{item.company}</h3>
           <p className="text-sm font-semibold text-brand-muted">{item.name}</p>

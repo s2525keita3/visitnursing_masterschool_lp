@@ -27,7 +27,7 @@ const benefits = [
 
 const Benefits = () => (
   <Section>
-    <div className="text-center space-y-6">
+    <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={CheckCircle2} variant="gold">
         Baum Bloom Method
       </Pill>
@@ -37,8 +37,12 @@ const Benefits = () => (
       </p>
     </div>
     <div className="grid md:grid-cols-3 gap-6">
-      {benefits.map((benefit) => (
-        <div key={benefit.title} className="rounded-2xl border border-brand-dark/10 bg-white shadow-card-soft p-8 space-y-4">
+      {benefits.map((benefit, index) => (
+        <div
+          key={benefit.title}
+          className="rounded-2xl border border-brand-dark/10 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
           <h3 className="text-2xl font-serif text-brand-dark">{benefit.title}</h3>
           <p className="text-brand-muted leading-relaxed">{benefit.description}</p>
         </div>

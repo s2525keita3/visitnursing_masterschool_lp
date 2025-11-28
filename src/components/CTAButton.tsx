@@ -11,14 +11,31 @@ type CTAButtonProps = {
 };
 
 const CTAButton = ({ children, href, onClick, className = "", type = "button", isLoading = false }: CTAButtonProps) => {
-  const shared =
-    "inline-flex items-center justify-center gap-3 rounded-full px-10 py-4 text-base font-bold text-white shadow-cta transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange disabled:opacity-60 disabled:cursor-not-allowed";
+  const baseClasses = "relative group overflow-hidden rounded-[50px] shadow-cta hover:shadow-cta-hover transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0";
+  const gradientClasses = "gradient-cta";
+  const isExternalLink = href?.startsWith("http");
+
+  const content = (
+    <>
+      <div className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-opacity" />
+      <div className="relative flex items-center justify-center gap-3 px-8 py-4 md:py-5">
+        <span className="font-bold text-white text-base md:text-lg tracking-wide">
+          {isLoading ? "送信中..." : children}
+        </span>
+        <ArrowRight className="w-5 h-5 text-white" />
+      </div>
+    </>
+  );
 
   if (href) {
     return (
-      <a href={href} className={`${shared} ${className}`} style={{ background: "linear-gradient(135deg, #D66B4D, #E78963)" }}>
-        {children}
-        <ArrowRight className="w-5 h-5" />
+      <a
+        href={href}
+        target={isExternalLink ? "_blank" : undefined}
+        rel={isExternalLink ? "noreferrer noopener" : undefined}
+        className={`${baseClasses} ${gradientClasses} ${className} block text-center disabled:opacity-60 disabled:cursor-not-allowed`}
+      >
+        {content}
       </a>
     );
   }
@@ -28,11 +45,9 @@ const CTAButton = ({ children, href, onClick, className = "", type = "button", i
       type={type}
       onClick={onClick}
       disabled={isLoading}
-      className={`${shared} ${className}`}
-      style={{ background: "linear-gradient(135deg, #D66B4D, #E78963)" }}
+      className={`${baseClasses} ${gradientClasses} ${className} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
     >
-      {isLoading ? "送信中..." : children}
-      <ArrowRight className="w-5 h-5" />
+      {content}
     </button>
   );
 };
