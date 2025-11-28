@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
-import Section from "./Section";
-import CTAButton from "./CTAButton";
+import Section from "../../shared/ui/Section";
+import CTAButton from "../../shared/ui/CTAButton";
 
 const initialState = { name: "", email: "", phone: "", message: "" };
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
-import CTAButton from "./CTAButton";
-import Section from "./Section";
-import Pill from "./Pill";
+import CTAButton from "../../shared/ui/CTAButton";
+import Section from "../../shared/ui/Section";
+import Pill from "../../shared/ui/Pill";
 
 type Metric = {
   label: string;

@@ -1,6 +1,6 @@
 import { AlertTriangle } from "lucide-react";
-import Section from "./Section";
-import Pill from "./Pill";
+import Section from "../../shared/ui/Section";
+import Pill from "../../shared/ui/Pill";
 
 const data = [
   {

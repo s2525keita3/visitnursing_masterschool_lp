@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import Section from "./Section";
-import Pill from "./Pill";
+import Section from "../../shared/ui/Section";
+import Pill from "../../shared/ui/Pill";
 
 const steps = [
   { title: "融資増額サポート", amount: "+100万円", detail: "面談同席と資料設計で、平均100万円以上の増額に成功。" },

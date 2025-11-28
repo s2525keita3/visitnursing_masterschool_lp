@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
 import { Bot } from "lucide-react";
-import Section from "./Section";
-import CTAButton from "./CTAButton";
-import Pill from "./Pill";
+import Section from "../../shared/ui/Section";
+import CTAButton from "../../shared/ui/CTAButton";
+import Pill from "../../shared/ui/Pill";
 
 type Message = { role: "user" | "assistant"; content: string };
 

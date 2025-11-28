@@ -1,6 +1,6 @@
-import Section from "./Section";
-import Pill from "./Pill";
-import CTAButton from "./CTAButton";
+import Section from "../../shared/ui/Section";
+import Pill from "../../shared/ui/Pill";
+import CTAButton from "../../shared/ui/CTAButton";
 
 const badges = [
   { label: "直営拠点", value: "5拠点" },

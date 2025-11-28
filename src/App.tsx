@@ -1,15 +1,15 @@
-import Hero from "./components/Hero";
-import Problems from "./components/Problems";
-import Benefits from "./components/Benefits";
-import Achievements from "./components/Achievements";
-import RoiSection from "./components/RoiSection";
-import Testimonials from "./components/Testimonials";
-import Founder from "./components/Founder";
-import Seminar from "./components/Seminar";
-import AiAdvisor from "./components/AiAdvisor";
-import ContactForm from "./components/ContactForm";
-import ProgressBar from "./components/ProgressBar";
-import Header from "./components/Header";
+import Hero from "./features/hero/Hero";
+import Problems from "./features/problems/Problems";
+import Benefits from "./features/benefits/Benefits";
+import Achievements from "./features/achievements/Achievements";
+import RoiSection from "./features/roi/RoiSection";
+import Testimonials from "./features/testimonials/Testimonials";
+import Founder from "./features/founder/Founder";
+import Seminar from "./features/seminar/Seminar";
+import AiAdvisor from "./features/ai-advisor/AiAdvisor";
+import ContactForm from "./features/contact/ContactForm";
+import ProgressBar from "./shared/layout/ProgressBar";
+import Header from "./shared/layout/Header";
 
 const App = () => (
   <div className="min-h-screen bg-background text-foreground font-sans selection:bg-brand-orange selection:text-white">

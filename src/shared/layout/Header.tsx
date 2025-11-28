@@ -1,4 +1,4 @@
-import CTAButton from "./CTAButton";
+import CTAButton from "../ui/CTAButton";
 
 const Header = () => (
   <header className="w-full px-6 py-4 bg-transparent">

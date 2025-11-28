@@ -1,6 +1,6 @@
 import { ShieldAlert } from "lucide-react";
-import Section from "./Section";
-import Pill from "./Pill";
+import Section from "../../shared/ui/Section";
+import Pill from "../../shared/ui/Pill";
 
 const chartData = [
   { month: "0ヶ月", success: 0, industry: 0 },
