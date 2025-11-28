@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Tailwind CSS v4 のテーマ設定 - フォントファミリーを上書き */
+@theme {
+  --font-sans: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif JP", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 /* カスタムカラーの確実な適用のためのCSS変数 */
 :root {
   /* バウムブルーム カラーパレット */
@@ -161,13 +167,14 @@ html {
   color: white;
 }
 
-/* フォントファミリーの確実な適用 */
-body {
-  font-family: "Noto Sans JP", sans-serif !important;
+/* フォントファミリーの確実な適用 - Tailwind CSS v4のデフォルトを上書き */
+html, body {
+  font-family: var(--font-sans) !important;
 }
 
 h1, h2, h3, h4, h5, h6,
-.font-serif {
-  font-family: "Noto Serif JP", serif !important;
+.font-serif,
+[class*="font-serif"] {
+  font-family: var(--font-serif) !important;
   font-weight: 700 !important;
 }
