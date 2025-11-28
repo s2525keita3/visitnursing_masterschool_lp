@@ -61,7 +61,7 @@ const AiAdvisor = () => {
           Gemini APIを使ったAIが、訪問看護の事業計画・採用・集客の質問にリアルタイムで回答します。
         </p>
       </div>
-      <form onSubmit={handleAsk} className="rounded-3xl border border-brand-dark/10 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+      <form onSubmit={handleAsk} className="rounded-3xl border border-brand-dark/5 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
         <textarea
           rows={3}
           value={question}
@@ -79,8 +79,8 @@ const AiAdvisor = () => {
         {messages.map((message, index) => (
           <div
             key={`${message.role}-${index}`}
-            className={`rounded-2xl border px-6 py-4 hover-lift animate-fade-up ${
-              message.role === "assistant" ? "border-brand-gold bg-brand-light/50" : "border-brand-dark/10 bg-white"
+            className={`rounded-3xl border px-6 py-4 shadow-card hover-lift animate-fade-up ${
+              message.role === "assistant" ? "border-brand-gold bg-brand-light/50" : "border-brand-dark/5 bg-white"
             }`}
             style={{ animationDelay: `${index * 0.05}s` }}
           >

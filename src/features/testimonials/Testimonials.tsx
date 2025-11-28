@@ -40,7 +40,7 @@ const Testimonials = () => (
       {testimonials.map((item, index) => (
         <div
           key={item.company}
-          className="rounded-2xl border border-brand-dark/10 bg-white p-8 shadow-card hover-lift space-y-4 animate-fade-up"
+          className="rounded-3xl border border-brand-dark/5 bg-white p-8 shadow-card hover-lift space-y-4 animate-fade-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <p className="text-xs font-semibold text-brand-muted tracking-wide">{item.result}</p>

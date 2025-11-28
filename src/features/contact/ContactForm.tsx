@@ -24,7 +24,7 @@ const ContactForm = () => {
         </h2>
         <p className="text-brand-muted">60分のZoom面談で、資金・採用・マーケティングのお悩みを整理します。</p>
       </div>
-      <form onSubmit={handleSubmit} className="grid gap-6 bg-white rounded-3xl border border-brand-dark/10 shadow-card hover-lift p-10 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+      <form onSubmit={handleSubmit} className="grid gap-6 bg-white rounded-3xl border border-brand-dark/5 shadow-card hover-lift p-10 animate-fade-up" style={{ animationDelay: "0.1s" }}>
         <label className="space-y-2">
           <span className="text-sm font-semibold text-brand-dark">お名前 *</span>
           <input

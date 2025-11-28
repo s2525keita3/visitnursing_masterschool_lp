@@ -34,7 +34,7 @@ const Achievements = () => (
       </p>
     </div>
     <div className="grid lg:grid-cols-2 gap-8">
-      <div className="rounded-3xl bg-white/90 border border-brand-dark/10 shadow-card hover-lift p-8 animate-fade-up">
+      <div className="rounded-3xl bg-white border border-brand-dark/5 shadow-card hover-lift p-8 animate-fade-up">
         <div className="mb-6">
           <p className="text-sm font-semibold text-brand-muted tracking-wide">SUCCESS x REALITY</p>
         </div>
@@ -65,11 +65,11 @@ const Achievements = () => (
           実運用データ 50社分をもとにした平均曲線。業界平均とのギャップを常にモニタリングしています。
         </p>
       </div>
-      <div className="rounded-3xl bg-brand-light/70 border border-brand-dark/10 shadow-card p-8 space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+      <div className="rounded-3xl bg-brand-light/70 border border-brand-dark/5 shadow-card p-8 space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
         {failures.map((item, index) => (
           <div
             key={item.title}
-            className="bg-white/95 rounded-2xl border border-brand-dark/5 p-6 shadow-card-subtle hover-lift space-y-2"
+            className="bg-white rounded-3xl border border-brand-dark/5 p-6 shadow-card hover-lift space-y-2"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <p className="text-sm font-semibold tracking-wide text-brand-dark">{item.title}</p>

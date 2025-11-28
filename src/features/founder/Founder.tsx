@@ -25,7 +25,7 @@ const Founder = () => (
           {badges.map((badge, index) => (
             <div
               key={badge.label}
-              className="rounded-2xl border border-brand-dark/10 bg-white/90 p-4 text-center shadow-card-subtle hover-lift animate-fade-up"
+              className="rounded-3xl border border-brand-dark/5 bg-white p-6 text-center shadow-card hover-lift animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <p className="text-2xl font-sans text-brand-dark">{badge.value}</p>
@@ -35,7 +35,7 @@ const Founder = () => (
         </div>
         <CTAButton href="#contact">創業者と直接面談する</CTAButton>
       </div>
-      <div className="rounded-3xl bg-white border border-brand-dark/10 shadow-card hover-lift p-10 space-y-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+      <div className="rounded-3xl bg-white border border-brand-dark/5 shadow-card hover-lift p-10 space-y-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
         <h3 className="text-2xl font-sans text-brand-dark">メッセージ</h3>
         <p className="text-brand-muted leading-relaxed">
           失敗事例をすべて公開し、再現性が証明されたノウハウしか扱いません。「開業後3ヶ月でキャッシュが尽きる」

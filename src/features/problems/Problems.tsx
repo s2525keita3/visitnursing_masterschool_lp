@@ -38,7 +38,7 @@ const Problems = () => (
       {data.map((item, index) => (
         <div
           key={item.title}
-          className="rounded-2xl bg-white p-8 border border-brand-dark/10 shadow-card hover-lift space-y-4 animate-fade-up"
+          className="rounded-3xl bg-white p-8 border border-brand-dark/5 shadow-card hover-lift space-y-4 animate-fade-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <h3 className="text-xl font-semibold text-brand-dark">{item.title}</h3>

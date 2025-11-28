@@ -26,7 +26,7 @@ const RoiSection = () => (
       {steps.map((step, index) => (
         <div
           key={step.title}
-          className="rounded-2xl p-8 border border-brand-dark/10 bg-white shadow-card hover-lift space-y-4 animate-fade-up"
+          className="rounded-3xl p-8 border border-brand-dark/5 bg-white shadow-card hover-lift space-y-4 animate-fade-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <p className="text-sm font-semibold text-brand-muted tracking-wide">STEP {index + 1}</p>
@@ -36,7 +36,7 @@ const RoiSection = () => (
         </div>
       ))}
     </div>
-    <div className="rounded-3xl border border-brand-dark/15 bg-white shadow-card hover-lift p-10 text-center space-y-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+    <div className="rounded-3xl border border-brand-dark/5 bg-white shadow-card hover-lift p-10 text-center space-y-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
       <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">RESULT</p>
       <p className="text-5xl font-sans text-brand-dark">5.8x</p>
       <p className="text-brand-muted">

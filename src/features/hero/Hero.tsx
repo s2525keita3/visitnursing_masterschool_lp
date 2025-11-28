@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import CTAButton from "../../shared/ui/CTAButton";
 import Section from "../../shared/ui/Section";
@@ -18,31 +18,15 @@ const metrics: Metric[] = [
   { label: "全国支援実績", value: 50, suffix: "社+", description: "北海道〜沖縄まで" },
 ];
 
-const useCountUp = (end: number, duration = 1800) => {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start: number | null = null;
-    const step = (timestamp: number) => {
-      if (start === null) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      setValue(Math.floor(progress * end));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [end, duration]);
-  return value;
-};
-
 const MetricCard = ({ metric }: { metric: Metric }) => {
-  const value = useCountUp(metric.value);
   return (
-    <div className="bg-white rounded-2xl p-6 border border-brand-dark/10 shadow-card hover-lift">
-      <p className="text-4xl md:text-5xl font-sans font-bold text-brand-orange mb-2">
-        {value}
+    <div className="bg-white rounded-3xl p-8 border border-brand-dark/5 shadow-card hover-lift">
+      <p className="text-4xl md:text-5xl font-sans font-bold text-brand-orange mb-3">
+        {metric.value}
         <span className="text-2xl md:text-3xl">{metric.suffix}</span>
       </p>
-      <p className="text-sm font-semibold text-brand-dark mb-1">{metric.label}</p>
-      <p className="text-xs text-brand-muted">{metric.description}</p>
+      <p className="text-base font-semibold text-brand-dark mb-2">{metric.label}</p>
+      <p className="text-xs text-brand-muted leading-relaxed">{metric.description}</p>
     </div>
   );
 };
@@ -88,7 +72,7 @@ const Hero = () => {
         
         {/* 右側: 画像 */}
         <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <div className="rounded-3xl overflow-hidden shadow-card hover-lift">
+          <div className="rounded-3xl overflow-hidden shadow-card hover-lift border border-brand-dark/5">
             {imageError ? (
               <div className="w-full aspect-[4/3] bg-gradient-to-br from-bg-orange-light to-white rounded-3xl flex items-center justify-center">
                 <div className="text-center space-y-2">

@@ -30,11 +30,11 @@
   --color-bg-cream: #FFF8F0;
   --color-bg-orange-light: #FFF5EB;
   
-  /* シャドウ */
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
-  --shadow-cta: 0 8px 24px rgba(255, 107, 0, 0.3);
-  --shadow-cta-hover: 0 12px 32px rgba(255, 107, 0, 0.4);
+  /* シャドウ - より強い影で厚みを出す */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.16);
+  --shadow-cta: 0 12px 32px rgba(255, 107, 0, 0.35);
+  --shadow-cta-hover: 0 16px 40px rgba(255, 107, 0, 0.45);
 }
 
 /* グラデーション */
@@ -127,14 +127,29 @@
   animation: scaleIn 0.5s ease-out forwards;
 }
 
-/* ホバーエフェクト */
+/* ホバーエフェクト - より強いリフト効果 */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+}
+
+/* カードスタイル - 統一されたデザイン */
+.card-elevated {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-elevated:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
 }
 
 /* カスタムスクロールバー */

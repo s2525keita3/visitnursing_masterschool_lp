@@ -43,7 +43,7 @@ const Benefits = () => (
       {benefits.map((benefit, index) => (
         <div
           key={benefit.title}
-          className="rounded-2xl border border-brand-dark/10 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up"
+          className="rounded-3xl border border-brand-dark/5 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <h3 className="text-2xl font-sans leading-tight">
