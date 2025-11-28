@@ -1,86 +1,85 @@
-import { useEffect, useState } from "react";
-import { Sparkles } from "lucide-react";
+import { useState } from "react";
 import CTAButton from "./CTAButton";
 import Section from "./Section";
 import Pill from "./Pill";
 
-type Metric = {
-  label: string;
-  value: number;
-  suffix?: string;
-  description: string;
-};
-
-const metrics: Metric[] = [
-  { label: "融資獲得率", value: 98, suffix: "%", description: "銀行交渉を同席サポート" },
-  { label: "平均融資額", value: 15, suffix: "00万円", description: "事業計画と返済設計" },
-  { label: "12ヶ月黒字化率", value: 90, suffix: "%", description: "月次KPIで運営を管理" },
-  { label: "全国支援実績", value: 50, suffix: "社+", description: "北海道〜沖縄まで" },
+const stats = [
+  { value: "87", suffix: "%", label: "会員継続率" },
+  { value: "328", suffix: "社", label: "参加事業所数" },
 ];
 
-const useCountUp = (end: number, duration = 1800) => {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start: number | null = null;
-    const step = (timestamp: number) => {
-      if (start === null) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      setValue(Math.floor(progress * end));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [end, duration]);
-  return value;
-};
+const Hero = () => {
+  const [imageError, setImageError] = useState(false);
 
-const MetricCard = ({ metric }: { metric: Metric }) => {
-  const value = useCountUp(metric.value);
   return (
-    <div className="rounded-2xl p-6 text-center border border-brand-dark/10 bg-white/90 shadow-card hover-lift">
-      <p className="text-3xl md:text-4xl font-serif font-semibold text-brand-dark">
-        {value}
-        {metric.suffix}
-      </p>
-      <p className="mt-2 text-sm font-semibold tracking-wide">{metric.label}</p>
-      <p className="text-xs text-brand-muted mt-1">{metric.description}</p>
-    </div>
+    <Section tone="surface">
+      <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[600px]">
+        {/* 左側: コンテンツ */}
+        <div className="space-y-6 animate-fade-up">
+          <Pill>訪問看護管理者・経営者専用コミュニティ</Pill>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-brand-dark leading-tight">
+            「感覚」の経営から、
+            <br />
+            <span className="text-brand-orange">「根拠」</span>ある経営へ。
+          </h1>
+          
+          <div className="space-y-2 text-lg text-brand-dark leading-relaxed">
+            <p>現役経営者の実践知 × AI活用 × 財務の仕組み。</p>
+            <p>「稼げ、人が育ち、選ばれるステーション」を最短距離で創る。</p>
+          </div>
+          
+          {/* 統計カード */}
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className="bg-white rounded-2xl p-6 border border-brand-dark/10 shadow-card hover-lift animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <p className="text-4xl md:text-5xl font-serif font-semibold text-brand-orange mb-2">
+                  {stat.value}
+                  <span className="text-2xl md:text-3xl">{stat.suffix}</span>
+                </p>
+                <p className="text-sm font-semibold text-brand-dark">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          
+          {/* CTAボタン */}
+          <div className="pt-4 space-y-2">
+            <CTAButton href="#contact" size="large">今すぐ詳細を見る</CTAButton>
+            <p className="text-sm text-brand-dark text-center">月額1万円で経営が変わる</p>
+          </div>
+        </div>
+        
+        {/* 右側: 画像 */}
+        <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div className="rounded-3xl overflow-hidden shadow-card hover-lift">
+            {imageError ? (
+              <div className="w-full aspect-[4/3] bg-gradient-to-br from-bg-orange-light to-white rounded-3xl flex items-center justify-center">
+                <div className="text-center space-y-2">
+                  <div className="w-24 h-24 mx-auto bg-brand-orange/20 rounded-full flex items-center justify-center">
+                    <svg className="w-12 h-12 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <p className="text-brand-dark font-semibold">画像を追加</p>
+                </div>
+              </div>
+            ) : (
+              <img
+                src="/hero-image.jpg"
+                alt="訪問看護経営者コミュニティ"
+                className="w-full h-auto object-cover"
+                onError={() => setImageError(true)}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </Section>
   );
 };
 
-const Hero = () => (
-  <Section tone="surface">
-    <div className="rounded-[36px] p-12 relative overflow-hidden shadow-card gradient-bg">
-      <div className="absolute inset-0 pointer-events-none opacity-60">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-brand-orange opacity-5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-64 h-64 bg-brand-orange opacity-10 rounded-full blur-3xl" />
-      </div>
-      <div className="relative text-center space-y-8 animate-fade-up">
-        <Pill icon={Sparkles}>90%が12ヶ月以内に黒字化達成</Pill>
-        <h1 className="text-4xl md:text-6xl font-serif font-semibold text-brand-dark leading-tight">
-          看護師が疲弊しない
-          <br className="hidden md:block" />
-          「高収益ステーション」の作り方
-        </h1>
-        <p className="text-lg md:text-xl text-brand-muted leading-relaxed max-w-3xl mx-auto">
-          融資獲得率98%、平均融資額1,500万円。開業3ヶ月で黒字化を実現するための「事業計画・採用・マーケティング」を
-          ワンストップで伴走します。
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-          <CTAButton href="#contact">無料面談を予約する</CTAButton>
-          <span className="text-sm font-semibold text-brand-dark/70">⚠️ 毎月5社限定 / オンライン60分</span>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-          {metrics.map((metric, index) => (
-            <div key={metric.label} style={{ animationDelay: `${index * 0.1}s` }} className="animate-fade-up">
-              <MetricCard metric={metric} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </Section>
-);
-
 export default Hero;
-
-

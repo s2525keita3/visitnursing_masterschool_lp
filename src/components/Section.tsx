@@ -13,8 +13,8 @@ const backgrounds: Record<NonNullable<SectionProps["tone"]>, string> = {
 };
 
 export const Section = ({ children, tone = "plain", id }: SectionProps) => (
-  <section id={id} className={`px-6 py-24 ${backgrounds[tone]}`}>
-    <div className="max-w-6xl mx-auto space-y-10">{children}</div>
+  <section id={id} className={`px-6 py-12 md:py-24 ${backgrounds[tone]}`}>
+    <div className="max-w-7xl mx-auto space-y-10">{children}</div>
   </section>
 );
 
