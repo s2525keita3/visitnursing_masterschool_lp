@@ -160,3 +160,14 @@ html {
   background: #FF6B00;
   color: white;
 }
+
+/* フォントファミリーの確実な適用 */
+body {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-serif {
+  font-family: "Noto Serif JP", serif !important;
+  font-weight: 700 !important;
+}
