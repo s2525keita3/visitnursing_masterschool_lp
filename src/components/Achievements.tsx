@@ -1,4 +1,4 @@
-import { ShieldAlert, TrendingUp, TrendingDown } from "lucide-react";
+import { ShieldAlert } from "lucide-react";
 import Section from "./Section";
 import Pill from "./Pill";
 
@@ -32,8 +32,7 @@ const Achievements = () => (
     </div>
     <div className="grid lg:grid-cols-2 gap-8">
       <div className="rounded-3xl bg-white/90 border border-brand-dark/10 shadow-card p-8">
-        <div className="flex items-center gap-3 mb-6">
-          <TrendingUp className="w-6 h-6 text-brand-dark" />
+        <div className="mb-6">
           <p className="text-sm font-semibold text-brand-muted tracking-wide">SUCCESS x REALITY</p>
         </div>
         <div className="space-y-4">
@@ -66,10 +65,7 @@ const Achievements = () => (
       <div className="rounded-3xl bg-brand-light/70 border border-brand-dark/10 shadow-card p-8 space-y-6">
         {failures.map((item) => (
           <div key={item.title} className="bg-white/95 rounded-2xl border border-brand-dark/5 p-6 shadow-card-subtle space-y-2">
-            <div className="flex items-center gap-2 text-brand-dark">
-              <TrendingDown className="w-5 h-5" />
-              <p className="text-sm font-semibold tracking-wide">{item.title}</p>
-            </div>
+            <p className="text-sm font-semibold tracking-wide text-brand-dark">{item.title}</p>
             <p className="text-brand-muted leading-relaxed">{item.description}</p>
           </div>
         ))}

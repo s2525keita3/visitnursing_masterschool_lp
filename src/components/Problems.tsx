@@ -1,4 +1,4 @@
-import { AlertTriangle, TrendingDown } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import Section from "./Section";
 import Pill from "./Pill";
 
@@ -32,10 +32,6 @@ const Problems = () => (
     <div className="grid md:grid-cols-3 gap-6">
       {data.map((item) => (
         <div key={item.title} className="rounded-2xl bg-white p-8 border border-brand-dark/10 shadow-card-soft space-y-4">
-          <div className="flex items-center gap-3">
-            <TrendingDown className="w-6 h-6 text-brand-dark" />
-            <span className="text-xs font-semibold tracking-wide text-brand-muted">MARKET DATA</span>
-          </div>
           <p className="text-5xl font-serif text-brand-dark">{item.stat}</p>
           <h3 className="text-xl font-semibold text-brand-dark">{item.title}</h3>
           <p className="text-brand-muted leading-relaxed">{item.description}</p>

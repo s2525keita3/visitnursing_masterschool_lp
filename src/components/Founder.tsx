@@ -1,12 +1,11 @@
-import { Building, Users, BarChart3 } from "lucide-react";
 import Section from "./Section";
 import Pill from "./Pill";
 import CTAButton from "./CTAButton";
 
 const badges = [
-  { label: "直営拠点", value: "5拠点", icon: Building },
-  { label: "年商規模", value: "5億円", icon: BarChart3 },
-  { label: "SNSフォロワー", value: "11万人", icon: Users },
+  { label: "直営拠点", value: "5拠点" },
+  { label: "年商規模", value: "5億円" },
+  { label: "SNSフォロワー", value: "11万人" },
 ];
 
 const Founder = () => (
@@ -22,7 +21,6 @@ const Founder = () => (
         <div className="grid grid-cols-3 gap-4">
           {badges.map((badge) => (
             <div key={badge.label} className="rounded-2xl border border-brand-dark/10 bg-white/90 p-4 text-center shadow-card-subtle">
-              <badge.icon className="w-6 h-6 mx-auto text-brand-dark mb-2" />
               <p className="text-2xl font-serif text-brand-dark">{badge.value}</p>
               <p className="text-xs tracking-wide text-brand-muted">{badge.label}</p>
             </div>

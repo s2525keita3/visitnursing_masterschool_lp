@@ -1,4 +1,4 @@
-import { CheckCircle2, LineChart, Users, Briefcase, Layers, Compass } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import Section from "./Section";
 import Pill from "./Pill";
 
@@ -6,27 +6,22 @@ const benefits = [
   {
     title: "融資ストーリーメイク",
     description: "金融機関が評価する事業計画、面談ロープレ、返済シミュレーションを100%テンプレート化。",
-    icon: LineChart,
   },
   {
     title: "人材オペレーション設計",
     description: "36ヶ月の採用ロードマップ、評価制度、研修動画で「疲弊しないチーム」を構築。",
-    icon: Users,
   },
   {
     title: "地域密着マーケティング",
     description: "医療連携・SNS・紹介をハイブリッドで設計し、稼働率80%超えを狙う導線を構築。",
-    icon: Compass,
   },
   {
     title: "財務ダッシュボード",
     description: "キャッシュフロー・人件費率・MIX比率をリアルタイムで可視化。危険指数を常に監視。",
-    icon: Layers,
   },
   {
     title: "専門家ネットワーク",
     description: "税理士、社労士、行政書士、M&Aアドバイザーまで信頼できるパートナーを紹介。",
-    icon: Briefcase,
   },
 ];
 
@@ -44,7 +39,6 @@ const Benefits = () => (
     <div className="grid md:grid-cols-3 gap-6">
       {benefits.map((benefit) => (
         <div key={benefit.title} className="rounded-2xl border border-brand-dark/10 bg-white shadow-card-soft p-8 space-y-4">
-          <benefit.icon className="w-8 h-8 text-brand-dark" />
           <h3 className="text-2xl font-serif text-brand-dark">{benefit.title}</h3>
           <p className="text-brand-muted leading-relaxed">{benefit.description}</p>
         </div>
