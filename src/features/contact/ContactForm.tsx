@@ -18,7 +18,7 @@ const ContactForm = () => {
     <Section id="contact" tone="surface">
       <div className="text-center space-y-4 animate-fade-up">
         <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">CONTACT</p>
-        <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
+        <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
           <span className="text-brand-dark">無料面談の</span>
           <span className="text-brand-orange">お申し込み</span>
         </h2>

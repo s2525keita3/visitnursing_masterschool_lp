@@ -2,8 +2,7 @@
 
 /* Tailwind CSS v4 のテーマ設定 - フォントファミリーを上書き */
 @theme {
-  --font-sans: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Noto Serif JP", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* カスタムカラーの確実な適用のためのCSS変数 */
@@ -172,9 +171,7 @@ html, body {
   font-family: var(--font-sans) !important;
 }
 
-h1, h2, h3, h4, h5, h6,
-.font-serif,
-[class*="font-serif"] {
-  font-family: var(--font-serif) !important;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans) !important;
   font-weight: 700 !important;
 }

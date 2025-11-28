@@ -30,7 +30,7 @@ const Testimonials = () => (
   <Section>
     <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={Quote}>Client Stories</Pill>
-      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
+      <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">数字で語る</span>
         <span className="text-brand-orange">卒業生の声</span>
       </h2>
@@ -44,7 +44,7 @@ const Testimonials = () => (
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <p className="text-xs font-semibold text-brand-muted tracking-wide">{item.result}</p>
-          <h3 className="text-xl font-serif text-brand-dark">{item.company}</h3>
+          <h3 className="text-xl font-sans text-brand-dark">{item.company}</h3>
           <p className="text-sm font-semibold text-brand-muted">{item.name}</p>
           <p className="text-brand-muted leading-relaxed">{item.comment}</p>
         </div>

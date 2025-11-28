@@ -25,7 +25,7 @@ const Achievements = () => (
   <Section tone="muted">
     <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={ShieldAlert}>正直な実績開示</Pill>
-      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
+      <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">成功も失敗も</span>
         <span className="text-brand-orange">すべて公開します</span>
       </h2>

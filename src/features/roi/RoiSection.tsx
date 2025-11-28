@@ -14,7 +14,7 @@ const RoiSection = () => (
       <Pill icon={ArrowUpRight} variant="gold">
         ROI & Cost Performance
       </Pill>
-      <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
+      <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
         <span className="text-brand-dark">88万円の投資で得られる</span>
         <span className="text-brand-orange">リターン</span>
       </h2>
@@ -30,15 +30,15 @@ const RoiSection = () => (
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <p className="text-sm font-semibold text-brand-muted tracking-wide">STEP {index + 1}</p>
-          <h3 className="text-2xl font-serif text-brand-dark">{step.title}</h3>
-          <p className="text-3xl font-serif text-brand-orange">{step.amount}</p>
+          <h3 className="text-2xl font-sans text-brand-dark">{step.title}</h3>
+          <p className="text-3xl font-sans text-brand-orange">{step.amount}</p>
           <p className="text-brand-muted leading-relaxed">{step.detail}</p>
         </div>
       ))}
     </div>
     <div className="rounded-3xl border border-brand-dark/15 bg-white shadow-card hover-lift p-10 text-center space-y-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
       <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">RESULT</p>
-      <p className="text-5xl font-serif text-brand-dark">5.8x</p>
+      <p className="text-5xl font-sans text-brand-dark">5.8x</p>
       <p className="text-brand-muted">
         受講料 <span className="font-semibold text-brand-dark">88万円</span> に対して
         <span className="font-semibold text-brand-dark"> 514.6万円 </span>

@@ -13,7 +13,7 @@ const Founder = () => (
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className="space-y-6 animate-fade-up">
         <Pill>Founder's Message</Pill>
-        <h2 className="text-4xl font-serif font-bold leading-tight tracking-tight">
+        <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
           <span className="text-brand-dark">「机上の空論」ではなく、</span>
           <span className="text-brand-orange">現場の数字で語る</span>
         </h2>
@@ -28,7 +28,7 @@ const Founder = () => (
               className="rounded-2xl border border-brand-dark/10 bg-white/90 p-4 text-center shadow-card-subtle hover-lift animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <p className="text-2xl font-serif text-brand-dark">{badge.value}</p>
+              <p className="text-2xl font-sans text-brand-dark">{badge.value}</p>
               <p className="text-xs tracking-wide text-brand-muted">{badge.label}</p>
             </div>
           ))}
@@ -36,7 +36,7 @@ const Founder = () => (
         <CTAButton href="#contact">創業者と直接面談する</CTAButton>
       </div>
       <div className="rounded-3xl bg-white border border-brand-dark/10 shadow-card hover-lift p-10 space-y-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-        <h3 className="text-2xl font-serif text-brand-dark">メッセージ</h3>
+        <h3 className="text-2xl font-sans text-brand-dark">メッセージ</h3>
         <p className="text-brand-muted leading-relaxed">
           失敗事例をすべて公開し、再現性が証明されたノウハウしか扱いません。「開業後3ヶ月でキャッシュが尽きる」
           という悪夢をなくすために、財務・人材・集客を同時にマネジメントできる仕組みを提供します。

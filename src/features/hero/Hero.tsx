@@ -37,7 +37,7 @@ const MetricCard = ({ metric }: { metric: Metric }) => {
   const value = useCountUp(metric.value);
   return (
     <div className="bg-white rounded-2xl p-6 border border-brand-dark/10 shadow-card hover-lift">
-      <p className="text-4xl md:text-5xl font-serif font-bold text-brand-orange mb-2">
+      <p className="text-4xl md:text-5xl font-sans font-bold text-brand-orange mb-2">
         {value}
         <span className="text-2xl md:text-3xl">{metric.suffix}</span>
       </p>
@@ -57,7 +57,7 @@ const Hero = () => {
         <div className="space-y-6 animate-fade-up">
           <Pill icon={Sparkles}>90%が12ヶ月以内に黒字化達成</Pill>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-tight tracking-tight">
             <span className="text-brand-dark">看護師が疲弊しない</span>
             <br />
             <span className="text-brand-orange">「高収益ステーション」の作り方</span>
