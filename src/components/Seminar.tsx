@@ -7,7 +7,10 @@ const Seminar = () => (
     <div className="rounded-3xl bg-white shadow-card hover-lift border border-brand-dark/10 p-10 space-y-8 animate-fade-up">
       <div className="space-y-3 text-center">
         <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">SEMINAR</p>
-        <h2 className="text-4xl font-serif text-brand-dark">無料ウェビナー＆個別相談会</h2>
+        <h2 className="text-4xl font-serif leading-tight">
+          <span className="text-brand-dark">無料ウェビナー＆</span>
+          <span className="text-brand-orange">個別相談会</span>
+        </h2>
         <p className="text-brand-muted">
           最新の報酬改定と金融トレンドを踏まえて、「いま開業すべきか」を判断できる60分のセッション。
         </p>

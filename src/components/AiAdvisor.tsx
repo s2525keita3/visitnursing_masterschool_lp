@@ -53,7 +53,10 @@ const AiAdvisor = () => {
     <Section>
       <div className="text-center space-y-4 animate-fade-up">
         <Pill icon={Bot}>AI Advisor</Pill>
-        <h2 className="text-4xl font-serif text-brand-dark">AIアドバイザーでその場で疑問を解決</h2>
+        <h2 className="text-4xl font-serif leading-tight">
+          <span className="text-brand-dark">AIアドバイザーでその場で</span>
+          <span className="text-brand-orange">疑問を解決</span>
+        </h2>
         <p className="text-brand-muted max-w-3xl mx-auto">
           Gemini APIを使ったAIが、訪問看護の事業計画・採用・集客の質問にリアルタイムで回答します。
         </p>

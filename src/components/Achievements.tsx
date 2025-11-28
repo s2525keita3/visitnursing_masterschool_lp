@@ -25,7 +25,10 @@ const Achievements = () => (
   <Section tone="muted">
     <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={ShieldAlert}>正直な実績開示</Pill>
-      <h2 className="text-4xl font-serif text-brand-dark">成功も失敗もすべて公開します</h2>
+      <h2 className="text-4xl font-serif leading-tight">
+        <span className="text-brand-dark">成功も失敗も</span>
+        <span className="text-brand-orange">すべて公開します</span>
+      </h2>
       <p className="text-brand-muted max-w-3xl mx-auto">
         98%の融資承認率、90%の黒字化率に至るまでのプロセスと同じくらい、失敗データの共有を重視します。
       </p>

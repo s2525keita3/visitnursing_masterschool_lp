@@ -14,7 +14,10 @@ const RoiSection = () => (
       <Pill icon={ArrowUpRight} variant="gold">
         ROI & Cost Performance
       </Pill>
-      <h2 className="text-4xl font-serif text-brand-dark">88万円の投資で得られるリターン</h2>
+      <h2 className="text-4xl font-serif leading-tight">
+        <span className="text-brand-dark">88万円の投資で得られる</span>
+        <span className="text-brand-orange">リターン</span>
+      </h2>
       <p className="text-brand-muted max-w-3xl mx-auto">
         現金流入を3ステップで設計し、12ヶ月後には受講料の5.8倍の投資回収を現実的に描きます。
       </p>

@@ -30,7 +30,10 @@ const Testimonials = () => (
   <Section>
     <div className="text-center space-y-6 animate-fade-up">
       <Pill icon={Quote}>Client Stories</Pill>
-      <h2 className="text-4xl font-serif text-brand-dark">数字で語る卒業生の声</h2>
+      <h2 className="text-4xl font-serif leading-tight">
+        <span className="text-brand-dark">数字で語る</span>
+        <span className="text-brand-orange">卒業生の声</span>
+      </h2>
       <p className="text-brand-muted max-w-3xl mx-auto">定量的な成果と定性的な学びの両方を可視化し、再現性を証明します。</p>
     </div>
     <div className="grid md:grid-cols-3 gap-6">

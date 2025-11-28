@@ -18,7 +18,10 @@ const ContactForm = () => {
     <Section id="contact" tone="surface">
       <div className="text-center space-y-4 animate-fade-up">
         <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">CONTACT</p>
-        <h2 className="text-4xl font-serif text-brand-dark">無料面談のお申し込み</h2>
+        <h2 className="text-4xl font-serif leading-tight">
+          <span className="text-brand-dark">無料面談の</span>
+          <span className="text-brand-orange">お申し込み</span>
+        </h2>
         <p className="text-brand-muted">60分のZoom面談で、資金・採用・マーケティングのお悩みを整理します。</p>
       </div>
       <form onSubmit={handleSubmit} className="grid gap-6 bg-white rounded-3xl border border-brand-dark/10 shadow-card hover-lift p-10 animate-fade-up" style={{ animationDelay: "0.1s" }}>

@@ -57,10 +57,10 @@ const Hero = () => {
         <div className="space-y-6 animate-fade-up">
           <Pill icon={Sparkles}>90%が12ヶ月以内に黒字化達成</Pill>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-brand-dark leading-tight">
-            看護師が疲弊しない
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
+            <span className="text-brand-dark">看護師が疲弊しない</span>
             <br />
-            「高収益ステーション」の作り方
+            <span className="text-brand-orange">「高収益ステーション」の作り方</span>
           </h1>
           
           <div className="space-y-2 text-lg text-brand-dark leading-relaxed">

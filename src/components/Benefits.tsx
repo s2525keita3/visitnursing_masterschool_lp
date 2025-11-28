@@ -31,7 +31,10 @@ const Benefits = () => (
       <Pill icon={CheckCircle2} variant="gold">
         Baum Bloom Method
       </Pill>
-      <h2 className="text-4xl font-serif text-brand-dark">黒字化を逆算する5つの伴走</h2>
+      <h2 className="text-4xl font-serif leading-tight">
+        <span className="text-brand-dark">黒字化を逆算する</span>
+        <span className="text-brand-orange">5つの伴走</span>
+      </h2>
       <p className="text-brand-muted max-w-3xl mx-auto">
         財務・人材・マーケティングを同じタイムラインで管理し、「迷いゼロ」の状態で開業を迎えます。
       </p>
@@ -43,7 +46,16 @@ const Benefits = () => (
           className="rounded-2xl border border-brand-dark/10 bg-white shadow-card hover-lift p-8 space-y-4 animate-fade-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
-          <h3 className="text-2xl font-serif text-brand-dark">{benefit.title}</h3>
+          <h3 className="text-2xl font-serif leading-tight">
+            {benefit.title.includes("設計") || benefit.title.includes("ネットワーク") ? (
+              <>
+                <span className="text-brand-dark">{benefit.title.slice(0, -2)}</span>
+                <span className="text-brand-orange">{benefit.title.slice(-2)}</span>
+              </>
+            ) : (
+              <span className="text-brand-dark">{benefit.title}</span>
+            )}
+          </h3>
           <p className="text-brand-muted leading-relaxed">{benefit.description}</p>
         </div>
       ))}

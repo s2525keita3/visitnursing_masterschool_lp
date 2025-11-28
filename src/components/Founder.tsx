@@ -13,7 +13,10 @@ const Founder = () => (
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className="space-y-6 animate-fade-up">
         <Pill>Founder's Message</Pill>
-        <h2 className="text-4xl font-serif text-brand-dark">「机上の空論」ではなく、現場の数字で語る</h2>
+        <h2 className="text-4xl font-serif leading-tight">
+          <span className="text-brand-dark">「机上の空論」ではなく、</span>
+          <span className="text-brand-orange">現場の数字で語る</span>
+        </h2>
         <p className="text-brand-muted leading-relaxed">
           私自身が5拠点を運営し、年商5億円を作っている「現役プレイヤー」です。コンサルタントではなく、事業家だからこそ
           語れる「解像度の高い施策」だけを提供します。
