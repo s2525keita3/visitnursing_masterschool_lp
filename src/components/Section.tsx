@@ -20,3 +20,4 @@ export const Section = ({ children, tone = "plain", id }: SectionProps) => (
 
 export default Section;
 
+

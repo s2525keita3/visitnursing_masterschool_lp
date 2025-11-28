@@ -35,3 +35,4 @@ const Seminar = () => (
 
 export default Seminar;
 
+
