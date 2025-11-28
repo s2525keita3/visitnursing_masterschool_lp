@@ -1,23 +1,24 @@
 # kigyo-lp
 
-Vite、React、Tailwind CSS、lucide-reactを使用したプロジェクトです。
+訪問看護ステーション開業支援のランディングページ
 
-## セットアップ
-
-このプロジェクトには以下の技術が含まれています：
+## 技術スタック
 
 - **Vite** - 高速なビルドツール
-- **React** - UIライブラリ
+- **React 19** - UIライブラリ
+- **TypeScript** - 型安全性
 - **Tailwind CSS v4** - ユーティリティファーストのCSSフレームワーク
 - **lucide-react** - アイコンライブラリ
 
-## インストール
+## セットアップ
+
+### 依存関係のインストール
 
 ```bash
 npm install
 ```
 
-## 開発サーバーの起動
+### 開発サーバーの起動
 
 ```bash
 npm run dev
@@ -25,13 +26,13 @@ npm run dev
 
 開発サーバーが起動したら、ブラウザで `http://localhost:5173` にアクセスしてください。
 
-## ビルド
+### ビルド
 
 ```bash
 npm run build
 ```
 
-## プレビュー
+### プレビュー
 
 ```bash
 npm run preview
@@ -42,44 +43,48 @@ npm run preview
 ```
 kigyo-lp/
 ├── src/
-│   ├── App.jsx          # メインのAppコンポーネント
-│   ├── index.css        # Tailwind CSSのインポート
-│   └── main.jsx         # エントリーポイント
-├── public/              # 静的ファイル
-├── index.html           # HTMLテンプレート
-├── vite.config.js       # Vite設定
-├── tailwind.config.js   # Tailwind CSS設定
-└── postcss.config.js    # PostCSS設定
+│   ├── App.tsx              # メインのAppコンポーネント
+│   ├── main.tsx             # エントリーポイント
+│   ├── index.css            # Tailwind CSSのインポート
+│   └── components/          # Reactコンポーネント
+│       ├── Hero.tsx
+│       ├── Problems.tsx
+│       ├── Benefits.tsx
+│       ├── Achievements.tsx
+│       ├── RoiSection.tsx
+│       ├── Testimonials.tsx
+│       ├── Founder.tsx
+│       ├── Seminar.tsx
+│       ├── AiAdvisor.tsx
+│       ├── ContactForm.tsx
+│       ├── Section.tsx
+│       ├── Pill.tsx
+│       └── CTAButton.tsx
+├── public/                  # 静的ファイル（画像など）
+├── index.html               # HTMLテンプレート
+├── vite.config.js           # Vite設定
+├── tailwind.config.ts       # Tailwind CSS設定（TypeScript）
+├── tsconfig.json            # TypeScript設定
+└── postcss.config.js        # PostCSS設定
 ```
 
-## 使用方法
+## 開発
 
-### Tailwind CSS
+### コンポーネント構造
 
-`src/index.css` に `@import "tailwindcss";` が含まれているため、コンポーネント内でTailwindのクラスを直接使用できます。
+各セクションは独立したコンポーネントとして実装されています。`src/components/` フォルダ内に配置されています。
 
-例：
-```jsx
-<div className="bg-blue-500 text-white p-4 rounded-lg">
-  Hello World
-</div>
+### スタイリング
+
+Tailwind CSS v4を使用しています。`src/index.css` に `@import "tailwindcss";` が含まれているため、コンポーネント内でTailwindのクラスを直接使用できます。
+
+カスタムカラーは `tailwind.config.ts` で定義されています：
+- `brand-dark`, `brand-gold`, `brand-orange`, `brand-light`, `brand-muted`
+
+### 環境変数
+
+AIアドバイザー機能を使用する場合は、`.env` ファイルに以下を設定してください：
+
 ```
-
-### lucide-react
-
-アイコンを使用するには、必要なアイコンをインポートして使用します。
-
-例：
-```jsx
-import { Heart, Star, User } from 'lucide-react';
-
-function MyComponent() {
-  return (
-    <div>
-      <Heart className="w-6 h-6 text-red-500" />
-      <Star className="w-6 h-6 text-yellow-500" />
-      <User className="w-6 h-6 text-blue-500" />
-    </div>
-  );
-}
+VITE_GEMINI_API_KEY=your_api_key_here
 ```
