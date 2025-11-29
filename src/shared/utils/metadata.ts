@@ -18,7 +18,7 @@ export const generateMetadata = (config: MetadataConfig) => {
   const {
     title,
     description,
-    ogImage = "/og-image.png",
+    ogImage = "/og-image.webp",
     url = typeof window !== "undefined" ? window.location.href : "",
     type = "website",
   } = config;

@@ -51,7 +51,7 @@ const Seminar = () => {
         <div className="space-y-6 animate-fade-up" style={imageAnimationStyle}>
           <div className="rounded-3xl overflow-hidden border border-brand-dark/10 shadow-card">
             <ImageWithFallback
-              src="/koushi-jon-photo.png"
+              src="/koushi-jon-photo.webp"
               alt="講師 じょん の写真"
               className="w-full h-full object-cover"
               fallbackText="講師写真"

@@ -5,7 +5,8 @@ import Footer from "./shared/layout/Footer";
 import StickyBottomCTA from "./shared/layout/StickyBottomCTA";
 import { ErrorBoundary } from "./shared/components/ErrorBoundary";
 import { Metadata } from "./shared/components/Metadata";
-import CtaSection from "./shared/components/CtaSection";
+// CtaSectionもlazy loadingで最適化
+const CtaSection = lazy(() => import("./shared/components/CtaSection"));
 
 // コード分割：初期ロードを最適化するため、Hero以外は遅延読み込み
 // パフォーマンス最適化：Heroはファーストビューなので通常ロード（lazy削除）
@@ -77,7 +78,6 @@ const App = () => (
       </Suspense>
       <Footer />
       <StickyBottomCTA />
-      {/* ScrollToTopCTAとFloatingCTAを削除：StickyBottomCTAのみで統一し、混乱を防止 */}
     </div>
   </ErrorBoundary>
 );

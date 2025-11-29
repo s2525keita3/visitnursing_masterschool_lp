@@ -82,7 +82,7 @@ const Founder = () => {
         >
           <div className="relative overflow-hidden rounded-3xl border border-brand-dark/10">
             <ImageWithFallback
-              src="/koushi-jon-photo.png"
+              src="/koushi-jon-photo.webp"
               alt="じょん講師の写真"
               className="w-full h-full object-cover"
               fallbackText="講師写真"

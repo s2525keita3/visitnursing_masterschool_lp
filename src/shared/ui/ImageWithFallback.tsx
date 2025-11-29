@@ -37,12 +37,20 @@ export const ImageWithFallback = memo<ImageWithFallbackProps>(
       );
     }
 
+    // パフォーマンス最適化：loading属性の決定ロジック
+    // priorityがtrueの場合はeager、それ以外はprops.loadingがあればそれを使用、なければlazy
+    const loadingAttribute = priority
+      ? "eager"
+      : loading !== undefined
+        ? loading
+        : "lazy";
+
     return (
       <img
         src={src}
         alt={alt}
         className={className}
-        loading={loading || (priority ? "eager" : "lazy")}
+        loading={loadingAttribute}
         decoding="async"
         onError={() => setHasError(true)}
         {...props}

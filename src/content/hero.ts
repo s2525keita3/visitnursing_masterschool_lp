@@ -10,7 +10,7 @@ export type HeroContent = {
 
 // Heroセクションのテキストと画像パスを一元管理し、将来の文言変更を容易にする
 export const heroContent: HeroContent = {
-  backgroundImage: "/Gemini_Generated_Image_d3aqqed3aqqed3aq.png",
+  backgroundImage: "/Gemini_Generated_Image_d3aqqed3aqqed3aq.webp",
   targetText: "資金調達・依頼獲得・採用…「経営の数字」に不安が残る方へ",
   titleLine1: "半年で黒字化・安定経営へ",
   titleLine2: "「失敗しない開業ロードマップ」",

@@ -14,7 +14,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    image: "/eme-houkan-daihyo.png",
+    image: "/eme-houkan-daihyo.webp",
     name: "北山 様",
     role: "えめ訪問看護ステーション和歌山 代表",
     title: "「土地勘ゼロの地で、まさかの融資2,000万円超。\n『準備不足』の私が、開業3ヶ月で黒字化できた理由」",
@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    image: "/first-houkan-daihyo.png",
+    image: "/first-houkan-daihyo.webp",
     name: "髙橋 様",
     role: "ファースト訪問看護ステーション灘 代表",
     title: "「訪看未経験、開業直前まで夜勤漬け…\nそんな私が『年商3億円・月間1,600件』を作れた」",
@@ -46,7 +46,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    image: "/ashinara-houkan-daihyo.png",
+    image: "/ashinara-houkan-daihyo.webp",
     name: "中村 様",
     role: "あしなら訪問看護ステーション 代表",
     title: "「東京23区の激戦区で、スタッフ30名の組織へ。\n経営者の『孤独』が、確信と『自信』に変わりました」",

@@ -16,7 +16,7 @@ const CtaSection = memo(() => {
           {/* 特典画像：スマホは上、デスクトップは左 */}
           <div className="flex-shrink-0 md:w-1/2">
             <ImageWithFallback
-              src="/present.png"
+              src="/present.webp"
               alt="無料セミナー参加特典"
               className="h-auto w-full max-w-md object-contain md:max-w-full"
               fallbackText="特典画像"

@@ -275,7 +275,7 @@ const ProgramHighlights = () => {
               {/* 画像 */}
               <div className="flex justify-center">
                 <ImageWithFallback
-                  src="/kigyo-kanshu-shuryosho.png"
+                  src="/kigyo-kanshu-shuryosho.webp"
                   alt="起業塾修了証書"
                   className="h-auto w-full max-w-md rounded-lg shadow-lg"
                   fallbackText="修了証書"

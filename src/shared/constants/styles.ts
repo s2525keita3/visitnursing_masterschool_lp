@@ -5,7 +5,7 @@
 
 // 背景画像パス
 export const BACKGROUND_IMAGES = {
-  PROBLEMS: "/nayami.png",
-  HERO: "/Gemini_Generated_Image_d3aqqed3aqqed3aq.png",
+  PROBLEMS: "/nayami.webp",
+  HERO: "/Gemini_Generated_Image_d3aqqed3aqqed3aq.webp",
 } as const;
 

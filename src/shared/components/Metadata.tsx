@@ -14,7 +14,7 @@ type MetadataProps = {
 export const Metadata = ({
   title,
   description,
-  ogImage = "/og-image.png",
+  ogImage = "/og-image.webp",
 }: MetadataProps) => {
   const hasInitialized = useRef(false);
 

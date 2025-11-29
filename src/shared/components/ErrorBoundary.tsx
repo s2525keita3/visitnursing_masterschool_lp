@@ -28,15 +28,8 @@ export class ErrorBoundary extends Component<
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // 本番環境ではエラーログサービスに送信
-    // 将来的にはSentry、LogRocket、Datadogなどのエラーログサービスに統合可能
-    if (import.meta.env.PROD) {
-      console.error("ErrorBoundary caught an error:", error, errorInfo);
-      // TODO: エラーログサービスへの送信を実装
-      // Example: errorLoggingService.captureException(error, { extra: errorInfo });
-    } else {
-      console.error("ErrorBoundary caught an error:", error, errorInfo);
-    }
+    // エラーログ：将来的にはSentry、LogRocket、Datadogなどのエラーログサービスに統合可能
+    // Example: errorLoggingService.captureException(error, { extra: errorInfo });
   }
 
   render() {

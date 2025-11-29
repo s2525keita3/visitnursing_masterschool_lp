@@ -26,31 +26,31 @@ export type StudentResult = {
 
 export const benefits: Benefit[] = [
   {
-    image: "/benefit1.png",
+    image: "/benefit1.webp",
     title: "数字で判断できる経営者になる",
     description:
       "市場調査と収支シミュレーションを使い、「なんとなく不安」という曖昧な状態から脱却。勝てる根拠を持って開業・運営できるようになります。",
   },
   {
-    image: "/benefit2.png",
+    image: "/benefit2.webp",
     title: "融資が通る事業計画書",
     description:
       "金融機関が最も重視するポイントを押さえた事業計画を自ら説明でき、開業資金と運転資金の不安を根本から解消します。",
   },
   {
-    image: "/benefit3.png",
+    image: "/benefit3.webp",
     title: "現場にいなくても回る仕組み",
     description:
       "カリスマ所長に頼らず、標準化されたマニュアルと業務フローで誰が運営しても同じ品質のケアを提供できる組織を構築します。",
   },
   {
-    image: "/benefit4.png",
+    image: "/benefit4.webp",
     title: "欲しい人材だけが集まる採用",
     description:
       "理念と条件に合った人材だけが集まるフィルターを設計し、早期離職によるコストとストレスを最小化します。",
   },
   {
-    image: "/benefit5.png",
+    image: "/benefit5.webp",
     title: "最短ルートの開業準備",
     description:
       "指定申請や備品選定など膨大なタスクの正解ルートをテンプレート化。無駄な調査時間を削減し、戦略立案に集中できます。",
@@ -62,7 +62,7 @@ export const studentResults: StudentResult[] = [
     name: "北山 様",
     location: "えめ訪問看護ステーション和歌山 代表",
     headline: "融資2,000万円超を獲得！開業3ヶ月で単月黒字化",
-    videoPoster: "/kitayama-thumbnail.png",
+    videoPoster: "/kitayama-thumbnail.webp",
     videoUrl: "https://youtu.be/-3gkNUKq5WM",
     website: "https://eme-houkan.com/",
     contextTag: "繋がりの無い土地 大阪 和歌山",
@@ -91,7 +91,7 @@ export const studentResults: StudentResult[] = [
     name: "髙橋 様",
     location: "ファースト訪問看護ステーション灘 代表",
     headline: "訪看未経験＆夜勤明けでも月間1,600件の\"モンスター級\"拠点へ",
-    videoPoster: "/takahashi-thumbnail.png",
+    videoPoster: "/takahashi-thumbnail.webp",
     videoUrl: "https://youtu.be/P6UeyhoTKgM",
     website: "https://recruit.gojo-inc.jp/",
     contextTag: "訪問看護未経験から開業",
@@ -119,7 +119,7 @@ export const studentResults: StudentResult[] = [
     name: "中村 様",
     location: "あしなら訪問看護ステーション",
     headline: "激戦区・東京でスタッフ約30名へ。経営者の孤独を乗り越え急拡大",
-    videoPoster: "/nakamura-thumbnail.png",
+    videoPoster: "/nakamura-thumbnail.webp",
     videoUrl: "https://youtu.be/ciZIPSAzg6Y",
     website: "https://first1105-nada.com/",
     contextTag: "激戦区東京23区で開業",
