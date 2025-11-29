@@ -1,3 +1,8 @@
+/**
+ * 講師データ
+ * 権威性と希少性を強調し、コンバージョン率を最大化
+ */
+
 export type Badge = {
   label: string;
   value: string;
@@ -14,6 +19,31 @@ export const badges: Badge[] = [
   { label: "年商規模", value: "5億円" },
   { label: "SNSフォロワー", value: "11万人" },
 ];
+
+/**
+ * 講師の実績データ
+ * 権威性を強調
+ */
+export const instructorAchievements = {
+  consultingCompanies: "50社以上",
+  profitabilityRate: "94%",
+  achievement: "コンサル実績50社以上・黒字化達成率94%",
+} as const;
+
+/**
+ * 講師の希少性・緊急性
+ * 個別コンサルティングの完全停止を強調
+ */
+export const instructorRarity = {
+  status: "完全停止",
+  normalPrice: "月額15万円",
+  availability: "本スクールの受講生のみ",
+  message: {
+    title: "現在、講師「じょん」は新規の個別コンサルティングを【完全停止】しています。",
+    subtitle:
+      "通常月額15万円の顧問契約も満枠のため、彼から直接アドバイスを受けられるのは、本スクールの受講生のみです。",
+  },
+} as const;
 
 export const programPhases: ProgramPhase[] = [
   {

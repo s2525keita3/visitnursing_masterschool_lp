@@ -55,6 +55,57 @@ export const programAnalogy = {
   ],
 };
 
+/**
+ * カリキュラムの5大領域
+ * 網羅性を強調し、「これなら自分でもできる」という確信を生む
+ */
+export const curriculumAreas = [
+  {
+    id: "strategy",
+    category: "【戦略】",
+    title: "勝てる商圏選定・差別化コンセプト設計",
+  },
+  {
+    id: "funding",
+    category: "【資金】",
+    title: "融資満額獲得・銀行員が唸る事業計画書作成",
+  },
+  {
+    id: "hiring",
+    category: "【採用】",
+    title: "離職を防ぐ採用面接・給与テーブル設計",
+  },
+  {
+    id: "marketing",
+    category: "【集客】",
+    title: "ケアマネジャーに選ばれる営業・マーケティング",
+  },
+  {
+    id: "operations",
+    category: "【運営】",
+    title: "指定申請・レセプト請求・実地指導対策",
+  },
+] as const;
+
+/**
+ * 学習環境・サポート体制
+ * 安心感を強調し、学習の継続性を担保
+ */
+export const learningEnvironment = {
+  format: {
+    title: "学習形式",
+    description: "半年間のオンライン動画講義（スマホ・PCで24時間どこでも視聴可能）",
+  },
+  questions: {
+    title: "質問サポート",
+    description: "チャットでの質問は無制限（原則3営業日以内に回答）",
+  },
+  consultation: {
+    title: "グループコンサル",
+    description: "月1回 Zoomグループコンサル（2時間・他社の事例も共有）",
+  },
+} as const;
+
 export const programRoadmap: ProgramPhase[] = [
   {
     phase: "Phase 1",

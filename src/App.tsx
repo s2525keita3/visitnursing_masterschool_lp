@@ -12,7 +12,10 @@ import CtaSection from "./shared/components/CtaSection";
 import Hero from "./features/hero/Hero";
 const Problems = lazy(() => import("./features/problems/Problems"));
 const Benefits = lazy(() => import("./features/benefits/Benefits"));
-const ProgramHighlights = lazy(() => import("./features/program/ProgramHighlights"));
+const RoiSection = lazy(() => import("./features/roi/RoiSection"));
+const PricingSection = lazy(() => import("./features/pricing/PricingSection"));
+const Founder = lazy(() => import("./features/founder/Founder"));
+const Testimonials = lazy(() => import("./features/testimonials/Testimonials"));
 const Seminar = lazy(() => import("./features/seminar/Seminar"));
 const ContactForm = lazy(() => import("./features/contact/ContactForm"));
 
@@ -36,17 +39,40 @@ const App = () => (
       <ProgressBar />
       <Header />
       <Suspense fallback={<LoadingFallback />}>
+        {/* 1. Hero (FV) */}
         <Hero />
-        {/* 1. Heroセクション（FV）の直後：即決ユーザー向け */}
+        
+        {/* 2. CtaSection (即決用) */}
         <CtaSection />
+        
+        {/* 3. Problems (共感) */}
         <Problems />
+        
+        {/* 4. Benefits (解決策: 動画あり) */}
         <Benefits />
-        {/* 2. 「解決策/ベネフィット」セクションの直後：購買意欲が高まったタイミング */}
+        
+        {/* 5. Testimonials (証拠: ※新規追加) - Benefitsの直後、gapを狭くし、動画の要約として機能 */}
+        <Testimonials />
+        
+        {/* 6. CtaSection (中間CTA) */}
         <CtaSection />
-        <ProgramHighlights />
+        
+        {/* 7. Founder (権威・信頼: ※新規追加・最重要) - 金額提示の前に「じょん」への信頼を確立 */}
+        <Founder />
+        
+        {/* 9. RoiSection (論理: 投資対効果) */}
+        <RoiSection />
+        
+        {/* 10. PricingSection (オファー: 88万円) */}
+        <PricingSection />
+        
+        {/* 11. Seminar (リスクリバーサル) */}
         <Seminar />
+        
+        {/* 12. ContactForm (アクション) */}
         <ContactForm />
-        {/* 3. フッター直前の「クロージング」エリア：最終的なアクションを促す */}
+        
+        {/* 13. CtaSection (最終クロージング) */}
         <CtaSection />
       </Suspense>
       <Footer />

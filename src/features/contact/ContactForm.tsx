@@ -5,7 +5,9 @@ import { useForm } from "../../shared/hooks/useForm";
 import { validateContactForm } from "../../shared/utils/validation";
 import { ANIMATION_DELAYS } from "../../shared/constants/animations";
 import { scheduleOptions } from "../../content/seminar";
+import { legalData } from "../../content/legal";
 import type { ContactFormData } from "../../shared/types";
+import { useState } from "react";
 
 const initialState: ContactFormData = {
   name: "",
@@ -14,6 +16,8 @@ const initialState: ContactFormData = {
   message: "",
   contactType: "seminar",
   seminarDate: "",
+  agreedToTokushoho: false,
+  agreedToPrivacy: false,
 };
 
 /**
@@ -22,6 +26,10 @@ const initialState: ContactFormData = {
  * CRO最適化：セミナー申込と個別相談を選択可能に
  */
 const ContactForm = () => {
+  const [showTokushoho, setShowTokushoho] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [isAgreed, setIsAgreed] = useState(false);
+  
   const formAnimationStyle = useStaggeredAnimation(
     ANIMATION_DELAYS.BASE,
     0,
@@ -258,6 +266,89 @@ const ContactForm = () => {
           />
         </label>
 
+        {/* チェックボックスエリア（送信ボタンの直前） */}
+        <div className="flex items-start gap-3 my-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <input
+            id="agreement"
+            type="checkbox"
+            checked={isAgreed}
+            onChange={(e) => {
+              setIsAgreed(e.target.checked);
+              // 内部的には両方の同意を記録（法的リスク回避）
+              handleChange("agreedToTokushoho", e.target.checked);
+              handleChange("agreedToPrivacy", e.target.checked);
+            }}
+            className="mt-1 h-5 w-5 rounded border-gray-300 text-brand-orange focus:ring-brand-orange cursor-pointer accent-brand-orange"
+            required
+            aria-label="特定商取引法およびプライバシーポリシーへの同意"
+          />
+          <label htmlFor="agreement" className="text-sm text-gray-700 cursor-pointer select-none leading-relaxed">
+            <button
+              type="button"
+              onClick={() => setShowTokushoho(!showTokushoho)}
+              className="font-bold border-b border-gray-400 hover:border-brand-orange transition-colors"
+            >
+              特定商取引法に基づく表記
+            </button>
+            {" "}および{" "}
+            <button
+              type="button"
+              onClick={() => setShowPrivacy(!showPrivacy)}
+              className="font-bold border-b border-gray-400 hover:border-brand-orange transition-colors"
+            >
+              プライバシーポリシー
+            </button>
+            {" "}の内容を確認し、同意して申し込みます。
+          </label>
+        </div>
+
+        {/* 特定商取引法の表記モーダル */}
+        {showTokushoho && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setShowTokushoho(false)}>
+            <div className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+              <div className="mb-4 flex items-center justify-between">
+                <h3 className="text-xl font-black text-brand-dark">特定商取引法に基づく表記</h3>
+                <button
+                  type="button"
+                  onClick={() => setShowTokushoho(false)}
+                  className="text-2xl font-bold text-brand-muted hover:text-brand-dark"
+                  aria-label="閉じる"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="space-y-4">
+                {legalData.tokushoho.map((item, index) => (
+                  <div key={index} className="border-b border-brand-dark/10 pb-3">
+                    <p className="mb-1 text-sm font-semibold text-brand-orange">{item.label}</p>
+                    <p className="text-sm leading-relaxed text-brand-dark whitespace-pre-line">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* プライバシーポリシーのモーダル */}
+        {showPrivacy && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setShowPrivacy(false)}>
+            <div className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+              <div className="mb-4 flex items-center justify-between">
+                <h3 className="text-xl font-black text-brand-dark">プライバシーポリシー</h3>
+                <button
+                  type="button"
+                  onClick={() => setShowPrivacy(false)}
+                  className="text-2xl font-bold text-brand-muted hover:text-brand-dark"
+                  aria-label="閉じる"
+                >
+                  ×
+                </button>
+              </div>
+              <div dangerouslySetInnerHTML={{ __html: legalData.privacy }} />
+            </div>
+          </div>
+        )}
+
         {/* フォーム全体のエラーメッセージ */}
         {errors._form && (
           <div
@@ -269,7 +360,11 @@ const ContactForm = () => {
         )}
 
         <div className="flex flex-col gap-3 items-center">
-          <CTAButton type="submit" isLoading={status === "submitting"}>
+          <CTAButton
+            type="submit"
+            isLoading={status === "submitting"}
+            disabled={!isAgreed || status === "submitting"}
+          >
             {form.contactType === "seminar"
               ? "セミナーに申し込む"
               : "個別相談を申し込む"}

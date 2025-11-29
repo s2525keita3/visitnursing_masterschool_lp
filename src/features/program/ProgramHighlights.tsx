@@ -5,18 +5,158 @@ import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation"
 import { ANIMATION_DELAYS } from "../../shared/constants/animations";
 import {
   programRoadmap,
+  curriculumAreas,
+  learningEnvironment,
   type ProgramPhase,
 } from "../../content/program";
-import { Sparkles, Award } from "lucide-react";
+import { Sparkles, Award, CheckCircle2, Video, MessageSquare, Users } from "lucide-react";
 
 /**
  * プログラム要点セクションコンポーネント
  * CRO最適化：要点を明確に提示し、視覚的インパクトで理解を促進
+ * 
+ * 表示内容：
+ * 1. カリキュラムの5大領域（何を学ぶか）
+ * 2. 学習環境・サポート体制（チャットし放題など）
+ * 3. 6ヶ月間のロードマップ（詳細カリキュラム）
+ * 4. 修了証書
  */
+
+/**
+ * カリキュラム5大領域コンポーネント
+ * 網羅性を強調し、「これなら自分でもできる」という確信を生む
+ * タスク1で追加：5大領域を明示
+ */
+const CurriculumAreas = () => (
+  <div className="mb-16 animate-fade-up">
+    <div className="mb-8 text-center">
+      <h3 className="mb-4 font-sans text-3xl font-black leading-tight tracking-tight text-brand-dark md:text-4xl">
+        <span className="block">カリキュラムの</span>
+        <span className="block text-brand-orange">5大領域</span>
+      </h3>
+      <p className="text-base text-brand-muted md:text-lg">
+        開業から黒字化まで、必要な知識を網羅的に習得
+      </p>
+    </div>
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {curriculumAreas.map((area, index) => {
+        const animationStyle = useStaggeredAnimation(
+          ANIMATION_DELAYS.BASE,
+          ANIMATION_DELAYS.STAGGER,
+          index
+        );
+        return (
+          <Card
+            key={area.id}
+            className="border-2 border-brand-dark/10 bg-gradient-to-br from-white to-brand-light/20 hover-lift"
+            padding="md"
+            style={animationStyle}
+          >
+            <div className="space-y-2">
+              <span className="inline-block text-xs font-bold text-brand-orange md:text-sm">
+                {area.category}
+              </span>
+              <h4 className="text-lg font-black text-brand-dark md:text-xl">
+                {area.title}
+              </h4>
+            </div>
+          </Card>
+        );
+      })}
+    </div>
+  </div>
+);
+
+/**
+ * 学習環境・サポート体制コンポーネント
+ * 安心感を強調し、学習の継続性を担保
+ * タスク1で追加：チャットし放題などのサポート体制を明示
+ */
+const LearningSupport = () => (
+  <div className="mb-16 animate-fade-up">
+    <div className="mb-8 text-center">
+      <h3 className="mb-4 font-sans text-3xl font-black leading-tight tracking-tight text-brand-dark md:text-4xl">
+        <span className="block">学習環境・</span>
+        <span className="block text-brand-orange">サポート体制</span>
+      </h3>
+    </div>
+    <div className="grid gap-6 md:grid-cols-3">
+      <Card
+        className="border-2 border-brand-dark/10 bg-gradient-to-br from-blue-50 to-blue-100/50 hover-lift"
+        padding="md"
+      >
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 md:h-14 md:w-14">
+              <Video className="h-6 w-6 text-white md:h-7 md:w-7" />
+            </div>
+          </div>
+          <div className="flex-1 space-y-2">
+            <h4 className="text-lg font-black text-brand-dark md:text-xl">
+              {learningEnvironment.format.title}
+            </h4>
+            <p className="text-sm leading-relaxed text-brand-muted md:text-base">
+              {learningEnvironment.format.description}
+            </p>
+          </div>
+        </div>
+      </Card>
+
+      <Card
+        className="border-2 border-brand-dark/10 bg-gradient-to-br from-emerald-50 to-emerald-100/50 hover-lift"
+        padding="md"
+      >
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 md:h-14 md:w-14">
+              <MessageSquare className="h-6 w-6 text-white md:h-7 md:w-7" />
+            </div>
+          </div>
+          <div className="flex-1 space-y-2">
+            <h4 className="text-lg font-black text-brand-dark md:text-xl">
+              {learningEnvironment.questions.title}
+            </h4>
+            <p className="text-sm leading-relaxed text-brand-muted md:text-base">
+              {learningEnvironment.questions.description}
+            </p>
+          </div>
+        </div>
+      </Card>
+
+      <Card
+        className="border-2 border-brand-dark/10 bg-gradient-to-br from-purple-50 to-purple-100/50 hover-lift"
+        padding="md"
+      >
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 md:h-14 md:w-14">
+              <Users className="h-6 w-6 text-white md:h-7 md:w-7" />
+            </div>
+          </div>
+          <div className="flex-1 space-y-2">
+            <h4 className="text-lg font-black text-brand-dark md:text-xl">
+              {learningEnvironment.consultation.title}
+            </h4>
+            <p className="text-sm leading-relaxed text-brand-muted md:text-base">
+              {learningEnvironment.consultation.description}
+            </p>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+);
+
 const ProgramHighlights = () => {
   return (
     <Section id="program" tone="surface">
       <div className="mx-auto max-w-7xl">
+        {/* カリキュラム5大領域 */}
+        <CurriculumAreas />
+
+        {/* 学習環境・サポート体制 */}
+        <LearningSupport />
+
         {/* ロードマップセクション */}
         <div className="space-y-12 animate-fade-up md:space-y-16">
           <div className="text-center">

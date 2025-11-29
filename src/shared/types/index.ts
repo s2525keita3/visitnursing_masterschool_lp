@@ -13,6 +13,9 @@ export type ContactFormData = {
   message: string;
   contactType: ContactType;
   seminarDate: string;
+  // 法的同意：訴訟リスク回避のため必須
+  agreedToTokushoho: boolean; // 特定商取引法への同意
+  agreedToPrivacy: boolean; // プライバシーポリシーへの同意
 };
 
 // フォーム送信状態

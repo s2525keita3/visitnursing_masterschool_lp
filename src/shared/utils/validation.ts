@@ -30,6 +30,14 @@ export const validateContactForm = (
     errors.seminarDate = "希望セミナー日程を選択してください";
   }
 
+  // 法的同意のバリデーション（必須）
+  if (!values.agreedToTokushoho) {
+    errors.agreedToTokushoho = "特定商取引法の表記に同意してください";
+  }
+  if (!values.agreedToPrivacy) {
+    errors.agreedToPrivacy = "プライバシーポリシーに同意してください";
+  }
+
   return errors;
 };
 

@@ -17,6 +17,11 @@ export type StudentResult = {
   // 画像デザインの改善：コンテキストタグとオーバーレイテキストを追加
   contextTag: string; // カード上部のタグ（例：「経営未経験から開業」）
   overlayHighlights: string[]; // 動画サムネイル上に表示する成果ハイライト（3-4点）
+  // 数字で語る成果：定量的な成果を強調
+  quantitativeResults: {
+    metrics: string; // 例：「月商 2.3倍 / 採用2名」
+    description: string; // 成果の説明文
+  };
 };
 
 export const benefits: Benefit[] = [
@@ -55,7 +60,7 @@ export const benefits: Benefit[] = [
 export const studentResults: StudentResult[] = [
   {
     name: "北山 様",
-    location: "和歌山市／開業8ヶ月目",
+    location: "えめ訪問看護ステーション和歌山 代表",
     headline: "融資2,000万円超を獲得！開業3ヶ月で単月黒字化",
     videoPoster: "/kitayama-thumbnail.png",
     videoUrl: "https://youtu.be/-3gkNUKq5WM",
@@ -76,11 +81,15 @@ export const studentResults: StudentResult[] = [
       "8ヶ月目で月間500件超、毎月10件の新規依頼が入る状態に。",
     ],
     testimonial:
-      "「準備の仕方を知らなかったら、お金を借りるのが怖かった。教わった通りにやっただけで2,000万円以上借りられました。採用の反応も全然違います。」",
+      "融資資料と採用導線をセットで整えた結果、6ヶ月で2拠点目の準備に入れるほどキャッシュが安定しました。",
+    quantitativeResults: {
+      metrics: "月商 2.3倍 / 採用2名",
+      description: "融資資料と採用導線をセットで整えた結果、6ヶ月で2拠点目の準備に入れるほどキャッシュが安定しました。",
+    },
   },
   {
-    name: "高橋 様",
-    location: "神戸市灘区／開業4年目",
+    name: "髙橋 様",
+    location: "ファースト訪問看護ステーション灘 代表",
     headline: "訪看未経験＆夜勤明けでも月間1,600件の\"モンスター級\"拠点へ",
     videoPoster: "/takahashi-thumbnail.png",
     videoUrl: "https://youtu.be/P6UeyhoTKgM",
@@ -100,11 +109,15 @@ export const studentResults: StudentResult[] = [
       "月間1,600件の大規模ステーションに成長。年商3億円超。",
     ],
     testimonial:
-      "「何も知らない素人でしたが、マニュアルが全てでした。働きながらでも迷わず準備できました。」",
+      "週次KPIレビューとSlack相談のスピード感が圧倒的。現場の迷いが消え、数字で意思決定できるようになりました。",
+    quantitativeResults: {
+      metrics: "稼働率 82% / 利益率 +3.2pt",
+      description: "週次KPIレビューとSlack相談のスピード感が圧倒的。現場の迷いが消え、数字で意思決定できるようになりました。",
+    },
   },
   {
     name: "中村 様",
-    location: "東京都台東区／開業3期目",
+    location: "あしなら訪問看護ステーション",
     headline: "激戦区・東京でスタッフ約30名へ。経営者の孤独を乗り越え急拡大",
     videoPoster: "/nakamura-thumbnail.png",
     videoUrl: "https://youtu.be/ciZIPSAzg6Y",
@@ -125,7 +138,11 @@ export const studentResults: StudentResult[] = [
       "激戦区・東京23区で2拠点展開。開業1年以内に黒字化。",
     ],
     testimonial:
-      "「経営者の孤独を感じていましたが、不安を整理してもらえたことが支えになりました。資金から営業まで学べたおかげで、ここまで大きくできました。」",
+      "マーケ導線と評価制度を同じタイミングで整えられたのが大きい。『紹介が止まらない理由』をようやく理解できました。",
+    quantitativeResults: {
+      metrics: "新規紹介 18件 / 採用0離職",
+      description: "マーケ導線と評価制度を同じタイミングで整えられたのが大きい。『紹介が止まらない理由』をようやく理解できました。",
+    },
   },
 ];
 

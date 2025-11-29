@@ -10,6 +10,7 @@ type CTAButtonProps = {
   className?: string;
   type?: "button" | "submit";
   isLoading?: boolean;
+  disabled?: boolean;
   size?: "small" | "default" | "large";
 };
 
@@ -33,6 +34,7 @@ const CTAButton = memo<CTAButtonProps>(
     className = "",
     type = "button",
     isLoading = false,
+    disabled = false,
     size = "default",
   }) => {
     const isExternalLink = href?.startsWith("http");
@@ -56,7 +58,7 @@ const CTAButton = memo<CTAButtonProps>(
           target={isExternalLink ? "_blank" : undefined}
           rel={isExternalLink ? "noreferrer noopener" : undefined}
           className={cn(
-            "group relative block overflow-hidden rounded-[50px] text-center shadow-cta transition-all duration-300 gradient-cta transform hover:-translate-y-0.5 hover:shadow-cta-hover active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60",
+            "group relative block overflow-hidden rounded-[50px] text-center shadow-cta transition-all duration-300 gradient-cta transform hover:-translate-y-0.5 hover:shadow-cta-hover active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:grayscale",
             className
           )}
         >
@@ -65,13 +67,15 @@ const CTAButton = memo<CTAButtonProps>(
       );
     }
 
+    const isDisabled = disabled || isLoading;
+
     return (
       <button
         type={type}
         onClick={onClick}
-        disabled={isLoading}
+        disabled={isDisabled}
         className={cn(
-          "group relative w-full overflow-hidden rounded-[50px] shadow-cta transition-all duration-300 gradient-cta transform hover:-translate-y-0.5 hover:shadow-cta-hover active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60",
+          "group relative w-full overflow-hidden rounded-[50px] shadow-cta transition-all duration-300 gradient-cta transform hover:-translate-y-0.5 hover:shadow-cta-hover active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:grayscale",
           className
         )}
       >

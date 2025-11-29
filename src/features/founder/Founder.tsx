@@ -4,7 +4,13 @@ import CTAButton from "../../shared/ui/CTAButton";
 import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
 import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
 import { ANIMATION_DELAYS } from "../../shared/constants/animations";
-import { badges, programPhases, type ProgramPhase } from "../../content/founder"; // Founder関連の定数を切り出し、複数コンポーネントから再利用しやすくする
+import {
+  badges,
+  programPhases,
+  instructorAchievements,
+  instructorRarity,
+  type ProgramPhase,
+} from "../../content/founder";
 
 const Founder = () => {
   // DRY原則：アニメーション遅延計算ロジックを共通化（定数を使用）
@@ -41,6 +47,21 @@ const Founder = () => {
             私自身が5拠点を運営し、年商5億円を作っている「現役プレイヤー」です。コンサルタントではなく、事業家だからこそ
             語れる「解像度の高い施策」だけを提供します。
           </p>
+          {/* 実績強調 */}
+          <div className="rounded-lg border-2 border-brand-orange bg-brand-orange/5 p-4">
+            <p className="text-center text-lg font-black text-brand-dark md:text-xl">
+              {instructorAchievements.achievement}
+            </p>
+          </div>
+          {/* 希少性・緊急性の強調 */}
+          <div className="rounded-lg border-2 border-red-500 bg-red-50 p-4">
+            <p className="mb-2 text-center text-base font-black text-red-700 md:text-lg">
+              {instructorRarity.message.title}
+            </p>
+            <p className="text-center text-sm leading-relaxed text-red-600 md:text-base">
+              {instructorRarity.message.subtitle}
+            </p>
+          </div>
           <div className="grid grid-cols-3 gap-4">
             {badges.map((badge, index) => (
               <div

@@ -1,6 +1,5 @@
 import Section from "../../shared/ui/Section";
 import CTAButton from "../../shared/ui/CTAButton";
-import { Card } from "../../shared/ui/Card";
 import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
 import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
 import { ANIMATION_DELAYS } from "../../shared/constants/animations";
@@ -75,12 +74,15 @@ const Benefits = () => {
         無料セミナーに申し込む
       </CTAButton>
     </div>
-    {/* 受講生の成果 */}
+    {/* 受講生の成果：Video Wallスタイル */}
     <div className="mt-20 space-y-10">
       <div className="text-center space-y-6">
         <h2 className="mb-6 text-center font-sans text-4xl font-black leading-[1.1] tracking-tight text-brand-orange md:text-5xl lg:text-6xl xl:text-7xl">
           受講生の成果
         </h2>
+        <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-brand-dark/80 md:text-xl">
+          定量的な成果と定性的な学びの両方を可視化し、再現性を証明します。
+        </p>
         {/* 社会的証明：数値で信頼性を強化 */}
         <div className="mb-6 rounded-2xl border-2 border-brand-orange/30 bg-brand-orange/5 px-6 py-4 md:px-8 md:py-5">
           <p className="text-2xl font-black text-brand-orange md:text-3xl">
@@ -91,102 +93,50 @@ const Benefits = () => {
           </p>
         </div>
       </div>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {studentResults.map((student: StudentResult, index) => (
-          <Card
+          <div
             key={student.name}
-            className="animate-fade-up space-y-5"
-            padding="lg"
+            className="group flex flex-col gap-4 animate-fade-up"
             style={getStudentAnimationDelay(index)}
           >
-            {/* コンテキストタグ（改善案1） */}
-            <div className="mb-2">
-              <span className="inline-block rounded-full border border-brand-orange/30 bg-brand-orange/5 px-4 py-1.5 text-xs font-bold text-brand-orange">
-                {student.contextTag}
-              </span>
-            </div>
-
-            {/* 動画サムネイル */}
+            {/* 動画サムネイル (クリックエリア) */}
             <a
               href={student.videoUrl}
               target="_blank"
               rel="noreferrer"
-              className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/40"
+              className="relative block w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-orange-500/20 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/40"
             >
-              <div className="relative overflow-hidden rounded-2xl border border-brand-dark/10 bg-black">
-                <div className="flex aspect-video w-full items-center justify-center">
-                  <ImageWithFallback
-                    src={student.videoPoster}
-                    alt={`${student.name} の動画サムネイル`}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    fallbackText="動画サムネイル"
-                  />
-                </div>
+              <div className="aspect-video w-full overflow-hidden">
+                <ImageWithFallback
+                  src={student.videoPoster}
+                  alt={`${student.name} の動画サムネイル`}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fallbackText="動画"
+                />
+              </div>
 
-                {/* 再生ボタン */}
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-2xl text-brand-orange shadow-[0_4px_16px_rgba(255,107,0,0.4)] transition-transform duration-300 group-hover:scale-110">
-                    ▶
-                  </span>
+              {/* オーバーレイ & 再生ボタン */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors group-hover:bg-black/20">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-brand-orange shadow-lg transition-transform duration-300 group-hover:scale-110 animate-pulse">
+                  <span className="ml-1 text-2xl">▶</span>
                 </div>
               </div>
             </a>
 
-            <div className="space-y-4">
-              {/* クライアント情報 */}
-              <div>
-                <p className="text-sm font-semibold text-brand-orange">{student.name}</p>
-                <p className="text-xs uppercase tracking-wide text-brand-muted">
-                  {student.location}
-                </p>
-              </div>
-
-              {/* ヘッドライン（改善案3：視覚的強調） */}
-              <p className="text-xl font-black leading-snug text-brand-dark md:text-2xl">
+            {/* シンプルなキャプション */}
+            <div className="text-center px-2">
+              <h3 className="text-lg md:text-xl font-black text-brand-dark leading-snug mb-2">
                 {student.headline}
+              </h3>
+              <p className="text-sm font-bold text-brand-orange">
+                {student.name}{" "}
+                <span className="text-gray-400 font-normal text-xs ml-1">
+                  | {student.location}
+                </span>
               </p>
-              <div className="rounded-2xl border border-brand-dark/10 bg-brand-dark/5 p-4">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-brand-orange">
-                  Before
-                </p>
-                <p className="text-sm leading-relaxed text-brand-dark">
-                  {student.before}
-                </p>
-              </div>
-              {/* Afterセクション：視覚的に強調 */}
-              <div className="rounded-2xl border-2 border-brand-orange/40 bg-brand-orange/10 p-6 shadow-[0_4px_16px_rgba(255,107,0,0.15)]">
-                <p className="mb-4 text-base font-black uppercase tracking-wide text-brand-orange md:text-lg">
-                  After
-                </p>
-                <ul className="space-y-3">
-                  {student.after.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-3 text-base font-bold leading-relaxed text-brand-dark md:text-lg"
-                    >
-                      <span className="mt-2 h-3 w-3 flex-shrink-0 rounded-full bg-brand-orange shadow-sm" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <p className="text-sm text-brand-dark/80 italic">
-                {student.testimonial}
-              </p>
-              {student.website && (
-                <div className="pt-2">
-                  <a
-                    href={student.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-full border border-brand-orange/30 bg-white px-4 py-2 text-sm font-semibold text-brand-orange shadow-sm transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white"
-                  >
-                    公式サイトを見る
-                  </a>
-                </div>
-              )}
             </div>
-          </Card>
+          </div>
         ))}
       </div>
     </div>
