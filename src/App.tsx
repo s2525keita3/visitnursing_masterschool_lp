@@ -12,6 +12,7 @@ import CtaSection from "./shared/components/CtaSection";
 import Hero from "./features/hero/Hero";
 const Problems = lazy(() => import("./features/problems/Problems"));
 const Benefits = lazy(() => import("./features/benefits/Benefits"));
+const ProgramHighlights = lazy(() => import("./features/program/ProgramHighlights"));
 const Seminar = lazy(() => import("./features/seminar/Seminar"));
 const ContactForm = lazy(() => import("./features/contact/ContactForm"));
 
@@ -42,6 +43,7 @@ const App = () => (
         <Benefits />
         {/* 2. 「解決策/ベネフィット」セクションの直後：購買意欲が高まったタイミング */}
         <CtaSection />
+        <ProgramHighlights />
         <Seminar />
         <ContactForm />
         {/* 3. フッター直前の「クロージング」エリア：最終的なアクションを促す */}
