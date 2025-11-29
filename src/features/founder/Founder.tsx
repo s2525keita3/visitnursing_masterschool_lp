@@ -1,70 +1,42 @@
 import Section from "../../shared/ui/Section";
 import Pill from "../../shared/ui/Pill";
 import CTAButton from "../../shared/ui/CTAButton";
+import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
+import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
+import { ANIMATION_DELAYS } from "../../shared/constants/animations";
+import { badges, programPhases, type ProgramPhase } from "../../content/founder"; // Founder関連の定数を切り出し、複数コンポーネントから再利用しやすくする
 
-const badges = [
-  { label: "直営拠点", value: "5拠点" },
-  { label: "年商規模", value: "5億円" },
-  { label: "SNSフォロワー", value: "11万人" },
-];
+const Founder = () => {
+  // DRY原則：アニメーション遅延計算ロジックを共通化（定数を使用）
+  const getBadgeAnimationDelay = (index: number) =>
+    useStaggeredAnimation(
+      ANIMATION_DELAYS.BASE,
+      ANIMATION_DELAYS.STAGGER,
+      index
+    );
+  const imageAnimationStyle = useStaggeredAnimation(ANIMATION_DELAYS.BASE * 2, 0, 0);
+  const getPhaseAnimationDelay = (index: number) =>
+    useStaggeredAnimation(
+      ANIMATION_DELAYS.BASE,
+      ANIMATION_DELAYS.STAGGER,
+      index
+    );
 
-const programPhases = [
-  {
-    phase: "Phase 1",
-    label: "【戦略・資金】勝てる事業設計",
-    items: [
-      "融資確定型 事業計画書の作成",
-      "銀行員が納得するロジック構成とプレゼン手法",
-      "損益分岐点（BEP）の算出と資金繰りシミュレーション",
-      "エリアマーケティング選定",
-      "競合分析と「勝てる立地」のデータ選定",
-      "診療・介護報酬の基礎と収益構造の理解",
-    ],
-  },
-  {
-    phase: "Phase 2",
-    label: "【環境・組織】盤石な基盤構築",
-    items: [
-      "指定申請・法人設立の実務",
-      "最短で認可を取る申請書類と行政対応",
-      "物件契約・備品選定のコスト最適化リスト",
-      "リスクゼロの採用・労務設計",
-      "トラブルを防ぐ就業規則・給与規定の策定",
-      "欲しい人材だけを集める求人票と媒体選定",
-    ],
-  },
-  {
-    phase: "Phase 3",
-    label: "【営業・集客】ロケットスタート戦略",
-    items: [
-      "再現性のある営業戦術",
-      "ケアマネに刺さる営業トークスクリプト",
-      "紹介が途切れない連携・報告の仕組み化",
-      "Web・SNS集客の導線設計",
-      "コストをかけず信頼を獲得するWebマーケティング",
-    ],
-  },
-  {
-    phase: "Phase 4",
-    label: "【管理・経営】安定化への数値管理",
-    items: [
-      "経営ダッシュボードの構築",
-      "ドンブリ勘定を脱却する予実管理とKPI設定",
-      "管理者が育つ会議と教育のフレームワーク",
-    ],
-  },
-];
-
-const Founder = () => (
+  return (
   <>
     <Section tone="surface">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid items-center gap-12 md:grid-cols-2">
         <div className="space-y-6 animate-fade-up">
-          <Pill>Founder's Message</Pill>
-          <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-            <span className="text-brand-dark">「机上の空論」ではなく、</span>
-            <span className="text-brand-orange">現場の数字で語る</span>
+          <Pill>紹介</Pill>
+          <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            <span className="block text-brand-dark">開業準備の「迷い」を「確信」に変える！</span>
+            <span className="mt-2 block text-brand-orange">
+              訪問看護・起業の勝ち筋 公開セミナー
+            </span>
           </h2>
+          <p className="text-center text-lg font-semibold leading-relaxed text-brand-dark md:text-xl">
+            まずは無料セミナーで！とことんお話しします。
+          </p>
           <p className="text-brand-muted leading-relaxed">
             私自身が5拠点を運営し、年商5億円を作っている「現役プレイヤー」です。コンサルタントではなく、事業家だからこそ
             語れる「解像度の高い施策」だけを提供します。
@@ -73,8 +45,8 @@ const Founder = () => (
             {badges.map((badge, index) => (
               <div
                 key={badge.label}
-                className="rounded-3xl border border-brand-dark/5 bg-white p-6 text-center shadow-card hover-lift animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="animate-fade-up rounded-3xl border border-brand-dark/5 bg-white p-6 text-center shadow-card hover-lift"
+                style={getBadgeAnimationDelay(index)}
               >
                 <p className="text-2xl font-sans text-brand-dark">{badge.value}</p>
                 <p className="text-xs tracking-wide text-brand-muted">{badge.label}</p>
@@ -84,16 +56,17 @@ const Founder = () => (
           <CTAButton href="#contact">創業者と直接面談する</CTAButton>
         </div>
         <div
-          className="rounded-3xl bg-white border border-brand-dark/5 shadow-card p-6 md:p-8 space-y-6 animate-fade-up"
-          style={{ animationDelay: "0.2s" }}
+          className="space-y-6 rounded-3xl border border-brand-dark/5 bg-white p-6 shadow-card animate-fade-up md:p-8"
+          style={imageAnimationStyle}
         >
           <div className="relative overflow-hidden rounded-3xl border border-brand-dark/10">
-            <img
+            <ImageWithFallback
               src="/koushi-jon-photo.png"
               alt="じょん講師の写真"
               className="w-full h-full object-cover"
+              fallbackText="講師写真"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
               <p className="text-lg font-semibold">Founder / じょん</p>
               <p className="text-sm opacity-90">訪問看護 起業塾 主宰</p>
             </div>
@@ -114,26 +87,27 @@ const Founder = () => (
 
     <Section>
       <div className="space-y-8">
-        <div className="text-center space-y-4">
+        <div className="space-y-4 text-center">
           <Pill>Program</Pill>
-          <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-            <span className="text-brand-dark">迷いを消す「6ヶ月間の集中講義」</span>
-            <br />
-            <span className="text-brand-orange">開業から黒字化までの実践カリキュラム</span>
+          <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            <span className="block text-brand-dark">迷いを消す「6ヶ月間の集中講義」</span>
+            <span className="mt-2 block text-brand-orange">
+              開業から黒字化までの実践カリキュラム
+            </span>
           </h2>
-          <p className="text-brand-muted max-w-4xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-4xl text-center text-lg leading-relaxed text-brand-dark/80 md:text-xl">
             本講座では、開業に必要なタスクを「4つのフェーズ」に分解。
             すべての工程で、現場でそのまま使えるテンプレートとデータを提供し、机上の空論ではない実務を習得します。
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {programPhases.map((phase, index) => (
+        <div className="grid gap-6 md:grid-cols-2">
+          {programPhases.map((phase: ProgramPhase, index) => (
             <div
               key={phase.phase}
-              className="rounded-3xl border border-brand-dark/10 bg-white p-6 space-y-4 shadow-card hover-lift animate-fade-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="space-y-4 rounded-3xl border border-brand-dark/10 bg-white p-6 shadow-card hover-lift animate-fade-up"
+              style={getPhaseAnimationDelay(index)}
             >
-              <div className="flex items-center justify-between flex-wrap gap-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="text-sm font-semibold tracking-[0.3em] text-brand-muted uppercase">
                   {phase.phase}
                 </p>
@@ -141,8 +115,11 @@ const Founder = () => (
               </div>
               <ul className="space-y-2">
                 {phase.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-brand-dark text-sm md:text-base">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-brand-orange flex-shrink-0" />
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-brand-dark md:text-base"
+                  >
+                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-brand-orange" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -165,7 +142,8 @@ const Founder = () => (
       </div>
     </Section>
   </>
-);
+  );
+};
 
 export default Founder;
 

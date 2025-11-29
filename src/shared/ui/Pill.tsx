@@ -1,4 +1,5 @@
-import type { ComponentType, SVGProps, ReactNode } from "react";
+import { memo, type ComponentType, type ReactNode, type SVGProps } from "react";
+import { cn } from "../utils/cn";
 
 type PillProps = {
   children: ReactNode;
@@ -7,16 +8,28 @@ type PillProps = {
 };
 
 const classes: Record<NonNullable<PillProps["variant"]>, string> = {
-  brand: "bg-white/90 border border-brand-dark/15 text-brand-dark shadow-card-soft",
-  gold: "bg-white/95 border border-brand-gold/30 text-brand-gold shadow-card-soft",
+  brand: "border border-brand-dark/15 bg-white/90 text-brand-dark shadow-card-soft",
+  gold: "border border-brand-gold/30 bg-white/95 text-brand-gold shadow-card-soft",
 };
 
-const Pill = ({ children, icon: Icon, variant = "brand" }: PillProps) => (
-  <span className={`inline-flex items-center gap-2 rounded-full px-6 py-2 text-sm tracking-wide font-semibold ${classes[variant]}`}>
-    {Icon ? <Icon className="w-4 h-4" /> : null}
+/**
+ * ピルコンポーネント（バッジ風のラベル）
+ * DRY原則に基づき、各セクションで重複していたピルスタイルを統一
+ * パフォーマンス最適化：React.memoで不要な再レンダリングを防止
+ */
+const Pill = memo<PillProps>(({ children, icon: Icon, variant = "brand" }) => (
+  <span
+    className={cn(
+      "inline-flex items-center gap-2 rounded-full px-6 py-2 text-sm font-semibold tracking-wide",
+      classes[variant]
+    )}
+  >
+    {Icon ? <Icon className="h-4 w-4" /> : null}
     {children}
   </span>
-);
+));
+
+Pill.displayName = "Pill";
 
 export default Pill;
 

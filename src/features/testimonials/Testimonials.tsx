@@ -1,46 +1,30 @@
 import { Quote } from "lucide-react";
 import Section from "../../shared/ui/Section";
 import Pill from "../../shared/ui/Pill";
-
-const testimonials = [
-  {
-    company: "えめ訪問看護ステーション和歌山",
-    name: "代表 北山さま",
-    result: "月商 2.3倍 / 採用2名",
-    comment:
-      "融資資料と採用導線をセットで整えた結果、6ヶ月で2拠点目の準備に入れるほどキャッシュが安定しました。",
-  },
-  {
-    company: "ファースト訪問看護ステーション灘",
-    name: "代表 髙橋さま",
-    result: "稼働率 82% / 利益率 +3.2pt",
-    comment:
-      "週次KPIレビューとSlack相談のスピード感が圧倒的。現場の迷いが消え、数字で意思決定できるようになりました。",
-  },
-  {
-    company: "訪問看護ステーションPLUS",
-    name: "共同代表 山口さま",
-    result: "新規紹介 18件 / 採用0離職",
-    comment:
-      "マーケ導線と評価制度を同じタイミングで整えられたのが大きい。『紹介が止まらない理由』をようやく理解できました。",
-  },
-];
+import {
+  testimonials,
+  type Testimonial,
+} from "../../content/testimonials"; // 卒業生の声データを分離し、LP以外の媒体からも参照しやすくする
 
 const Testimonials = () => (
   <Section>
-    <div className="text-center space-y-6 animate-fade-up">
+    <div className="space-y-6 text-center animate-fade-up">
       <Pill icon={Quote}>Client Stories</Pill>
-      <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-        <span className="text-brand-dark">数字で語る</span>
-        <span className="text-brand-orange">卒業生の声</span>
+      <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+        <span className="block text-brand-dark">数字で語る</span>
+        <span className="mt-2 block text-brand-orange">
+          卒業生の声
+        </span>
       </h2>
-      <p className="text-brand-muted max-w-3xl mx-auto">定量的な成果と定性的な学びの両方を可視化し、再現性を証明します。</p>
+      <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-brand-dark/80 md:text-xl">
+        定量的な成果と定性的な学びの両方を可視化し、再現性を証明します。
+      </p>
     </div>
-    <div className="grid md:grid-cols-3 gap-6">
-      {testimonials.map((item, index) => (
+    <div className="grid gap-6 md:grid-cols-3">
+      {testimonials.map((item: Testimonial, index) => (
         <div
           key={item.company}
-          className="rounded-3xl border border-brand-dark/5 bg-white p-8 shadow-card hover-lift space-y-4 animate-fade-up"
+          className="space-y-4 rounded-3xl border border-brand-dark/5 bg-white p-8 shadow-card hover-lift animate-fade-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <p className="text-xs font-semibold text-brand-muted tracking-wide">{item.result}</p>

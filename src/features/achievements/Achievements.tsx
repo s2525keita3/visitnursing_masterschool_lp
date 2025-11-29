@@ -1,76 +1,42 @@
 import { ShieldAlert } from "lucide-react";
 import Section from "../../shared/ui/Section";
 import Pill from "../../shared/ui/Pill";
+import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
+import { ANIMATION_DELAYS } from "../../shared/constants/animations";
+import {
+  chartData,
+  failures,
+  type ChartPoint,
+  type FailureItem,
+} from "../../content/achievements"; // 実績に関するデータセットを外出しし、他コンポーネントからも共有しやすくする
 
-const chartData = [
-  { month: "0ヶ月", success: 0, industry: 0 },
-  { month: "3ヶ月", success: 45, industry: 20 },
-  { month: "6ヶ月", success: 78, industry: 32 },
-  { month: "9ヶ月", success: 88, industry: 41 },
-  { month: "12ヶ月", success: 90, industry: 47 },
-];
+const Achievements = () => {
+  const getFailureAnimationDelay = (index: number) =>
+    useStaggeredAnimation(ANIMATION_DELAYS.BASE, 0.1, index);
 
-const failures = [
-  {
-    title: "融資否認 2%",
-    description: "資料の作り込み不足・面談での根拠提示ができなかったケースをすべて公開し、改善策を共有。",
-  },
-  {
-    title: "黒字化未達成 10%",
-    description: "市場選定ミス、採用遅延による稼働率ダウンなど、失敗パターン別のリカバリープランを提示。",
-  },
-];
-
-const Achievements = () => (
+  return (
   <Section tone="muted">
-    <div className="text-center space-y-6 animate-fade-up">
+    <div className="space-y-6 text-center animate-fade-up">
       <Pill icon={ShieldAlert}>正直な実績開示</Pill>
-      <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-        <span className="text-brand-dark">成功も失敗も</span>
-        <span className="text-brand-orange">すべて公開します</span>
+      <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+        <span className="block text-brand-dark">成功も失敗も</span>
+        <span className="mt-2 block text-brand-orange">
+          すべて公開します
+        </span>
       </h2>
-      <p className="text-brand-muted max-w-3xl mx-auto">
+      <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-brand-dark/80 md:text-xl">
         98%の融資承認率、90%の黒字化率に至るまでのプロセスと同じくらい、失敗データの共有を重視します。
       </p>
     </div>
-    <div className="grid lg:grid-cols-2 gap-8">
-      <div className="rounded-3xl bg-white border border-brand-dark/5 shadow-card hover-lift p-8 animate-fade-up">
-        <div className="mb-6">
-          <p className="text-sm font-semibold text-brand-muted tracking-wide">SUCCESS x REALITY</p>
-        </div>
-        <div className="space-y-4">
-          {chartData.map((data) => (
-            <div key={data.month} className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold text-brand-dark">{data.month}</span>
-                <div className="flex items-center gap-4">
-                  <span className="text-sm text-brand-muted">業界平均: {data.industry}%</span>
-                  <span className="text-sm font-semibold text-brand-dark">当社実績: {data.success}%</span>
-                </div>
-              </div>
-              <div className="relative h-4 bg-brand-light rounded-full overflow-hidden">
-                <div
-                  className="absolute left-0 top-0 h-full bg-brand-dark rounded-full transition-all duration-500"
-                  style={{ width: `${data.success}%` }}
-                />
-                <div
-                  className="absolute left-0 top-0 h-full bg-brand-muted/30 rounded-full transition-all duration-500"
-                  style={{ width: `${data.industry}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-sm text-brand-muted">
-          実運用データ 50社分をもとにした平均曲線。業界平均とのギャップを常にモニタリングしています。
-        </p>
-      </div>
-      <div className="rounded-3xl bg-brand-light/70 border border-brand-dark/5 shadow-card p-8 space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-        {failures.map((item, index) => (
+    <div className="mx-auto max-w-4xl">
+      <div
+        className="space-y-6 rounded-3xl border border-brand-dark/5 bg-brand-light/70 p-8 shadow-card animate-fade-up"
+      >
+        {failures.map((item: FailureItem, index) => (
           <div
             key={item.title}
-            className="bg-white rounded-3xl border border-brand-dark/5 p-6 shadow-card hover-lift space-y-2"
-            style={{ animationDelay: `${index * 0.1}s` }}
+            className="space-y-2 rounded-3xl border border-brand-dark/5 bg-white p-6 shadow-card hover-lift"
+            style={getFailureAnimationDelay(index)}
           >
             <p className="text-sm font-semibold tracking-wide text-brand-dark">{item.title}</p>
             <p className="text-brand-muted leading-relaxed">{item.description}</p>
@@ -79,7 +45,8 @@ const Achievements = () => (
       </div>
     </div>
   </Section>
-);
+  );
+};
 
 export default Achievements;
 

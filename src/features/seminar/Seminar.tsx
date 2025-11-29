@@ -1,69 +1,60 @@
 import Section from "../../shared/ui/Section";
 import CTAButton from "../../shared/ui/CTAButton";
+import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
+import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
+import { ANIMATION_DELAYS } from "../../shared/constants/animations";
+import {
+  scheduleOptions,
+  seminarTopics,
+  type ScheduleSlot,
+  type SeminarTopic,
+} from "../../content/seminar"; // セミナーのトピックと日程を専用モジュールに分離し、再利用と差し替えを容易にする
 
-const seminarTopics = [
-  {
-    title: "■ 融資獲得率90%超の「事業計画」とは",
-    description:
-      "銀行員がどこを見ているか知っていますか？「熱意」ではなく「根拠」で納得させる、満額融資獲得のためのロジックと資料作成の極意を公開します。",
-  },
-  {
-    title: "■ 採用コスト0円を実現する「採用戦略」",
-    description:
-      "紹介会社頼みの経営から卒業。高橋様（兵庫）の事例をもとに、ミスマッチを防ぎながら欲しい人材だけを惹きつける自社採用の仕組みを解説します。",
-  },
-  {
-    title: "■ 成功事例から紐解く「再現性のある経営」",
-    description:
-      "未経験から8ヶ月で月間500件訪問を達成した北山様（和歌山）など、成功者に共通する数字管理と行動量をデータで可視化して共有します。",
-  },
-  {
-    title: "■ 質疑応答・個別相談コーナー",
-    description:
-      "「エリア選定は？」「自己資金はいくら必要？」など、検索には載っていないリアルな疑問に、実績ベースでその場でお答えします。",
-  },
-];
+const Seminar = () => {
+  // DRY原則：アニメーション遅延計算ロジックを共通化（定数を使用）
+  const getTopicAnimationDelay = (index: number) =>
+    useStaggeredAnimation(
+      ANIMATION_DELAYS.BASE,
+      ANIMATION_DELAYS.STAGGER / 2,
+      index
+    );
+  const imageAnimationStyle = useStaggeredAnimation(ANIMATION_DELAYS.BASE * 2, 0, 0);
 
-const scheduleOptions = [
-  { date: "X月X日（火）", time: "19:00 - 20:30" },
-  { date: "X月X日（土）", time: "10:00 - 11:30" },
-  { date: "X月X日（木）", time: "19:00 - 20:30" },
-];
-
-const Seminar = () => (
+  return (
   <Section tone="surface">
     <div className="space-y-12">
-      <div className="text-center space-y-4 animate-fade-up">
-        <div className="inline-flex items-center justify-center rounded-full bg-brand-orange/10 px-6 py-2 text-brand-orange font-semibold">
+      <div className="space-y-4 text-center animate-fade-up">
+        <div className="inline-flex items-center justify-center rounded-full bg-brand-orange/10 px-6 py-2 font-semibold text-brand-orange">
           まずは無料セミナーで「経営の正解」を体感しませんか？
         </div>
-        <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-          <span className="text-brand-dark">開業準備の「迷い」を「確信」に変える！</span>
-          <br />
-          <span className="text-brand-orange">訪問看護・起業の勝ち筋 公開セミナー</span>
+        <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+          <span className="block text-brand-dark">開業準備の「迷い」を「確信」に変える！</span>
+          <span className="mt-2 block text-brand-orange">
+            訪問看護・起業の勝ち筋 公開セミナー
+          </span>
         </h2>
       </div>
 
-      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
+      <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-6 animate-fade-up">
-          {seminarTopics.map((topic, index) => (
+          {seminarTopics.map((topic: SeminarTopic, index) => (
             <div
               key={topic.title}
               className="rounded-3xl border border-brand-dark/10 bg-white p-6 shadow-card hover-lift"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              style={getTopicAnimationDelay(index)}
             >
-              <p className="text-lg font-bold text-brand-dark mb-2">{topic.title}</p>
-              <p className="text-brand-muted leading-relaxed">{topic.description}</p>
+              <p className="text-lg font-bold text-brand-dark">{topic.title}</p>
             </div>
           ))}
         </div>
 
-        <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        <div className="space-y-6 animate-fade-up" style={imageAnimationStyle}>
           <div className="rounded-3xl overflow-hidden border border-brand-dark/10 shadow-card">
-            <img
+            <ImageWithFallback
               src="/koushi-jon-photo.png"
               alt="講師 じょん の写真"
               className="w-full h-full object-cover"
+              fallbackText="講師写真"
             />
             <div className="p-4 bg-white">
               <p className="text-sm font-semibold text-brand-dark">講師：じょん</p>
@@ -73,28 +64,17 @@ const Seminar = () => (
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6 animate-fade-up">
-        <div className="rounded-3xl border-2 border-emerald-300 bg-emerald-50/80 p-6 space-y-3 text-center lg:text-left">
-          <p className="text-xs font-semibold tracking-[0.4em] text-emerald-600">SPECIAL</p>
-          <p className="text-2xl font-bold text-brand-dark">＼ 無料セミナー参加特典 ／</p>
-          <p className="text-lg font-semibold text-emerald-700">
-            そのまま銀行に提出できるレベル！
-          </p>
-          <p className="text-brand-dark">
-            「融資対策・事業計画書テンプレート」をプレゼント！
-          </p>
-        </div>
-
-        <div className="rounded-3xl border border-brand-dark/10 bg-white p-6 space-y-6 shadow-card">
+      <div className="flex justify-center animate-fade-up">
+        <div className="w-full max-w-2xl space-y-6 rounded-3xl border border-brand-dark/10 bg-white p-6 shadow-card">
           <div>
             <p className="text-sm font-semibold text-brand-orange uppercase tracking-widest">
               オンラインセミナー（Zoom開催）
             </p>
             <div className="mt-3 space-y-3">
-              {scheduleOptions.map((slot) => (
+              {scheduleOptions.map((slot: ScheduleSlot) => (
                 <div
                   key={slot.date}
-                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between rounded-2xl border border-brand-dark/10 px-4 py-3 bg-brand-dark/5 text-brand-dark"
+                  className="flex flex-col rounded-2xl border border-brand-dark/10 bg-brand-dark/5 px-4 py-3 text-brand-dark sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span className="font-semibold">{slot.date}</span>
                   <span className="text-sm sm:text-base">{slot.time}</span>
@@ -126,7 +106,8 @@ const Seminar = () => (
       </div>
     </div>
   </Section>
-);
+  );
+};
 
 export default Seminar;
 
