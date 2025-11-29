@@ -34,12 +34,12 @@ const Header = () => {
           <div className="min-w-0 flex-1">
             <div className="truncate text-sm font-bold leading-tight text-brand-dark sm:text-base md:text-lg">
               <span className="hidden lg:inline">
-                一般社団法人 全国訪問看護経営研究協会
+                オンライン起業塾マスタープログラム
               </span>
               <span className="hidden sm:inline lg:hidden">
-                全国訪問看護経営研究協会
+                オンライン起業塾マスタープログラム
               </span>
-              <span className="sm:hidden">訪問看護経営協会</span>
+              <span className="sm:hidden">起業塾マスタープログラム</span>
             </div>
             <div className="hidden text-xs font-medium text-brand-muted sm:block">
               訪問看護ステーション開業支援

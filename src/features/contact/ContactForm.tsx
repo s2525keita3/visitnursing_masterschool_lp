@@ -147,36 +147,6 @@ const ContactForm = () => {
             </p>
           )}
         </label>
-        <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">
-            電話番号
-          </span>
-          <input
-            type="tel"
-            name="phone"
-            value={form.phone}
-            onChange={handleInputChange}
-            className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${
-              errors.phone
-                ? "border-red-500 focus:ring-red-500/30"
-                : "border-brand-dark/15"
-            }`}
-            placeholder="090-1234-5678"
-            aria-label="電話番号"
-            aria-invalid={!!errors.phone}
-            aria-describedby={errors.phone ? "phone-error" : undefined}
-          />
-          {errors.phone && (
-            <p
-              id="phone-error"
-              className="text-sm font-semibold text-red-600"
-              role="alert"
-            >
-              {errors.phone}
-            </p>
-          )}
-        </label>
-
         {/* お申し込み種別 */}
         <div className="space-y-3">
           <span className="text-sm font-semibold text-brand-dark">

@@ -23,10 +23,7 @@ export const validateContactForm = (
     errors.email = "正しいメールアドレスを入力してください";
   }
 
-  // 電話番号のバリデーション（任意だが、入力された場合は形式チェック）
-  if (values.phone && !/^[\d-]+$/.test(values.phone.replace(/\s/g, ""))) {
-    errors.phone = "正しい電話番号を入力してください";
-  }
+  // 電話番号のバリデーション（削除：UIから電話番号フィールドを削除したため）
 
   // セミナー日程のバリデーション（セミナー申込の場合）
   if (values.contactType === "seminar" && !values.seminarDate) {
