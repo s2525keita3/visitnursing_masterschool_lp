@@ -36,7 +36,7 @@ const App = () => (
       title="看護師が疲弊しない「高収益ステーション」の作り方"
       description="訪問看護ステーションの開業から経営まで、データと戦略で成功を導く専門機関。無料セミナーで「経営の正解」を体感しませんか？"
     />
-    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-brand-orange selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background font-sans text-foreground selection:bg-brand-orange selection:text-white">
       <ProgressBar />
       <Header />
       <Suspense fallback={<LoadingFallback />}>

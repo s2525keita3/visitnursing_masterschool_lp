@@ -24,3 +24,4 @@ export const TOUCH_TARGETS = {
   LARGE: 56, // 大きなタッチターゲットサイズ（px）
 } as const;
 
+
