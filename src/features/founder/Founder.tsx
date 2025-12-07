@@ -37,7 +37,7 @@ const Founder = () => {
           <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
             <span className="block text-brand-dark">開業準備の「迷い」を「確信」に変える！</span>
             <span className="mt-2 block text-brand-orange">
-              訪問看護・起業の勝ち筋 公開セミナー
+              訪問看護開業の勝ち筋 公開セミナー
             </span>
           </h2>
           <p className="text-center text-lg font-semibold leading-relaxed text-brand-dark md:text-xl">
@@ -88,7 +88,7 @@ const Founder = () => {
               fallbackText="講師写真"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-              <p className="text-lg font-semibold">Founder / じょん</p>
+              <p className="text-lg font-semibold">じょん</p>
               <p className="text-sm opacity-90">訪問看護 起業塾 主宰</p>
             </div>
           </div>

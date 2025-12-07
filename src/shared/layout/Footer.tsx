@@ -1,4 +1,4 @@
-import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 /**
  * フッターコンポーネント
@@ -114,25 +114,6 @@ const Footer = () => {
                 className="block text-sm text-brand-muted transition-colors hover:text-brand-orange md:text-base"
               >
                 お問い合わせ
-              </a>
-              <a
-                href="/privacy"
-                className="block text-sm text-brand-muted transition-colors hover:text-brand-orange md:text-base"
-              >
-                プライバシーポリシー
-              </a>
-              <a
-                href="/terms"
-                className="block text-sm text-brand-muted transition-colors hover:text-brand-orange md:text-base"
-              >
-                利用規約
-              </a>
-              <a
-                href="/sitemap"
-                className="flex items-center gap-1 text-sm text-brand-muted transition-colors hover:text-brand-orange md:text-base"
-              >
-                <span>サイトマップ</span>
-                <ExternalLink className="h-3 w-3" />
               </a>
             </nav>
           </div>

@@ -30,7 +30,7 @@ const Seminar = () => {
         <h2 className="text-center font-sans text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
           <span className="block text-brand-dark">開業準備の「迷い」を「確信」に変える！</span>
           <span className="mt-2 block text-brand-orange">
-            訪問看護・起業の勝ち筋 公開セミナー
+            訪問看護開業の勝ち筋 公開セミナー
           </span>
         </h2>
       </div>
