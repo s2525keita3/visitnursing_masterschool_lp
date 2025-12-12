@@ -10,20 +10,8 @@ export default defineConfig({
     open: true,
   },
   build: {
-    // パフォーマンス最適化：チャンク分割とミニファイ設定
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // ベンダーチャンク：大きなライブラリを分離
-          vendor: ["react", "react-dom"],
-          icons: ["lucide-react"],
-        },
-      },
-    },
-    // チャンクサイズ警告の閾値を上げる（大きな画像アセットがあるため）
+    // NOTE: Windows環境でのビルド安定性を優先し、Rollup設定を最小化（必要になったら再導入）
     chunkSizeWarningLimit: 1000,
-    // ミニファイ設定（esbuildを使用、より高速）
-    minify: "esbuild",
   },
   // パフォーマンス最適化：依存関係の事前バンドル
   optimizeDeps: {

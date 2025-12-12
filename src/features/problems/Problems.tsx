@@ -83,7 +83,7 @@ const Problems = () => {
           size="large"
           className="w-full max-w-md mx-auto text-lg font-black shadow-[0_8px_32px_rgba(255,107,0,0.5)] animate-shake-slow md:text-xl"
         >
-          無料説明会に申し込む
+          無料個別相談を申し込む
         </CTAButton>
       </div>
     </div>

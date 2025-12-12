@@ -1,4 +1,3 @@
-import { Sparkles } from "lucide-react";
 import CTAButton from "../../shared/ui/CTAButton";
 import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
 import { useHeroAnimationDelays } from "../../shared/hooks/useAnimationDelays";
@@ -13,73 +12,117 @@ const Hero = () => {
   const animationDelays = useHeroAnimationDelays();
 
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-      {/* 背景画像 - 全画面に隙間なく配置 */}
-      <ImageWithFallback
-        src={heroContent.backgroundImage}
-        alt=""
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-        fallbackText=""
-        priority={true}
-      />
+    <section className="relative w-full overflow-hidden bg-white">
+      <div className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
+          {/* 左：コピー（画像レイアウトに合わせて“左余白”を活かす） */}
+          <div className="space-y-7">
+            <div className="animate-fade-up" style={animationDelays.targetText}>
+              <p className="text-center text-base font-bold tracking-tight text-brand-dark md:text-left md:text-lg">
+                {heroContent.brandLabel}
+              </p>
+            </div>
 
-      {/* 背景画像に暗いオーバーレイを追加してテキスト視認性を向上 */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
-
-      {/* 中央のメインコンテンツ */}
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24">
-        <div className="space-y-8 animate-fade-up md:space-y-12">
-          {/* 上部ターゲット文：控えめに表示してメインタイトルを強調 */}
-          <div className="animate-fade-up text-center" style={animationDelays.targetText}>
-            <p className="mb-2 text-base font-semibold text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] md:text-lg lg:text-xl">
-              {heroContent.targetText}
-            </p>
-          </div>
-
-          {/* メインタイトル：より大きく、コントラスト強化 */}
-          <div className="space-y-6 animate-fade-up" style={animationDelays.title}>
-            <h1 className="text-center font-sans text-5xl font-black leading-[1.1] tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)] md:text-6xl lg:text-7xl">
-              <span className="block">{heroContent.titleLine1}</span>
-              <span className="mt-2 block text-brand-orange">
-                {heroContent.titleLine2}
-              </span>
-            </h1>
-
-            <p className="mx-auto max-w-3xl text-center text-xl font-bold leading-relaxed text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] md:text-2xl">
-              {heroContent.subTitle}
-            </p>
-          </div>
-
-          {/* 特典・オファー：白背景＋緑ボーダーで視認性を大幅に向上 */}
-          <div
-            className="mx-auto max-w-2xl animate-fade-up space-y-3"
-            style={animationDelays.offer}
-          >
-            <div className="flex items-center justify-center gap-3 rounded-2xl border-[3px] border-emerald-400 bg-white px-8 py-5 shadow-[0_12px_48px_rgba(16,185,129,0.5)] backdrop-blur-sm md:px-10 md:py-6">
-              <Sparkles className="h-6 w-6 flex-shrink-0 text-emerald-500 md:h-7 md:w-7" />
-              <div className="flex flex-col text-center text-base font-black leading-tight text-brand-dark md:text-lg lg:text-xl">
-                <span className="text-emerald-600">無料説明会にご参加の方限定 融資が通る！</span>
-                <span className="text-brand-dark">事業計画書テンプレートをプレゼント！</span>
+            {/* 青帯（キーメッセージ） */}
+            <div className="animate-fade-up" style={animationDelays.title}>
+              <div className="mx-auto w-full max-w-[560px] rounded-sm bg-[#1E66D0] px-6 py-4 md:mx-0 md:px-7 md:py-4">
+                <p className="text-center text-base font-black leading-tight text-white md:text-left md:text-lg">
+                  {heroContent.highlightBar}
+                </p>
               </div>
+            </div>
+
+            {/* 大見出し */}
+            <div className="space-y-4 animate-fade-up" style={animationDelays.title}>
+              <h1 className="text-center font-sans text-5xl font-black leading-[1.05] tracking-tight text-brand-dark md:text-left md:text-6xl lg:text-7xl">
+                <span className="block">{heroContent.titleLine1}</span>
+                <span className="mt-3 block">{heroContent.titleLine2}</span>
+              </h1>
+              <p className="mx-auto max-w-2xl text-center text-base font-semibold leading-relaxed text-brand-muted md:mx-0 md:text-left md:text-lg">
+                {heroContent.subTitle}
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="space-y-3 animate-fade-up" style={animationDelays.cta}>
+              <div className="flex justify-center md:justify-start">
+                <CTAButton
+                  href="#contact"
+                  size="large"
+                  className="w-full max-w-lg text-xl font-black shadow-[0_12px_48px_rgba(255,107,0,0.6)] animate-shake-slow sm:w-auto sm:min-w-[380px]"
+                >
+                  {heroContent.ctaLabel}
+                </CTAButton>
+              </div>
+              <p className="text-center text-xs font-semibold text-brand-muted md:text-left md:text-sm">
+                {heroContent.ctaNote}
+              </p>
+            </div>
+
+            {/* 下部3丸（ベネフィット即理解） */}
+            <div className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-3 animate-fade-up" style={animationDelays.offer}>
+              {heroContent.points.map((p) => (
+                <div
+                  key={p.title}
+                  className="flex min-h-[92px] flex-col items-center justify-center rounded-full border-2 border-[#1E66D0] bg-white px-4 text-center shadow-[0_8px_24px_rgba(0,0,0,0.06)] sm:aspect-square sm:min-h-0 sm:px-3"
+                >
+                  <p className="text-sm font-black leading-tight text-[#1E66D0] sm:text-base">
+                    {p.title}
+                  </p>
+                  {p.subtitle && (
+                    <p className="mt-2 text-[11px] font-semibold leading-tight text-brand-muted sm:text-xs">
+                      {p.subtitle}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* CTAボタン：より大きく、上部に配置してファーストビューで確実に視認 */}
-          <div
-            className="mt-8 flex justify-center animate-fade-up"
-            style={animationDelays.cta}
-          >
-            <CTAButton
-              href="#contact"
-              size="large"
-              className="w-full max-w-lg text-xl font-black shadow-[0_12px_48px_rgba(255,107,0,0.6)] animate-shake-slow sm:w-auto sm:min-w-[400px] md:text-2xl md:min-h-[64px]"
-            >
-              {heroContent.ctaLabel}
-            </CTAButton>
+          {/* 右：円＋人物＋実績バッジ（画像レイアウトに寄せる） */}
+          <div className="relative animate-fade-up" style={animationDelays.offer}>
+            {/* 背景の大きい青円 */}
+            <div className="pointer-events-none absolute -right-24 top-12 h-[520px] w-[520px] rounded-full bg-[#1E66D0] md:-right-28 md:top-6" />
+
+            <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center md:ml-auto">
+              {/* 人物円（kigyo_heroから右側を切り出すイメージ） */}
+              <div className="relative h-[340px] w-[340px] overflow-hidden rounded-full bg-white shadow-card sm:h-[420px] sm:w-[420px] lg:h-[460px] lg:w-[460px]">
+                <ImageWithFallback
+                  src={heroContent.portraitImage}
+                  alt="講師の写真"
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: "82% 40%" }}
+                  fallbackText="講師写真"
+                  priority={true}
+                />
+                {/* ほんのり白グラデで文字の邪魔を防ぐ */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/10" />
+              </div>
+
+              {/* 94%バッジ */}
+              <div className="absolute -left-2 top-10 sm:-left-8 sm:top-12">
+                <div className="grid h-[160px] w-[160px] place-items-center rounded-full bg-gradient-to-br from-[#F7E39A] via-[#E6C659] to-[#C99A2E] shadow-[0_18px_60px_rgba(201,154,46,0.35)]">
+                  <div className="text-center">
+                    <p className="text-sm font-black text-[#1E66D0] sm:text-base">
+                      {heroContent.badge.kicker}
+                    </p>
+                    <p className="mt-1 text-5xl font-black leading-none text-[#1E66D0] sm:text-6xl">
+                      {heroContent.badge.value}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {heroContent.badge.note && (
+              <p className="mt-4 text-center text-[11px] font-medium text-brand-muted md:text-right">
+                {heroContent.badge.note}
+              </p>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

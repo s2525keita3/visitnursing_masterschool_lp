@@ -17,7 +17,7 @@ const CtaSection = memo(() => {
           <div className="flex-shrink-0 md:w-1/2">
             <ImageWithFallback
               src="/present.webp"
-              alt="無料セミナー参加特典"
+              alt="無料個別相談 参加特典"
               className="h-auto w-full max-w-md object-contain md:max-w-full"
               fallbackText="特典画像"
             />
@@ -32,7 +32,7 @@ const CtaSection = memo(() => {
                 </span>
               </div>
               <h2 className="text-2xl font-black leading-tight text-white md:text-3xl lg:text-4xl">
-                無料セミナー参加特典
+                無料個別相談 参加特典
               </h2>
               <p className="text-lg font-bold leading-relaxed text-white md:text-xl lg:text-2xl">
                 「融資に強い事業計画書フォーマット」を
@@ -52,7 +52,7 @@ const CtaSection = memo(() => {
                   "touch-manipulation"
                 )}
               >
-                無料説明会に申し込む
+                無料個別相談を申し込む
               </CTAButton>
             </div>
           </div>

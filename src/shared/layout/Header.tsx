@@ -54,8 +54,8 @@ const Header = () => {
             size="default"
             className="min-h-[44px] px-6 py-2.5 text-sm font-bold shadow-[0_4px_12px_rgba(255,107,0,0.3)] transition-all hover:shadow-[0_6px_16px_rgba(255,107,0,0.4)] sm:px-8 sm:py-3 sm:text-base"
           >
-            <span className="hidden sm:inline">無料説明会に申し込む</span>
-            <span className="sm:hidden">申し込む</span>
+            <span className="hidden sm:inline">無料個別相談を申し込む</span>
+            <span className="sm:hidden">無料相談</span>
           </CTAButton>
         </div>
       </div>

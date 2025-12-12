@@ -31,7 +31,7 @@ const StickyBottomCTA = () => {
         {/* 左側：メッセージ */}
         <div className="hidden flex-1 items-center gap-3 sm:flex">
           <p className="text-sm font-semibold text-brand-dark md:text-base">
-            無料セミナーで「経営の正解」を体感しませんか？
+            まずは無料個別相談で「次の一手」を整理しませんか？
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const StickyBottomCTA = () => {
             size="large"
             className="w-full min-h-[48px] text-base font-black shadow-[0_8px_32px_rgba(255,107,0,0.5)] transition-all hover:shadow-[0_12px_40px_rgba(255,107,0,0.6)] sm:w-auto sm:min-w-[280px]"
           >
-            無料説明会に申し込む
+            無料個別相談を申し込む
           </CTAButton>
         </div>
       </div>

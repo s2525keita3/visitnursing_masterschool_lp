@@ -12,7 +12,7 @@ const initialState: ContactFormData = {
   email: "",
   phone: "",
   message: "",
-  contactType: "seminar",
+  contactType: "consultation",
   seminarDate: "",
 };
 
@@ -67,11 +67,11 @@ const ContactForm = () => {
       <div className="text-center space-y-4 animate-fade-up">
         <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">CONTACT</p>
         <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-          <span className="text-brand-dark">セミナー申込</span>
-          <span className="text-brand-orange">または個別相談</span>
+          <span className="text-brand-dark">無料個別相談</span>
+          <span className="text-brand-orange">（または無料セミナー）</span>
         </h2>
         <p className="text-brand-muted">
-          まずは無料セミナーで「経営の正解」を体感。個別相談も承ります。
+          まずは無料個別相談で、あなたの状況に合わせて「次の一手」を整理します（無料セミナー参加も可能です）。
         </p>
       </div>
       <form

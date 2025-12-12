@@ -35,6 +35,6 @@ export const pricingData = {
       text: "訪問看護特化の専門家をあらゆる分野でご紹介",
     },
   ] as PricingFeature[],
-  paymentNote: "※分割払い対応（無料説明会にてご相談ください）",
+  paymentNote: "※分割払い対応（無料個別相談にてご相談ください）",
 };
 
