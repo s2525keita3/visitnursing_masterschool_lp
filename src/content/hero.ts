@@ -36,7 +36,7 @@ export const heroContent: HeroContent = {
     note: "※個別伴走プログラム受講生の実績（自社調べ）",
   },
   backgroundImage: "/koushi-jon-photo.webp",
-  portraitImage: "/john_hero_haikei (2).png",
+  portraitImage: "/john_hero_haikei2.png",
   ctaLabel: "無料個別相談を申し込む",
   ctaNote: "所要60分／Zoom（顔出し不要・耳だけOK）／強引な営業なし",
 };
