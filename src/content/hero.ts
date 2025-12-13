@@ -10,6 +10,7 @@ export type HeroContent = {
     value: string;
     note?: string;
   };
+  backgroundImage: string;
   portraitImage: string;
   ctaLabel: string;
   ctaNote: string;
@@ -22,18 +23,20 @@ export const heroContent: HeroContent = {
   titleLine1: "訪問看護ステーション",
   titleLine2: "黒字化のロードマップ",
   subTitle:
-    "資金調達／集客／採用／数字まで。直営5拠点・年商5億の現役経営者が、あなたの状況に合わせて「次の一手」を整理します。",
+    "資金調達／集客／採用／数字まで。直営5拠点・年商5億・コンサル実績50社以上の現役経営者が、あなたの状況に合わせて「次の一手」を整理します。",
   points: [
-    { title: "融資・資金調達", subtitle: "計画書まで一気通貫" },
-    { title: "採用・定着", subtitle: "疲弊しない体制づくり" },
-    { title: "集客・単価UP", subtitle: "地域で選ばれる導線" },
+    { title: "94%", subtitle: "1年以内黒字化" },
+    { title: "50社+", subtitle: "コンサル実績" },
+    { title: "5億円", subtitle: "年商規模" },
+    { title: "11万人", subtitle: "SNSフォロワー" },
   ],
   badge: {
     kicker: "1年以内黒字化",
     value: "94%",
     note: "※個別伴走プログラム受講生の実績（自社調べ）",
   },
-  portraitImage: "/kigyo_hero.jpg",
+  backgroundImage: "/koushi-jon-photo.webp",
+  portraitImage: "/john_hero_haikei (2).png",
   ctaLabel: "無料個別相談を申し込む",
   ctaNote: "所要60分／Zoom（顔出し不要・耳だけOK）／強引な営業なし",
 };
