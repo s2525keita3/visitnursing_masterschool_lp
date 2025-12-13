@@ -18,7 +18,7 @@ export type HeroContent = {
 
 // Heroセクションのテキストと画像パスを一元管理し、将来の文言変更を容易にする
 export const heroContent: HeroContent = {
-  brandLabel: "訪問看護起業オンラインスクール",
+  brandLabel: "オンライン起業塾マスタープログラム｜訪問看護ステーション開業支援",
   highlightBar: "開業から1年以内の黒字化を「最短で」実現する",
   titleLine1: "訪問看護ステーション",
   titleLine2: "黒字化のロードマップ",
