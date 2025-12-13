@@ -26,8 +26,8 @@ const Hero = () => {
 
 
       {/* コンテンツ */}
-      <div className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:py-24">
-        <div className="max-w-md sm:max-w-lg md:max-w-xl">
+      <div className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 xl:px-16">
+        <div className="max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
           {/* ブランドラベル */}
           <div className="animate-fade-up" style={animationDelays.targetText}>
             <p className="text-sm font-bold tracking-tight text-brand-dark sm:text-base md:text-lg">
@@ -50,7 +50,7 @@ const Hero = () => {
               <span className="block">{heroContent.titleLine1}</span>
               <span className="mt-1 block sm:mt-2">{heroContent.titleLine2}</span>
             </h1>
-            <p className="max-w-sm text-sm font-semibold leading-relaxed text-brand-muted sm:max-w-md sm:text-base md:max-w-lg md:text-lg">
+            <p className="max-w-sm text-sm font-semibold leading-relaxed text-brand-muted sm:max-w-md sm:text-base md:max-w-lg md:text-lg lg:max-w-xl xl:max-w-2xl">
               {heroContent.subTitle}
             </p>
           </div>
@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
 
           {/* 下部4丸（実績数字を金色で目立たせる） */}
-          <div className="mt-8 grid max-w-md grid-cols-4 gap-3 animate-fade-up sm:mt-10 sm:max-w-lg sm:gap-4 md:max-w-xl md:gap-5" style={animationDelays.offer}>
+          <div className="mt-8 grid max-w-md grid-cols-4 gap-3 animate-fade-up sm:mt-10 sm:max-w-lg sm:gap-4 md:max-w-xl md:gap-5 lg:max-w-2xl lg:gap-6" style={animationDelays.offer}>
             {heroContent.points.map((p, index) => (
               <div
                 key={p.title}
