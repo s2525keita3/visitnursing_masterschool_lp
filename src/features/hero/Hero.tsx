@@ -1,114 +1,74 @@
-import CTAButton from "../../shared/ui/CTAButton";
-import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
-import { useHeroAnimationDelays } from "../../shared/hooks/useAnimationDelays";
 import { heroContent } from "../../content/hero";
 
 /**
- * Heroセクションコンポーネント
- * ブラッシュアップ：実績カードを黒から清潔感・高級感のある「ホワイトカード」へ
+ * Heroセクションコンポーネント（クジラスナイパー風デザイン - ホワイト版）
+ * 背景を白に変更し、清潔感と視認性を向上
  */
 const Hero = () => {
-  const animationDelays = useHeroAnimationDelays();
-
   return (
-    <section className="relative w-full min-h-[auto] overflow-hidden bg-white pt-6 pb-10 md:min-h-[900px] md:py-20 lg:py-24">
-      {/* 背景装飾 */}
-      <div className="absolute right-0 top-0 z-0 h-full w-1/3 bg-gradient-to-l from-brand-muted/5 to-transparent" />
+    <section className="relative w-full overflow-hidden bg-white pt-12 pb-16 text-center text-brand-dark md:pt-20 md:pb-24">
+      <div className="mx-auto max-w-5xl px-4">
+        {/* サブキャッチ：権威性の提示 */}
+        <div className="animate-fade-up">
+          <p className="text-lg font-black tracking-tighter text-brand-orange sm:text-2xl md:text-3xl">
+            <span className="text-brand-dark">直営5拠点・年商5億・コンサル50社超の</span> 現役経営者が教える
+          </p>
+        </div>
 
-      {/* メインレイアウトコンテナ */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-3 md:px-8 lg:px-12 xl:px-16">
-        <div className="flex flex-row items-start justify-between gap-1 md:gap-8">
-          
-          {/* 左：コンテンツエリア */}
-          <div className="relative z-30 w-[64%] shrink-0 py-2 sm:w-[65%] md:w-full md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
-            {/* キャッチコピー */}
-            <div className="animate-fade-up" style={animationDelays.targetText}>
-              <p className="inline-block bg-[#E53E3E] px-1.5 py-0.5 text-[9px] font-black tracking-tighter text-white sm:text-xs md:px-3 md:py-1 md:text-base">
-                {heroContent.brandLabel}
-              </p>
-            </div>
+        {/* メインキャッチ：数字と結果の提示 */}
+        <div className="mt-4 animate-fade-up md:mt-6" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-3xl font-black leading-[1.2] tracking-tighter text-brand-dark sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="text-brand-orange">【勝率94.1%】</span>
+            <br className="md:hidden" />
+            訪問看護「黒字化」の全戦略
+          </h1>
+        </div>
 
-            {/* 強調帯（斜めカット） */}
-            <div className="mt-3 animate-fade-up sm:mt-6 md:mt-8" style={animationDelays.title}>
-              <div className="inline-block transform skew-x-[-15deg] bg-gradient-to-r from-[#FF6B00] to-[#FF8533] px-2 py-1 shadow-md sm:px-6 sm:py-2 md:px-8 md:py-3">
-                <p className="transform skew-x-[15deg] text-[10px] font-black leading-tight text-white sm:text-base md:text-xl lg:text-2xl italic tracking-tighter">
-                  {heroContent.highlightBar}
-                </p>
+        {/* 枠線付きテキスト：実績数値をシンプルに集約 */}
+        <div className="mt-10 animate-fade-up md:mt-14" style={{ animationDelay: "0.2s" }}>
+          <div className="relative inline-block rounded-sm border-2 border-brand-orange bg-brand-orange/5 px-6 py-4 shadow-[inset_0_0_20px_rgba(255,107,0,0.05)] sm:px-12 sm:py-6">
+            <div className="absolute -top-6 left-1/2 h-8 w-px -translate-x-1/2 rotate-45 bg-brand-orange"></div>
+            <div className="flex flex-col items-center justify-center gap-4 divide-y divide-brand-orange/20 sm:flex-row sm:gap-8 sm:divide-y-0 sm:divide-x">
+              <div className="flex flex-col items-center">
+                <span className="text-2xl font-black text-brand-orange md:text-4xl">勝率94.1%</span>
+                <span className="text-[10px] font-bold text-brand-dark md:text-xs">黒字化達成率</span>
+              </div>
+              <div className="flex flex-col items-center pt-4 sm:pt-0 sm:pl-8">
+                <span className="text-2xl font-black text-brand-orange md:text-4xl">50社以上</span>
+                <span className="text-[10px] font-bold text-brand-dark md:text-xs">導入実績</span>
+              </div>
+              <div className="flex flex-col items-center pt-4 sm:pt-0 sm:pl-8">
+                <span className="text-2xl font-black text-brand-orange md:text-4xl">11万人超</span>
+                <span className="text-[10px] font-bold text-brand-dark md:text-xs">SNSフォロワー</span>
               </div>
             </div>
-
-            {/* メインタイトル */}
-            <div className="mt-3 space-y-1 animate-fade-up sm:mt-6 sm:space-y-2 md:mt-8" style={animationDelays.title}>
-              <h1 className="font-sans text-xl font-black leading-[1.1] tracking-tighter text-[#1a1a1a] sm:text-4xl md:text-6xl lg:text-7xl xl:text-[100px]">
-                <span className="block">{heroContent.titleLine1}</span>
-                <span className="mt-0.5 block bg-gradient-to-r from-[#1a1a1a] to-[#4a4a4a] bg-clip-text text-transparent sm:mt-2">{heroContent.titleLine2}</span>
-              </h1>
-              <p className="mt-3 max-w-xl border-l-2 border-[#FF6B00] pl-2 text-[9px] font-bold leading-relaxed text-brand-muted/90 sm:border-l-4 sm:pl-6 sm:text-base md:text-xl lg:text-2xl">
-                {heroContent.subTitle}
-              </p>
-            </div>
-
-            {/* 実績カード（白ベースの高級感あるデザインへ変更） */}
-            <div className="mt-5 grid grid-cols-1 gap-1.5 animate-fade-up sm:mt-8 sm:grid-cols-2 sm:gap-3 md:mt-12 md:max-w-2xl" style={animationDelays.offer}>
-              {heroContent.points.map((p, index) => (
-                <div
-                  key={p.title}
-                  className="group flex items-center gap-2 rounded-md border border-gray-100 bg-white p-1.5 shadow-lg shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:gap-4 sm:rounded-xl sm:p-4"
-                  style={{ animationDelay: `${0.5 + index * 0.1}s` }}
-                >
-                  <div className="flex-shrink-0">
-                    {/* 数字：ブランドカラーの青、または金色で強調 */}
-                    <span className="text-xl font-black italic text-[#1E66D0] drop-shadow-[0_1px_3px_rgba(30,102,208,0.1)] sm:text-3xl md:text-5xl">
-                      {p.title}
-                    </span>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[8px] font-black leading-tight text-brand-dark sm:text-sm md:text-base">
-                      {p.subtitle}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <div className="mt-6 space-y-2 animate-fade-up sm:mt-12 sm:space-y-4 md:mt-16" style={animationDelays.cta}>
-              <CTAButton
-                href="#contact"
-                size="large"
-                className="w-full py-3 text-sm font-black shadow-[0_8px_25px_rgba(255,107,0,0.4)] animate-shake-slow sm:w-auto sm:min-w-[320px] sm:text-xl md:min-w-[420px] md:text-3xl"
-              >
-                {heroContent.ctaLabel}
-              </CTAButton>
-              <p className="flex items-center gap-1 pl-1 text-[8px] font-bold text-brand-muted sm:pl-2 sm:text-sm">
-                <span className="inline-block rounded bg-[#FF6B00] px-1.5 py-0.5 text-[7px] text-white">必見</span>
-                {heroContent.ctaNote}
-              </p>
-            </div>
           </div>
+        </div>
 
-          {/* 右：人物エリア */}
-          <div className="relative z-20 w-[36%] shrink-0 pt-4 md:absolute md:right-0 md:bottom-0 md:h-[85%] md:w-[50%] lg:h-[95%]">
-            <div className="h-full w-full">
-              <ImageWithFallback
-                src={heroContent.portraitImage}
-                alt="講師の写真"
-                className="h-full w-full object-contain object-right-top transition-transform duration-700 md:object-right-bottom lg:scale-[1.05]"
-                fallbackText="講師写真"
-                priority={true}
-              />
-            </div>
+        {/* ボックス型タイトル：コントラストを最大化（影と文字色を調整） */}
+        <div className="mt-10 flex flex-wrap justify-center gap-2 animate-fade-up sm:gap-4 md:mt-14" style={{ animationDelay: "0.3s" }}>
+          <div className="bg-brand-orange px-4 py-6 text-5xl font-black text-white shadow-[0_8px_0_#CC5000] ring-4 ring-brand-orange sm:px-8 sm:py-10 sm:text-7xl md:text-8xl lg:text-[110px]">
+            訪問看護
           </div>
+          <div className="bg-brand-orange px-4 py-6 text-5xl font-black text-white shadow-[0_8px_0_#CC5000] ring-4 ring-brand-orange sm:px-8 sm:py-10 sm:text-7xl md:text-8xl lg:text-[110px]">
+            黒字化
+          </div>
+        </div>
 
+        {/* フッターテキスト：実績とアクション */}
+        <div className="mt-10 animate-fade-up md:mt-14" style={{ animationDelay: "0.4s" }}>
+          <p className="text-xl font-black tracking-widest text-brand-orange sm:text-3xl md:text-4xl lg:text-5xl">
+            50社超を導き、94.1%を黒字化させた『勝てる戦略』を無料公開中
+          </p>
+        </div>
+
+        {/* 下向き矢印（オレンジに変更 - 縦幅をコンパクトに） */}
+        <div className="mt-6 flex flex-col items-center gap-0.5 opacity-70 animate-fade-up md:mt-10" style={{ animationDelay: "0.5s" }}>
+          <div className="h-0 w-0 border-l-[10px] border-r-[10px] border-t-[10px] border-l-transparent border-r-transparent border-t-brand-orange animate-bounce sm:border-l-[15px] sm:border-r-[15px] sm:border-t-[12px]" style={{ animationDelay: "0s" }}></div>
+          <div className="h-0 w-0 border-l-[10px] border-r-[10px] border-t-[10px] border-l-transparent border-r-transparent border-t-brand-orange animate-bounce sm:border-l-[15px] sm:border-r-[15px] sm:border-t-[12px]" style={{ animationDelay: "0.2s" }}></div>
+          <div className="h-0 w-0 border-l-[10px] border-r-[10px] border-t-[10px] border-l-transparent border-r-transparent border-t-brand-orange animate-bounce sm:border-l-[15px] sm:border-r-[15px] sm:border-t-[12px]" style={{ animationDelay: "0.4s" }}></div>
         </div>
       </div>
-
-      {/* 補足注釈 */}
-      {heroContent.badge.note && (
-        <p className="mt-6 px-3 text-[8px] font-medium text-brand-muted/40 md:absolute md:bottom-4 md:left-8 md:mt-0 md:text-left md:text-[11px]">
-          {heroContent.badge.note}
-        </p>
-      )}
     </section>
   );
 };

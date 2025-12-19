@@ -5,25 +5,23 @@ import Footer from "./shared/layout/Footer";
 import StickyBottomCTA from "./shared/layout/StickyBottomCTA";
 import { ErrorBoundary } from "./shared/components/ErrorBoundary";
 import { Metadata } from "./shared/components/Metadata";
-// CtaSectionもlazy loadingで最適化
-const CtaSection = lazy(() => import("./shared/components/CtaSection"));
 
-// コード分割：初期ロードを最適化するため、Hero以外は遅延読み込み
-// パフォーマンス最適化：Heroはファーストビューなので通常ロード（lazy削除）
+// Heroはファーストビューなので通常ロード
 import Hero from "./features/hero/Hero";
+// 新しく作成した導入セクション
+import Introduction from "./features/hero/Introduction";
+
+const CtaSection = lazy(() => import("./shared/components/CtaSection"));
 const Problems = lazy(() => import("./features/problems/Problems"));
 const Benefits = lazy(() => import("./features/benefits/Benefits"));
 const RoiSection = lazy(() => import("./features/roi/RoiSection"));
 const PricingSection = lazy(() => import("./features/pricing/PricingSection"));
-const Founder = lazy(() => import("./features/founder/Founder"));
 const Testimonials = lazy(() => import("./features/testimonials/Testimonials"));
 const Seminar = lazy(() => import("./features/seminar/Seminar"));
 const ContactForm = lazy(() => import("./features/contact/ContactForm"));
 
-/**
- * ローディングフォールバックコンポーネント
- * コード分割時のスムーズな読み込み体験を提供
- */
+// ※ FounderセクションはIntroductionに統合されたため一旦非表示にするか、必要に応じて調整
+
 const LoadingFallback = () => (
   <div className="flex min-h-screen items-center justify-center bg-white">
     <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand-orange border-t-transparent" />
@@ -33,47 +31,44 @@ const LoadingFallback = () => (
 const App = () => (
   <ErrorBoundary>
     <Metadata
-      title="看護師が疲弊しない「高収益ステーション」の作り方"
+      title="訪問看護ステーション 黒字化のロードマップ"
       description="訪問看護ステーションの開業から経営まで、データと戦略で成功を導く専門機関。無料個別相談で、あなたの状況に合わせた「次の一手」を整理しませんか？"
     />
-    <div className="min-h-screen w-full overflow-x-hidden bg-background font-sans text-foreground selection:bg-brand-orange selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background font-sans text-foreground selection:bg-[#1E66D0] selection:text-white">
       <ProgressBar />
       <Header />
       <Suspense fallback={<LoadingFallback />}>
-        {/* 1. Hero (FV) */}
+        {/* 1. 新Hero (FV) - クジラスナイパー風 */}
         <Hero />
         
-        {/* 2. CtaSection (即決用) */}
+        {/* 2. 新導入セクション - 実績・プロフィール・特長 */}
+        <Introduction />
+        
+        {/* 3. CtaSection (即決用) */}
         <CtaSection />
         
-        {/* 3. Problems (共感) */}
+        {/* 4. Problems (共感) */}
         <Problems />
         
-        {/* 4. Benefits (解決策: 動画あり) */}
+        {/* 5. Benefits (解決策) */}
         <Benefits />
         
-        {/* 5. Testimonials (証拠: ※新規追加) - Benefitsの直後、gapを狭くし、動画の要約として機能 */}
+        {/* 6. Testimonials (証拠) */}
         <Testimonials />
         
-        {/* 6. CtaSection (中間CTA) */}
-        <CtaSection />
-        
-        {/* 7. Founder (権威・信頼: ※新規追加・最重要) - 金額提示の前に「じょん」への信頼を確立 */}
-        <Founder />
-        
-        {/* 9. RoiSection (論理: 投資対効果) */}
+        {/* 7. RoiSection (論理: 投資対効果) */}
         <RoiSection />
         
-        {/* 10. PricingSection (オファー: 88万円) */}
+        {/* 8. PricingSection (オファー) */}
         <PricingSection />
         
-        {/* 11. Seminar (リスクリバーサル) */}
+        {/* 9. Seminar (リスクリバーサル) */}
         <Seminar />
         
-        {/* 12. ContactForm (アクション) */}
+        {/* 10. ContactForm (アクション) */}
         <ContactForm />
         
-        {/* 13. CtaSection (最終クロージング) */}
+        {/* 11. CtaSection (最終クロージング) */}
         <CtaSection />
       </Suspense>
       <Footer />
@@ -83,5 +78,3 @@ const App = () => (
 );
 
 export default App;
-
-
