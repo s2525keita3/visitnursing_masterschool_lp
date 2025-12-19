@@ -6,7 +6,7 @@ import { heroContent } from "../../content/hero";
  */
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-12 pb-16 text-center text-brand-dark md:pt-20 md:pb-24">
+    <section className="relative w-full overflow-hidden bg-white pt-12 pb-4 text-center text-brand-dark md:pt-20 md:pb-8">
       <div className="mx-auto max-w-5xl px-4">
         {/* サブキャッチ：権威性の提示 */}
         <div className="animate-fade-up">
