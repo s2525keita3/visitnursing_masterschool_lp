@@ -15,13 +15,13 @@ const Hero = () => {
       {/* 1. 背景の装飾（大きな青円） */}
       <div className="absolute right-[-10%] top-[15%] z-0 h-[600px] w-[600px] rounded-full bg-[#1E66D0] opacity-[0.07] blur-3xl md:h-[800px] md:w-[800px]" />
       
-      {/* 2. 右下の人物画像（額縁: relative容器を absoluteで配置） */}
-      <div className="absolute bottom-0 right-0 z-10 h-[60%] w-[90%] max-w-[500px] md:h-[85%] md:w-[50%] md:max-w-[750px] lg:h-[95%] lg:max-w-[900px]">
+      {/* 2. 人物画像（赤枠のエリアへ配置を調整） */}
+      <div className="absolute right-0 top-[10%] z-10 h-[70%] w-[95%] max-w-[550px] md:right-[-5%] md:top-[5%] md:h-[90%] md:w-[55%] md:max-w-[800px] lg:right-0 lg:top-[2%] lg:h-[98%] lg:max-w-[950px]">
         <div className="relative h-full w-full">
           <ImageWithFallback
             src={heroContent.portraitImage}
             alt="講師の写真"
-            className="absolute bottom-0 right-0 h-full w-full object-contain object-bottom transition-transform duration-700 hover:scale-[1.02]"
+            className="absolute right-0 top-0 h-full w-full object-contain object-right-top transition-transform duration-700 hover:scale-[1.02]"
             fallbackText="講師写真"
             priority={true}
           />
