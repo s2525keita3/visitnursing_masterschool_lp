@@ -5,99 +5,101 @@ import { heroContent } from "../../content/hero";
 
 /**
  * Heroセクションコンポーネント
+ * 黄金律：親(relative) > 子(absolute + object-contain) で配置を完全固定
  */
 const Hero = () => {
   const animationDelays = useHeroAnimationDelays();
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f5f5f0]">
-      {/* 背景画像（右側に人物＋青円が含まれている） */}
-      <div className="absolute inset-0">
-        <ImageWithFallback
-          src={heroContent.portraitImage}
-          alt=""
-          className="h-full w-full object-cover object-[85%_center] sm:object-[80%_center] md:object-right"
-          fallbackText=""
-          priority={true}
-        />
-        {/* モバイルでテキストを読みやすくするための左側グラデーション */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#f5f5f0] via-[#f5f5f0]/80 to-transparent md:via-[#f5f5f0]/60 md:to-transparent" />
+    <section className="relative w-full min-h-[850px] overflow-hidden bg-[#ffffff] py-12 md:min-h-[900px] md:py-20 lg:py-24">
+      {/* 1. 背景の装飾（大きな青円） */}
+      <div className="absolute right-[-10%] top-[15%] z-0 h-[600px] w-[600px] rounded-full bg-[#1E66D0] opacity-[0.07] blur-3xl md:h-[800px] md:w-[800px]" />
+      
+      {/* 2. 右下の人物画像（額縁: relative容器を absoluteで配置） */}
+      <div className="absolute bottom-0 right-0 z-10 h-[60%] w-[90%] max-w-[500px] md:h-[85%] md:w-[50%] md:max-w-[750px] lg:h-[95%] lg:max-w-[900px]">
+        <div className="relative h-full w-full">
+          <ImageWithFallback
+            src={heroContent.portraitImage}
+            alt="講師の写真"
+            className="absolute bottom-0 right-0 h-full w-full object-contain object-bottom transition-transform duration-700 hover:scale-[1.02]"
+            fallbackText="講師写真"
+            priority={true}
+          />
+        </div>
       </div>
 
-
-      {/* コンテンツ */}
-      <div className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 xl:px-16">
-        <div className="max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-          {/* ブランドラベル */}
+      {/* 3. コンテンツエリア（最前面） */}
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-12 xl:px-16">
+        <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+          {/* キャッチコピー（赤のアクセント） */}
           <div className="animate-fade-up" style={animationDelays.targetText}>
-            <p className="text-sm font-bold tracking-tight text-brand-dark sm:text-base md:text-lg">
+            <p className="inline-block bg-[#E53E3E] px-3 py-1 text-xs font-black tracking-tighter text-white sm:text-sm md:text-base">
               {heroContent.brandLabel}
             </p>
           </div>
 
-          {/* オレンジ帯（キーメッセージ） */}
-          <div className="mt-4 animate-fade-up sm:mt-6" style={animationDelays.title}>
-            <div className="inline-block rounded-sm bg-gradient-to-r from-[#FF6B00] to-[#FF8533] px-4 py-2 shadow-[0_8px_24px_rgba(255,107,0,0.35)] sm:px-6 sm:py-3 md:px-7 md:py-4">
-              <p className="text-sm font-black leading-tight text-white sm:text-base md:text-lg">
+          {/* オレンジ帯（斜めカットのSNIPERスタイル） */}
+          <div className="mt-6 animate-fade-up sm:mt-8" style={animationDelays.title}>
+            <div className="inline-block transform skew-x-[-15deg] bg-gradient-to-r from-[#FF6B00] to-[#FF8533] px-6 py-2 shadow-[10px_10px_0_rgba(255,107,0,0.2)] sm:px-8 sm:py-3">
+              <p className="transform skew-x-[15deg] text-base font-black leading-tight text-white sm:text-lg md:text-2xl italic tracking-tighter">
                 {heroContent.highlightBar}
               </p>
             </div>
           </div>
 
-          {/* 大見出し */}
-          <div className="mt-4 space-y-3 animate-fade-up sm:mt-6 sm:space-y-4" style={animationDelays.title}>
-            <h1 className="font-sans text-3xl font-black leading-[1.1] tracking-tight text-brand-dark sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          {/* メインタイトル（超巨大・黒） */}
+          <div className="mt-6 space-y-2 animate-fade-up sm:mt-8" style={animationDelays.title}>
+            <h1 className="font-sans text-5xl font-black leading-[1.0] tracking-[calc(-0.05em)] text-[#1a1a1a] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px]">
               <span className="block">{heroContent.titleLine1}</span>
-              <span className="mt-1 block sm:mt-2">{heroContent.titleLine2}</span>
+              <span className="mt-2 block bg-gradient-to-r from-[#1a1a1a] to-[#4a4a4a] bg-clip-text text-transparent">{heroContent.titleLine2}</span>
             </h1>
-            <p className="max-w-sm text-sm font-semibold leading-relaxed text-brand-muted sm:max-w-md sm:text-base md:max-w-lg md:text-lg lg:max-w-xl xl:max-w-2xl">
+            <p className="mt-8 max-w-xl border-l-4 border-[#FF6B00] pl-6 text-base font-bold leading-relaxed text-brand-muted/90 sm:text-lg md:text-xl lg:text-2xl">
               {heroContent.subTitle}
             </p>
           </div>
 
-          {/* CTA */}
-          <div className="mt-6 space-y-2 animate-fade-up sm:mt-8 sm:space-y-3" style={animationDelays.cta}>
-            <CTAButton
-              href="#contact"
-              size="large"
-              className="w-full text-lg font-black shadow-[0_12px_48px_rgba(255,107,0,0.6)] animate-shake-slow sm:w-auto sm:min-w-[320px] sm:text-xl md:min-w-[360px]"
-            >
-              {heroContent.ctaLabel}
-            </CTAButton>
-            <p className="text-[10px] font-semibold text-brand-muted sm:text-xs md:text-sm">
-              {heroContent.ctaNote}
-            </p>
-          </div>
-
-          {/* 下部4丸（実績数字を金色で目立たせる） */}
-          <div className="mt-8 grid max-w-md grid-cols-4 gap-3 animate-fade-up sm:mt-10 sm:max-w-lg sm:gap-4 md:max-w-xl md:gap-5 lg:max-w-2xl lg:gap-6" style={animationDelays.offer}>
+          {/* 4つのリッチな実績カード */}
+          <div className="mt-10 grid grid-cols-1 gap-3 animate-fade-up sm:grid-cols-2 md:mt-12 md:max-w-2xl" style={animationDelays.offer}>
             {heroContent.points.map((p, index) => (
               <div
                 key={p.title}
-                className="group relative flex aspect-square flex-col items-center justify-center rounded-full bg-gradient-to-br from-[#F7E39A] via-[#E6C659] to-[#C99A2E] p-2 text-center shadow-[0_10px_30px_rgba(201,154,46,0.4)] ring-4 ring-white/50 transition-all duration-300 hover:scale-110 hover:shadow-[0_16px_40px_rgba(201,154,46,0.5)] sm:p-3 md:p-4"
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                className="group flex items-center gap-4 rounded-xl border border-white/10 bg-[#1a1a1a] p-4 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#2a2a2a] sm:p-5"
+                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
-                {/* 数字（超目立たせる） */}
-                <p 
-                  className="text-xl font-black leading-none text-[#1E66D0] drop-shadow-[0_2px_4px_rgba(30,102,208,0.3)] sm:text-2xl md:text-3xl lg:text-4xl"
-                  style={{ textShadow: '0 2px 8px rgba(255,255,255,0.8)' }}
-                >
-                  {p.title}
-                </p>
-                {/* サブタイトル（控えめに） */}
-                {p.subtitle && (
-                  <p className="mt-1 text-[7px] font-bold leading-tight text-[#1E66D0]/70 sm:text-[8px] md:text-[9px] lg:text-[11px]">
+                <div className="flex-shrink-0">
+                  <span className="text-3xl font-black italic text-[#F7E39A] drop-shadow-[0_2px_10px_rgba(247,227,154,0.3)] sm:text-4xl md:text-5xl">
+                    {p.title}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-xs font-black leading-tight text-white/70 sm:text-sm md:text-base">
                     {p.subtitle}
                   </p>
-                )}
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* CTA（強烈なシャドウ） */}
+          <div className="mt-12 space-y-4 animate-fade-up sm:mt-16" style={animationDelays.cta}>
+            <CTAButton
+              href="#contact"
+              size="large"
+              className="w-full text-xl font-black shadow-[0_20px_50px_rgba(255,107,0,0.6)] animate-shake-slow sm:w-auto sm:min-w-[420px] md:text-3xl"
+            >
+              {heroContent.ctaLabel}
+            </CTAButton>
+            <p className="flex items-center gap-2 pl-2 text-xs font-bold text-brand-muted sm:text-sm">
+              <span className="inline-block rounded bg-[#FF6B00] px-2 py-0.5 text-[10px] text-white">必見</span>
+              {heroContent.ctaNote}
+            </p>
           </div>
         </div>
       </div>
 
+      {/* 補足（最背面） */}
       {heroContent.badge.note && (
-        <p className="absolute bottom-2 right-2 text-[8px] font-medium text-brand-muted sm:bottom-4 sm:right-4 sm:text-[10px] md:text-[11px]">
+        <p className="absolute bottom-4 left-4 z-0 text-[10px] font-medium text-brand-muted/40 md:left-8 md:text-[11px]">
           {heroContent.badge.note}
         </p>
       )}
