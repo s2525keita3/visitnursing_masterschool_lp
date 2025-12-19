@@ -3,8 +3,8 @@ import { ImageWithFallback } from "../../shared/ui/ImageWithFallback";
 import { heroContent } from "../../content/hero";
 
 /**
- * 導入・プロフィールセクション（ホワイト版）
- * 解決策：モバイルでもテキストと人物を横並びに配置
+ * 導入・プロフィールセクション
+ * 改善：スマホでの不自然な改行を防止（inline-blockによるフレーズ保持）
  */
 const Introduction = memo(() => {
   return (
@@ -14,36 +14,43 @@ const Introduction = memo(() => {
         <div className="flex flex-col gap-3 pt-4 pb-10 md:pt-8 md:pb-16">
           <div className="border-2 border-brand-orange bg-brand-orange/5 py-4 text-center">
             <p className="text-lg font-black tracking-tight text-brand-orange md:text-2xl">
-              【実録】直営5拠点・年商5億・コンサル実績50社以上の圧倒的経営ノウハウ
+              <span className="inline-block">【実録】直営5拠点・年商5億・</span>
+              <span className="inline-block">コンサル実績50社以上の</span>
+              <span className="inline-block">圧倒的経営ノウハウ</span>
             </p>
           </div>
-          <div className="border-2 border-brand-orange bg-white py-4 text-center">
+          <div className="border-2 border-brand-orange bg-white py-4 text-center px-2">
             <p className="text-lg font-black tracking-tight text-brand-dark md:text-2xl">
-              【全国50社以上】が導入。勝率94.1%を叩き出す「黒字化」の絶対的ノウハウ
+              <span className="inline-block">【全国50社以上】が導入。</span>
+              <span className="inline-block">勝率94.1%を叩き出す</span>
+              <span className="inline-block">「黒字化」の絶対的ノウハウ</span>
             </p>
           </div>
         </div>
 
-        {/* 2. プロフィール部分（モバイルでも横並びを実現） */}
+        {/* 2. プロフィール部分 */}
         <div className="relative mt-6 flex flex-row items-stretch justify-between gap-2 md:mt-10 md:gap-8">
           
-          {/* 左側のテキスト（幅を60%に固定） */}
           <div className="relative z-20 w-[60%] shrink-0 space-y-4 md:w-1/2 md:space-y-6">
             <div className="space-y-1 md:space-y-2">
               <p className="inline-block bg-brand-orange px-1.5 py-0.5 text-[10px] font-black text-white md:px-2 md:text-sm">
-                直営5拠点を運営する現役の経営実務家
+                <span className="inline-block">直営5拠点を運営する</span>
+                <span className="inline-block">現役の経営実務家</span>
               </p>
-              <h2 className="text-lg font-black text-brand-dark sm:text-2xl md:text-5xl">
-                株式会社ジョン代表<br className="md:hidden" />渋谷慶太
+              <h2 className="text-lg font-black text-brand-dark sm:text-2xl md:text-5xl leading-tight">
+                <span className="inline-block">株式会社ジョン代表</span>
+                <br className="md:hidden" />
+                <span className="inline-block md:mt-2">渋谷慶太</span>
               </h2>
             </div>
 
             <p className="text-sm font-black italic leading-tight text-[#E53E3E] sm:text-xl md:text-4xl">
-              「机上の空論」は一切なし。<br />
-              現場で実証済みの「勝ち筋」だけを伝授
+              <span className="inline-block">「机上の空論」は一切なし。</span>
+              <br />
+              <span className="inline-block">現場で実証済みの</span>
+              <span className="inline-block">「勝ち筋」だけを伝授</span>
             </p>
 
-            {/* 左側に並ぶ3つの実績カード（モバイル向けにコンパクト化） */}
             <div className="flex flex-col gap-2 pt-2 md:gap-4 md:pt-6">
               {[
                 { 
@@ -79,7 +86,6 @@ const Introduction = memo(() => {
             </div>
           </div>
 
-          {/* 右側の人物画像（幅を40%に固定し、文字の横に配置） */}
           <div className="relative w-[40%] shrink-0 md:w-1/2">
             <ImageWithFallback
               src={heroContent.portraitImage}
@@ -90,7 +96,7 @@ const Introduction = memo(() => {
           </div>
         </div>
 
-        {/* 3. 下部の4つの詳細ボックス（2x2グリッド） */}
+        {/* 3. 下部の4つの詳細ボックス */}
         <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-24">
           {[
             {
