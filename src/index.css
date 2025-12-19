@@ -3,10 +3,10 @@
 /* Tailwind CSS v4 のテーマ設定 - フォントファミリーを上書き */
 @theme {
   --font-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --color-brand-orange: #FF6B00;
-  --color-brand-orange-light: #FF8533;
+  --color-brand-orange: #C2410C; /* 落ち着いた深みのあるオレンジに変更 */
+  --color-brand-orange-light: #EA580C;
   --color-brand-dark: #1a1a1a;
-  --color-brand-muted: #666666;
+  --color-brand-muted: #4b5563;
 }
 
 /* パフォーマンス最適化：フォント読み込み戦略 */

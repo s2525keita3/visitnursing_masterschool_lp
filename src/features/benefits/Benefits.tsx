@@ -35,34 +35,63 @@ const Benefits = () => {
         5つのベネフィット
       </h2>
     </div>
-    {/* ベネフィットカード：画像を大きく見せるレイアウト */}
-    <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-      {benefits.map((benefit, index) => (
-        <div
-          key={benefit.title}
-          className="flex flex-col items-center space-y-4 animate-fade-up"
-          style={getBenefitAnimationDelay(index)}
-        >
-          {/* 画像 */}
-          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border-2 border-brand-dark/10 bg-gradient-to-br from-white to-brand-light/30 shadow-card hover-lift aspect-[4/3]">
-            <ImageWithFallback
-              src={benefit.image}
-              alt={benefit.title}
-              className="h-full w-full object-cover"
-              fallbackText="画像を追加"
-            />
+    {/* ベネフィットカード：画像左・テキスト右のリスト形式（強調色を適用） */}
+    <div className="mt-16 space-y-6 max-w-4xl mx-auto">
+      {benefits.map((benefit, index) => {
+        // 「」や『』で囲まれた重要ワードをブランドカラーで強調するパーサー
+        const renderDescription = (desc: string) => {
+          // 「」や『』で囲まれた部分を抽出して色付け
+          const parts = desc.split(/([「」『』])/);
+          let isEmphasized = false;
+          let isDoubleEmphasized = false;
+
+          return parts.map((part, i) => {
+            if (part === "「") { isEmphasized = true; return null; }
+            if (part === "」") { isEmphasized = false; return null; }
+            if (part === "『") { isDoubleEmphasized = true; return null; }
+            if (part === "』") { isDoubleEmphasized = false; return null; }
+
+            if (isEmphasized) {
+              return <span key={i} className="text-brand-orange font-black">「{part}」</span>;
+            }
+            if (isDoubleEmphasized) {
+              return <span key={i} className="text-brand-orange font-black">『{part}』</span>;
+            }
+            return part;
+          });
+        };
+
+        return (
+          <div
+            key={benefit.title}
+            className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl sm:flex-row"
+            style={getBenefitAnimationDelay(index)}
+          >
+            {/* 左側：画像エリア（数字タグ付き） */}
+            <div className="relative h-48 shrink-0 sm:h-auto sm:w-1/3 md:w-2/5">
+              <div className="absolute top-0 left-0 z-10 flex h-12 w-12 items-center justify-center bg-brand-orange text-2xl font-black text-white rounded-br-2xl shadow-lg">
+                {index + 1}
+              </div>
+              <ImageWithFallback
+                src={benefit.image}
+                alt={benefit.title}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fallbackText="画像"
+              />
+            </div>
+
+            {/* 右側：テキストエリア */}
+            <div className="flex flex-1 flex-col justify-center p-6 sm:p-8">
+              <h3 className="mb-3 text-xl font-black text-gray-900 md:text-2xl lg:text-3xl">
+                {renderDescription(benefit.title)}
+              </h3>
+              <p className="text-base leading-relaxed text-gray-700 md:text-lg">
+                {renderDescription(benefit.description)}
+              </p>
+            </div>
           </div>
-          {/* テキスト説明：視覚的階層を明確化 */}
-          <div className="text-center space-y-3">
-            <h3 className="mb-3 text-xl font-black text-gray-900 md:text-2xl">
-              {benefit.title}
-            </h3>
-            <p className="text-sm leading-relaxed text-gray-700 md:text-base">
-              {benefit.description}
-            </p>
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
     {/* CTA */}
     <div className="mt-12 flex justify-center">

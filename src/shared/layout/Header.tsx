@@ -32,16 +32,10 @@ const Header = () => {
         {/* ブランド部分：組織名 */}
         <div className="flex min-w-0 flex-1 items-center">
           <div className="min-w-0 flex-1">
-            <div className="truncate text-sm font-bold leading-tight text-brand-dark sm:text-base md:text-lg">
-              <span className="hidden lg:inline">
-                オンライン起業塾マスタープログラム
-              </span>
-              <span className="hidden sm:inline lg:hidden">
-                オンライン起業塾マスタープログラム
-              </span>
-              <span className="sm:hidden">起業塾マスタープログラム</span>
+            <div className="text-sm font-black leading-tight text-brand-dark sm:text-lg md:text-xl">
+              勝率94.1%の起業塾
             </div>
-            <div className="hidden text-xs font-medium text-brand-muted sm:block">
+            <div className="hidden text-[10px] font-bold text-brand-muted sm:block">
               訪問看護ステーション開業支援
             </div>
           </div>

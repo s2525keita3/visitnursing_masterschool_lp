@@ -55,10 +55,10 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* フッターテキスト：実績とアクション */}
+        {/* フッターテキスト：アクションへの誘導 */}
         <div className="mt-10 animate-fade-up md:mt-14" style={{ animationDelay: "0.4s" }}>
           <p className="text-xl font-black tracking-widest text-brand-orange sm:text-3xl md:text-4xl lg:text-5xl">
-            50社超を導き、94.1%を黒字化させた『勝てる戦略』を無料公開中
+            無料面談で、その『勝ち筋』を惜しみなく伝えます
           </p>
         </div>
 

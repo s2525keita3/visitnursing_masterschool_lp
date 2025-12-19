@@ -27,17 +27,28 @@ const Problems = () => {
     <div className="pointer-events-none absolute inset-0 z-[1] bg-white/20" />
     
     <div className="relative z-10 mx-auto w-full max-w-4xl px-4 md:px-6 lg:px-8">
-      {/* ターゲット層への呼びかけ */}
-      <div className="mb-4 text-center md:mb-6 animate-fade-up">
-        <p className="mb-3 text-lg font-bold text-brand-orange drop-shadow-lg md:mb-4 md:text-xl lg:text-2xl">
-          経営・採用の「正解」が見えない訪問看護ステーション開業希望・準備中の方へ
-        </p>
+      {/* ターゲット層への呼びかけ（強烈な警告バナー風） */}
+      <div className="mb-8 flex flex-col items-center gap-4 text-center animate-fade-up md:mb-12">
+        <div className="inline-block bg-brand-dark px-4 py-1 text-sm font-black text-white sm:text-base md:text-lg">
+          WARNING
+        </div>
+        <div className="space-y-2">
+          <p className="text-2xl font-black leading-tight text-brand-dark sm:text-3xl md:text-4xl lg:text-5xl">
+            まだ<span className="text-brand-orange">「なんとかなる」</span>と<br className="sm:hidden" />思っていませんか？
+          </p>
+          <div className="mt-4 inline-block border-y-4 border-red-600 py-3 md:py-4">
+            <p className="text-xl font-black leading-tight text-red-600 sm:text-2xl md:text-4xl lg:text-5xl">
+              9割の開業者が陥る<br className="sm:hidden" />「破滅へのカウントダウン」は、<br className="hidden sm:block" />
+              すでに始まっています。
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* 問題提起（フック） */}
       <div className="mb-6 animate-fade-up text-center md:mb-8" style={titleAnimationStyle}>
-        <h2 className="mb-4 text-center font-sans text-3xl font-black leading-[1.1] tracking-tight text-brand-orange drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)] md:text-4xl lg:text-5xl">
-          開業前に潰すべき6つの致命傷
+        <h2 className="mb-4 text-center font-sans text-3xl font-black leading-[1.1] tracking-tight text-brand-dark md:text-4xl lg:text-5xl">
+          開業前に潰すべき<span className="text-red-600 underline decoration-red-600/30 underline-offset-8">6つの致命傷</span>
         </h2>
       </div>
 
@@ -55,6 +66,20 @@ const Problems = () => {
               index
             );
 
+            // 「最悪の未来」部分を強調表示するための簡易パーサー
+            // タイトル内の「」の中身を赤く強調
+            const renderTitle = (title: string) => {
+              const parts = title.split(/[「」]/);
+              if (parts.length >= 3) {
+                return (
+                  <>
+                    {parts[0]}<span className="text-red-600">「{parts[1]}」</span>{parts[2]}
+                  </>
+                );
+              }
+              return title;
+            };
+
             return (
               <Card
                 key={problem.title}
@@ -64,7 +89,7 @@ const Problems = () => {
               >
                 <div className="w-full space-y-3">
                   <h3 className="mb-2 text-xl font-black text-gray-900 md:text-2xl">
-                    {problem.title}
+                    {renderTitle(problem.title)}
                   </h3>
                   <p className="text-sm leading-relaxed text-gray-700 md:text-base">
                     {problem.description}

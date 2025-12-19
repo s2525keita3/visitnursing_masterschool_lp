@@ -30,10 +30,10 @@ const Introduction = memo(() => {
           <div className="relative z-20 space-y-6">
             <div className="space-y-2">
               <p className="inline-block bg-brand-orange px-2 py-0.5 text-sm font-black text-white">
-                訪問看護ステーション経営の第一人者
+                直営5拠点を運営する現役の経営実務家
               </p>
               <h2 className="text-3xl font-black text-brand-dark md:text-5xl">
-                じょん <span className="text-xl md:text-2xl font-normal text-brand-muted">JOHN</span>
+                株式会社ジョン代表　渋谷慶太
               </h2>
             </div>
 
@@ -53,8 +53,8 @@ const Introduction = memo(() => {
                 },
                 { 
                   title: "累計50社以上", 
-                  label: "の導入実績", 
-                  subtitle: "全国のステーションへノウハウを供与" 
+                  label: "の圧倒的提携数", 
+                  subtitle: "全国の最新事例・成功ケースを網羅" 
                 },
                 { 
                   title: "11万人超", 
@@ -90,24 +90,24 @@ const Introduction = memo(() => {
           </div>
         </div>
 
-        {/* 3. 下部の4つの詳細ボックス（うっすら色付け） */}
+        {/* 3. 下部の4つの詳細ボックス（権威性とメリットを最大化） */}
         <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-24">
           {[
             {
-              title: "【融資成功率100%】の実績",
-              desc: "創業以来、私たちがサポートした全案件で融資を勝ち取った事業計画書の「全貌」を公開。",
+              title: "【財務】銀行が唸る事業計画書",
+              desc: "自己資金が少なくとも、数千万単位の融資を100%着金させた『門外不出の計画書』を譲渡。資金繰りの不安をゼロにします。",
             },
             {
-              title: "【平均3ヶ月】での黒字化",
-              desc: "1年かかるのが当たり前の世界で、なぜコンサル生はたった3ヶ月で黒字化するのか？その仕組みを伝授。",
+              title: "【集客】広告費0円の自動集客",
+              desc: "ケアマネジャーが『あなたに預けたい』と懇願する紹介営業の仕組み。開業初月から待機者が出る集客ノウハウを伝授します。",
             },
             {
-              title: "【300名超】のコミュニティ",
-              desc: "全国の志高い経営者たちが集う。業界最大のプラットフォームで「次の一手」を共有。",
+              title: "【採用】看護師を惹きつける文化",
+              desc: "「人が採れない」業界で、なぜ自社だけに応募が殺到するのか？離職率を極限まで抑え、最強のチームを作るマネジメント術。",
             },
             {
-              title: "【即戦力】50種類のツール",
-              desc: "事業計画書、営業資料、契約書、マニュアル。今すぐ現場で使えるツールをすべて譲渡。",
+              title: "【実務】5拠点5億の全テンプレート",
+              desc: "雇用契約、管理者教育、経営数字の管理。私が5拠点を5億円まで成長させた際に使用した『全実務ツール』をそのまま差し上げます。",
             },
           ].map((item) => (
             <div key={item.title} className="rounded-sm border-2 border-brand-orange/10 bg-brand-orange/[0.02] p-6 text-center shadow-sm">
