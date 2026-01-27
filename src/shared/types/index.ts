@@ -1,4 +1,4 @@
-﻿export type ContactType = "seminar" | "consultation";
+export type ContactType = "seminar" | "consultation";
 
 export type ContactFormData = {
   name: string;

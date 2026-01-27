@@ -1,4 +1,4 @@
-﻿import Section from "../../shared/ui/Section";
+import Section from "../../shared/ui/Section";
 import CTAButton from "../../shared/ui/CTAButton";
 import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
 import { useForm } from "../../shared/hooks/useForm";
@@ -44,7 +44,7 @@ const ContactForm = () => {
         });
 
         if (!response.ok) {
-          throw new Error("騾∽ｿ｡縺ｫ螟ｱ謨励＠縺ｾ縺励◆");
+          throw new Error("送信に失敗しました");
         }
       } catch (error) {
         throw error;
@@ -57,11 +57,12 @@ const ContactForm = () => {
       <div className="text-center space-y-4 animate-fade-up">
         <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">CONTACT</p>
         <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-          <span className="text-brand-dark">辟｡譁吝句挨逶ｸ隲・/span>
-          <span className="text-brand-orange">縺ｮ縺顔筏縺苓ｾｼ縺ｿ</span>
+          <span className="text-brand-dark">無料個別相談</span>
+          <span className="text-brand-orange">のお申し込み</span>
         </h2>
         <p className="text-brand-muted">
-          辟｡譁吝句挨逶ｸ隲・〒縲√≠縺ｪ縺溘・迥ｶ豕√↓蜷医ｏ縺帙※縲梧ｬ｡縺ｮ荳謇九阪ｒ謨ｴ逅・＠縺ｾ縺吶・        </p>
+          無料個別相談で、あなたの状況に合わせて「次の一手」を整理します。
+        </p>
       </div>
       <form
         onSubmit={handleSubmit}
@@ -70,22 +71,22 @@ const ContactForm = () => {
         noValidate
       >
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">縺雁錐蜑・*</span>
+          <span className="text-sm font-semibold text-brand-dark">お名前 *</span>
           <input
             required
             name="name"
             value={form.name}
             onChange={handleInputChange}
             className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${errors.name ? "border-red-500 focus:ring-red-500/30" : "border-brand-dark/15"}`}
-            placeholder="螻ｱ逕ｰ 螟ｪ驛・
-            aria-label="縺雁錐蜑・
+            placeholder="山田 太郎"
+            aria-label="お名前"
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
           />
           {errors.name && <p id="name-error" className="text-sm font-semibold text-red-600" role="alert">{errors.name}</p>}
         </label>
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ *</span>
+          <span className="text-sm font-semibold text-brand-dark">メールアドレス *</span>
           <input
             required
             type="email"
@@ -94,38 +95,38 @@ const ContactForm = () => {
             onChange={handleInputChange}
             className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${errors.email ? "border-red-500 focus:ring-red-500/30" : "border-brand-dark/15"}`}
             placeholder="example@email.com"
-            aria-label="繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ"
+            aria-label="メールアドレス"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
           />
           {errors.email && <p id="email-error" className="text-sm font-semibold text-red-600" role="alert">{errors.email}</p>}
         </label>
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">縺泌ｸ梧悍縺ｮ逶ｸ隲・律遞・*</span>
+          <span className="text-sm font-semibold text-brand-dark">ご希望の相談日程 *</span>
           <input
             required
             name="preferredSchedule"
             value={form.preferredSchedule}
             onChange={handleInputChange}
             className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${errors.preferredSchedule ? "border-red-500 focus:ring-red-500/30" : "border-brand-dark/15"}`}
-            placeholder="萓具ｼ・譛・譌･ 10:00縲・2:00縲・譛・譌･ 14:00莉･髯・縺ｪ縺ｩ"
-            aria-label="縺泌ｸ梧悍縺ｮ逶ｸ隲・律遞・
+            placeholder="例：2月1日 10:00〜12:00、2月3日 14:00以降 など"
+            aria-label="ご希望の相談日程"
             aria-invalid={!!errors.preferredSchedule}
             aria-describedby={errors.preferredSchedule ? "preferredSchedule-error" : undefined}
           />
-          <p className="text-xs text-brand-muted">窶ｻ隍・焚縺ｮ蛟呵｣懈律繧偵＃險伜・縺・◆縺縺代ｋ縺ｨ隱ｿ謨ｴ縺後せ繝繝ｼ繧ｺ縺ｧ縺・/p>
+          <p className="text-xs text-brand-muted">※複数の候補日をご記入いただけると調整がスムーズです</p>
           {errors.preferredSchedule && <p id="preferredSchedule-error" className="text-sm font-semibold text-red-600" role="alert">{errors.preferredSchedule}</p>}
         </label>
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">縺皮嶌隲・・螳ｹ</span>
+          <span className="text-sm font-semibold text-brand-dark">ご相談内容</span>
           <textarea
             rows={4}
             name="message"
             value={form.message}
             onChange={handleInputChange}
             className="w-full rounded-2xl border border-brand-dark/15 px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30"
-            placeholder="髢区･ｭ莠亥ｮ壽凾譛溘∬ｳ・≡隱ｿ驕皮憾豕√√＃逶ｸ隲・・螳ｹ縺ｪ縺ｩ繧偵＃險伜・縺上□縺輔＞縲・
-            aria-label="縺皮嶌隲・・螳ｹ"
+            placeholder="開業予定時期、資金調達状況、ご相談内容などをご記入ください。"
+            aria-label="ご相談内容"
           />
         </label>
         {errors._form && (
@@ -135,17 +136,17 @@ const ContactForm = () => {
         )}
         <div className="flex flex-col gap-3 items-center">
           <CTAButton type="submit" isLoading={status === "submitting"} disabled={status === "submitting"}>
-            蛟句挨逶ｸ隲・ｒ逕ｳ縺苓ｾｼ繧
+            個別相談を申し込む
           </CTAButton>
           {status === "success" && (
             <div className="space-y-2 text-sm font-semibold text-emerald-600 animate-fade-in" role="alert">
-              <p>縺顔筏縺苓ｾｼ縺ｿ縺ゅｊ縺後→縺・＃縺悶＞縺ｾ縺吶・/p>
-              <p>縺泌・蜉帙＞縺溘□縺・◆繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ縺ｸ縲∵律遞玖ｪｿ謨ｴ縺ｮ縺秘｣邨｡繧・蝟ｶ讌ｭ譌･莉･蜀・↓縺企√ｊ縺励∪縺吶・/p>
-              <p className="text-xs text-emerald-500">窶ｻ螻翫°縺ｪ縺・ｴ蜷医・霑ｷ諠代Γ繝ｼ繝ｫ繝輔か繝ｫ繝繧ゅ＃遒ｺ隱阪￥縺縺輔＞縲・/p>
+              <p>お申し込みありがとうございます。</p>
+              <p>ご入力いただいたメールアドレスへ、日程調整のご連絡を2営業日以内にお送りします。</p>
+              <p className="text-xs text-emerald-500">※届かない場合は迷惑メールフォルダもご確認ください。</p>
             </div>
           )}
           {status === "error" && !errors._form && (
-            <p className="text-sm font-semibold text-red-600" role="alert">騾∽ｿ｡縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲ゅｂ縺・ｸ蠎ｦ縺願ｩｦ縺励￥縺縺輔＞縲・/p>
+            <p className="text-sm font-semibold text-red-600" role="alert">送信に失敗しました。もう一度お試しください。</p>
           )}
         </div>
       </form>
