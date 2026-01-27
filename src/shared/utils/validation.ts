@@ -1,35 +1,23 @@
-import type { ContactFormData, FormErrors } from "../types";
+﻿import type { ContactFormData, FormErrors } from "../types";
 
-/**
- * フォームバリデーション関数
- * 型安全なバリデーションルールを定義
- */
-export const validateContactForm = (
-  values: ContactFormData
-): FormErrors => {
+export const validateContactForm = (values: ContactFormData): FormErrors => {
   const errors: FormErrors = {};
 
-  // お名前のバリデーション
   if (!values.name.trim()) {
-    errors.name = "お名前を入力してください";
+    errors.name = "縺雁錐蜑阪ｒ蜈･蜉帙＠縺ｦ縺上□縺輔＞";
   } else if (values.name.trim().length < 2) {
-    errors.name = "お名前は2文字以上で入力してください";
+    errors.name = "縺雁錐蜑阪・2譁・ｭ嶺ｻ･荳翫〒蜈･蜉帙＠縺ｦ縺上□縺輔＞";
   }
 
-  // メールアドレスのバリデーション
   if (!values.email.trim()) {
-    errors.email = "メールアドレスを入力してください";
+    errors.email = "繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ繧貞・蜉帙＠縺ｦ縺上□縺輔＞";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = "正しいメールアドレスを入力してください";
+    errors.email = "豁｣縺励＞繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ繧貞・蜉帙＠縺ｦ縺上□縺輔＞";
   }
 
-  // 電話番号のバリデーション（削除：UIから電話番号フィールドを削除したため）
-
-  // セミナー日程のバリデーション（セミナー申込の場合）
-  if (values.contactType === "seminar" && !values.seminarDate) {
-    errors.seminarDate = "希望セミナー日程を選択してください";
+  if (!values.preferredSchedule.trim()) {
+    errors.preferredSchedule = "縺泌ｸ梧悍縺ｮ逶ｸ隲・律遞九ｒ蜈･蜉帙＠縺ｦ縺上□縺輔＞";
   }
 
   return errors;
 };
-

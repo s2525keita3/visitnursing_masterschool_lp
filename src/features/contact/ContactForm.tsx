@@ -1,10 +1,9 @@
-import Section from "../../shared/ui/Section";
+﻿import Section from "../../shared/ui/Section";
 import CTAButton from "../../shared/ui/CTAButton";
 import { useStaggeredAnimation } from "../../shared/hooks/useStaggeredAnimation";
 import { useForm } from "../../shared/hooks/useForm";
 import { validateContactForm } from "../../shared/utils/validation";
 import { ANIMATION_DELAYS } from "../../shared/constants/animations";
-import { scheduleOptions } from "../../content/seminar";
 import type { ContactFormData } from "../../shared/types";
 
 const initialState: ContactFormData = {
@@ -14,13 +13,9 @@ const initialState: ContactFormData = {
   message: "",
   contactType: "consultation",
   seminarDate: "",
+  preferredSchedule: "",
 };
 
-/**
- * お問い合わせフォームコンポーネント
- * useFormフックでバリデーション・エラーハンドリング・送信処理を統合
- * CRO最適化：セミナー申込と個別相談を選択可能に
- */
 const ContactForm = () => {
   const formAnimationStyle = useStaggeredAnimation(
     ANIMATION_DELAYS.BASE,
@@ -33,14 +28,12 @@ const ContactForm = () => {
     errors,
     status,
     handleInputChange,
-    handleChange,
     handleSubmit,
   } = useForm<ContactFormData>({
     initialValues: initialState,
     validate: validateContactForm,
     onSubmit: async (values) => {
       try {
-        // Formspreeエンドポイントに送信
         const response = await fetch("https://formspree.io/f/mkglekko", {
           method: "POST",
           headers: {
@@ -50,13 +43,10 @@ const ContactForm = () => {
           body: JSON.stringify(values),
         });
 
-        // レスポンスが成功でない場合はエラーをスロー
         if (!response.ok) {
-          throw new Error("送信に失敗しました");
+          throw new Error("騾∽ｿ｡縺ｫ螟ｱ謨励＠縺ｾ縺励◆");
         }
-
       } catch (error) {
-        // useForm側でエラー状態にするためにスロー
         throw error;
       }
     },
@@ -67,12 +57,11 @@ const ContactForm = () => {
       <div className="text-center space-y-4 animate-fade-up">
         <p className="text-sm font-semibold text-brand-muted tracking-[0.3em]">CONTACT</p>
         <h2 className="text-4xl font-sans font-bold leading-tight tracking-tight">
-          <span className="text-brand-dark">無料個別相談</span>
-          <span className="text-brand-orange">（または無料セミナー）</span>
+          <span className="text-brand-dark">辟｡譁吝句挨逶ｸ隲・/span>
+          <span className="text-brand-orange">縺ｮ縺顔筏縺苓ｾｼ縺ｿ</span>
         </h2>
         <p className="text-brand-muted">
-          まずは無料個別相談で、あなたの状況に合わせて「次の一手」を整理します（無料セミナー参加も可能です）。
-        </p>
+          辟｡譁吝句挨逶ｸ隲・〒縲√≠縺ｪ縺溘・迥ｶ豕√↓蜷医ｏ縺帙※縲梧ｬ｡縺ｮ荳謇九阪ｒ謨ｴ逅・＠縺ｾ縺吶・        </p>
       </div>
       <form
         onSubmit={handleSubmit}
@@ -81,213 +70,82 @@ const ContactForm = () => {
         noValidate
       >
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">
-            お名前 *
-          </span>
+          <span className="text-sm font-semibold text-brand-dark">縺雁錐蜑・*</span>
           <input
             required
             name="name"
             value={form.name}
             onChange={handleInputChange}
-            className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${
-              errors.name
-                ? "border-red-500 focus:ring-red-500/30"
-                : "border-brand-dark/15"
-            }`}
-            placeholder="山田 太郎"
-            aria-label="お名前"
+            className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${errors.name ? "border-red-500 focus:ring-red-500/30" : "border-brand-dark/15"}`}
+            placeholder="螻ｱ逕ｰ 螟ｪ驛・
+            aria-label="縺雁錐蜑・
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
           />
-          {errors.name && (
-            <p
-              id="name-error"
-              className="text-sm font-semibold text-red-600"
-              role="alert"
-            >
-              {errors.name}
-            </p>
-          )}
+          {errors.name && <p id="name-error" className="text-sm font-semibold text-red-600" role="alert">{errors.name}</p>}
         </label>
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">
-            メールアドレス *
-          </span>
+          <span className="text-sm font-semibold text-brand-dark">繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ *</span>
           <input
             required
             type="email"
             name="email"
             value={form.email}
             onChange={handleInputChange}
-            className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${
-              errors.email
-                ? "border-red-500 focus:ring-red-500/30"
-                : "border-brand-dark/15"
-            }`}
+            className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${errors.email ? "border-red-500 focus:ring-red-500/30" : "border-brand-dark/15"}`}
             placeholder="example@email.com"
-            aria-label="メールアドレス"
+            aria-label="繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
           />
-          {errors.email && (
-            <p
-              id="email-error"
-              className="text-sm font-semibold text-red-600"
-              role="alert"
-            >
-              {errors.email}
-            </p>
-          )}
+          {errors.email && <p id="email-error" className="text-sm font-semibold text-red-600" role="alert">{errors.email}</p>}
         </label>
-        {/* お申し込み種別 */}
-        <div className="space-y-3">
-          <span className="text-sm font-semibold text-brand-dark">
-            お申し込み種別 *
-          </span>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border-2 border-brand-dark/10 bg-white p-4 transition-all hover:border-brand-orange/30 hover:bg-brand-orange/5">
-              <input
-                type="radio"
-                name="contactType"
-                value="seminar"
-                checked={form.contactType === "seminar"}
-                onChange={handleInputChange}
-                className="h-5 w-5 cursor-pointer accent-brand-orange"
-                required
-                aria-label="セミナー申込"
-              />
-              <div className="flex-1">
-                <p className="font-semibold text-brand-dark">セミナー申込</p>
-                <p className="text-xs text-brand-muted">
-                  無料オンラインセミナーに参加
-                </p>
-              </div>
-            </label>
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border-2 border-brand-dark/10 bg-white p-4 transition-all hover:border-brand-orange/30 hover:bg-brand-orange/5">
-              <input
-                type="radio"
-                name="contactType"
-                value="consultation"
-                checked={form.contactType === "consultation"}
-                onChange={(e) => {
-                  handleChange("contactType", e.target.value as ContactFormData["contactType"]);
-                  if (e.target.value === "consultation") {
-                    handleChange("seminarDate", "");
-                  }
-                }}
-                className="h-5 w-5 cursor-pointer accent-brand-orange"
-                required
-                aria-label="個別相談"
-              />
-              <div className="flex-1">
-                <p className="font-semibold text-brand-dark">個別相談</p>
-                <p className="text-xs text-brand-muted">
-                  60分のZoom面談で個別相談
-                </p>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        {/* セミナー日程選択（セミナー申込を選んだ場合のみ表示） */}
-        {form.contactType === "seminar" && (
-          <label className="space-y-2">
-            <span className="text-sm font-semibold text-brand-dark">
-              希望セミナー日程 *
-            </span>
-            <select
-              required={form.contactType === "seminar"}
-              name="seminarDate"
-              value={form.seminarDate}
-              onChange={handleInputChange}
-              className={`w-full rounded-2xl border bg-white px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${
-                errors.seminarDate
-                  ? "border-red-500 focus:ring-red-500/30"
-                  : "border-brand-dark/15"
-              }`}
-              aria-label="希望セミナー日程"
-              aria-invalid={!!errors.seminarDate}
-              aria-describedby={errors.seminarDate ? "seminarDate-error" : undefined}
-            >
-              <option value="">日程を選択してください</option>
-              {scheduleOptions.map((slot) => (
-                <option
-                  key={`${slot.date}-${slot.time}`}
-                  value={`${slot.date} ${slot.time}`}
-                >
-                  {slot.date} {slot.time}
-                </option>
-              ))}
-            </select>
-            {errors.seminarDate && (
-              <p
-                id="seminarDate-error"
-                className="text-sm font-semibold text-red-600"
-                role="alert"
-              >
-                {errors.seminarDate}
-              </p>
-            )}
-          </label>
-        )}
-
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-brand-dark">
-            ご相談内容
-          </span>
+          <span className="text-sm font-semibold text-brand-dark">縺泌ｸ梧悍縺ｮ逶ｸ隲・律遞・*</span>
+          <input
+            required
+            name="preferredSchedule"
+            value={form.preferredSchedule}
+            onChange={handleInputChange}
+            className={`w-full rounded-2xl border px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30 ${errors.preferredSchedule ? "border-red-500 focus:ring-red-500/30" : "border-brand-dark/15"}`}
+            placeholder="萓具ｼ・譛・譌･ 10:00縲・2:00縲・譛・譌･ 14:00莉･髯・縺ｪ縺ｩ"
+            aria-label="縺泌ｸ梧悍縺ｮ逶ｸ隲・律遞・
+            aria-invalid={!!errors.preferredSchedule}
+            aria-describedby={errors.preferredSchedule ? "preferredSchedule-error" : undefined}
+          />
+          <p className="text-xs text-brand-muted">窶ｻ隍・焚縺ｮ蛟呵｣懈律繧偵＃險伜・縺・◆縺縺代ｋ縺ｨ隱ｿ謨ｴ縺後せ繝繝ｼ繧ｺ縺ｧ縺・/p>
+          {errors.preferredSchedule && <p id="preferredSchedule-error" className="text-sm font-semibold text-red-600" role="alert">{errors.preferredSchedule}</p>}
+        </label>
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-brand-dark">縺皮嶌隲・・螳ｹ</span>
           <textarea
             rows={4}
             name="message"
             value={form.message}
             onChange={handleInputChange}
             className="w-full rounded-2xl border border-brand-dark/15 px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange/30"
-            placeholder={
-              form.contactType === "seminar"
-                ? "開業予定時期、資金調達状況などをご記入ください。"
-                : "開業予定時期、資金調達状況、ご相談内容などをご記入ください。"
-            }
-            aria-label="ご相談内容"
+            placeholder="髢区･ｭ莠亥ｮ壽凾譛溘∬ｳ・≡隱ｿ驕皮憾豕√√＃逶ｸ隲・・螳ｹ縺ｪ縺ｩ繧偵＃險伜・縺上□縺輔＞縲・
+            aria-label="縺皮嶌隲・・螳ｹ"
           />
         </label>
-
-        {/* フォーム全体のエラーメッセージ */}
         {errors._form && (
-          <div
-            className="rounded-2xl border-2 border-red-500 bg-red-50 p-4"
-            role="alert"
-          >
+          <div className="rounded-2xl border-2 border-red-500 bg-red-50 p-4" role="alert">
             <p className="text-sm font-semibold text-red-600">{errors._form}</p>
           </div>
         )}
-
         <div className="flex flex-col gap-3 items-center">
-          <CTAButton
-            type="submit"
-            isLoading={status === "submitting"}
-            disabled={status === "submitting"}
-          >
-            {form.contactType === "seminar"
-              ? "セミナーに申し込む"
-              : "個別相談を申し込む"}
+          <CTAButton type="submit" isLoading={status === "submitting"} disabled={status === "submitting"}>
+            蛟句挨逶ｸ隲・ｒ逕ｳ縺苓ｾｼ繧
           </CTAButton>
           {status === "success" && (
-            <div
-              className="space-y-2 text-sm font-semibold text-emerald-600 animate-fade-in"
-              role="alert"
-            >
-              <p>お申し込みありがとうございます。</p>
-              <p>
-                ご入力いただいたメールアドレスへ、当日のZoom URLを2営業日以内にお送りします。
-              </p>
-              <p className="text-xs text-emerald-500">
-                ※届かない場合は迷惑メールフォルダもご確認ください。
-              </p>
+            <div className="space-y-2 text-sm font-semibold text-emerald-600 animate-fade-in" role="alert">
+              <p>縺顔筏縺苓ｾｼ縺ｿ縺ゅｊ縺後→縺・＃縺悶＞縺ｾ縺吶・/p>
+              <p>縺泌・蜉帙＞縺溘□縺・◆繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ縺ｸ縲∵律遞玖ｪｿ謨ｴ縺ｮ縺秘｣邨｡繧・蝟ｶ讌ｭ譌･莉･蜀・↓縺企√ｊ縺励∪縺吶・/p>
+              <p className="text-xs text-emerald-500">窶ｻ螻翫°縺ｪ縺・ｴ蜷医・霑ｷ諠代Γ繝ｼ繝ｫ繝輔か繝ｫ繝繧ゅ＃遒ｺ隱阪￥縺縺輔＞縲・/p>
             </div>
           )}
           {status === "error" && !errors._form && (
-            <p className="text-sm font-semibold text-red-600" role="alert">
-              送信に失敗しました。もう一度お試しください。
-            </p>
+            <p className="text-sm font-semibold text-red-600" role="alert">騾∽ｿ｡縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲ゅｂ縺・ｸ蠎ｦ縺願ｩｦ縺励￥縺縺輔＞縲・/p>
           )}
         </div>
       </form>
@@ -296,5 +154,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-
