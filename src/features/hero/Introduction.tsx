@@ -112,8 +112,8 @@ const Introduction = memo(() => {
               desc: "「人が採れない」業界で、なぜ自社だけに応募が殺到するのか？離職率を極限まで抑え、最強のチームを作るマネジメント術。",
             },
             {
-              title: "【実務】5拠点5億の全テンプレート",
-              desc: "雇用契約、管理者教育、経営数字の管理。私が5拠点を5億円まで成長させた際に使用した『全実務ツール』をそのまま差し上げます。",
+              title: "【実務】6拠点5億の全テンプレート",
+              desc: "雇用契約、管理者教育、経営数字の管理。私が6拠点を5億円まで成長させた際に使用した『全実務ツール』をそのまま差し上げます。",
             },
           ].map((item) => (
             <div key={item.title} className="rounded-sm border-2 border-brand-orange/10 bg-brand-orange/[0.02] p-6 text-center shadow-sm">
