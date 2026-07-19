@@ -41,10 +41,10 @@ const Founder = () => {
             </span>
           </h2>
           <p className="text-center text-lg font-semibold leading-relaxed text-brand-dark md:text-xl">
-            まずは無料セミナーで！とことんお話しします。
+            まずは無料個別相談で！とことんお話しします。
           </p>
           <p className="text-brand-muted leading-relaxed">
-            私自身が5拠点を運営し、年商5億円を作っている「現役プレイヤー」です。コンサルタントではなく、事業家だからこそ
+            私自身が6拠点を運営し、年商5億円を作っている「現役プレイヤー」です。コンサルタントではなく、事業家だからこそ
             語れる「解像度の高い施策」だけを提供します。
           </p>
           {/* 実績強調 */}

@@ -63,6 +63,9 @@ const ContactForm = () => {
         <p className="text-brand-muted">
           無料個別相談で、あなたの状況に合わせて「次の一手」を整理します。
         </p>
+        <p className="text-lg font-black text-brand-dark">
+          訪問看護を、想いだけで終わらせない。
+        </p>
       </div>
       <form
         onSubmit={handleSubmit}

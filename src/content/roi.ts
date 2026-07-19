@@ -70,7 +70,7 @@ export const roiData = {
       id: "insurance",
       category: "【保険】",
       title: "専門家選びの失敗回避",
-      description: "「訪問看護を知らない税理士」を選んでしまうリスクをゼロに。無駄な変更コストと時間をカットします。",
+      description: "「訪問看護を知らない税理士」を選んでしまうリスクを回避。無駄な変更コストと時間をカットします。",
       value: "50万円相当",
       icon: "shield-check" as const,
     },

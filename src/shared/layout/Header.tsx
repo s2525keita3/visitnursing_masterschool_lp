@@ -33,7 +33,7 @@ const Header = () => {
         <div className="flex min-w-0 flex-1 items-center">
           <div className="min-w-0 flex-1">
             <div className="text-sm font-black leading-tight text-brand-dark sm:text-lg md:text-xl">
-              勝率94.1%の起業塾
+              黒字化達成率94.1%の起業塾
             </div>
             <div className="hidden text-[10px] font-bold text-brand-muted sm:block">
               訪問看護ステーション開業支援

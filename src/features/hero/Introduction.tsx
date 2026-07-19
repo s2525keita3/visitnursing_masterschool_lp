@@ -14,7 +14,7 @@ const Introduction = memo(() => {
         <div className="flex flex-col gap-3 pt-4 pb-10 md:pt-8 md:pb-16">
           <div className="border-2 border-brand-orange bg-brand-orange/5 py-4 text-center">
             <p className="text-lg font-black tracking-tight text-brand-orange md:text-2xl">
-              <span className="inline-block">【実録】直営5拠点・年商5億・</span>
+              <span className="inline-block">【実録】直営6拠点・年商5億・</span>
               <span className="inline-block">コンサル実績50社以上の</span>
               <span className="inline-block">圧倒的経営ノウハウ</span>
             </p>
@@ -22,8 +22,8 @@ const Introduction = memo(() => {
           <div className="border-2 border-brand-orange bg-white py-4 text-center px-2">
             <p className="text-lg font-black tracking-tight text-brand-dark md:text-2xl">
               <span className="inline-block">【全国50社以上】が導入。</span>
-              <span className="inline-block">勝率94.1%を叩き出す</span>
-              <span className="inline-block">「黒字化」の絶対的ノウハウ</span>
+              <span className="inline-block">黒字化達成率94.1%（受講生実績）の</span>
+              <span className="inline-block">「黒字化」ノウハウ</span>
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ const Introduction = memo(() => {
           <div className="relative z-20 w-[60%] shrink-0 space-y-4 md:w-1/2 md:space-y-6">
             <div className="space-y-1 md:space-y-2">
               <p className="inline-block bg-brand-orange px-1.5 py-0.5 text-[10px] font-black text-white md:px-2 md:text-sm">
-                <span className="inline-block">直営5拠点を運営する</span>
+                <span className="inline-block">直営6拠点を運営する</span>
                 <span className="inline-block">現役の経営実務家</span>
               </p>
               <h2 className="text-lg font-black text-brand-dark sm:text-2xl md:text-5xl leading-tight">
@@ -54,9 +54,9 @@ const Introduction = memo(() => {
             <div className="flex flex-col gap-2 pt-2 md:gap-4 md:pt-6">
               {[
                 { 
-                  title: "勝率94.1%", 
-                  label: "の実績", 
-                  subtitle: "黒字化達成率" 
+                  title: "94.1%",
+                  label: "の実績",
+                  subtitle: "黒字化達成率（受講生実績）"
                 },
                 { 
                   title: "提携50社+", 
@@ -101,7 +101,7 @@ const Introduction = memo(() => {
           {[
             {
               title: "【財務】銀行が唸る事業計画書",
-              desc: "自己資金が少なくても、数千万単位の融資を100%着金させた『門外不出の計画書』を譲渡。資金繰りの不安をゼロにします。",
+              desc: "自己資金が少なくても、数千万円単位の融資獲得につながってきた事業計画書のフォーマットを譲渡。資金繰りの不安を大きく減らします。",
             },
             {
               title: "【集客】広告費0円の自動集客",

@@ -23,16 +23,16 @@ export const heroContent: HeroContent = {
   titleLine1: "訪問看護ステーション",
   titleLine2: "黒字化のロードマップ",
   subTitle:
-    "資金調達／集客／採用／数字まで。直営5拠点・年商5億・コンサル実績50社以上の現役経営者が、あなたの状況に合わせて「次の一手」を整理します。",
+    "資金調達／集客／採用／数字まで。直営6拠点・年商5億・コンサル実績50社以上の現役経営者が、あなたの状況に合わせて「次の一手」を整理します。",
   points: [
-    { title: "94%", subtitle: "1年以内黒字化" },
+    { title: "94.1%", subtitle: "1年以内黒字化" },
     { title: "50社+", subtitle: "コンサル実績" },
     { title: "5億円", subtitle: "年商規模" },
     { title: "11万人", subtitle: "SNSフォロワー" },
   ],
   badge: {
     kicker: "1年以内黒字化",
-    value: "94%",
+    value: "94.1%",
     note: "※個別伴走プログラム受講生の実績（自社調べ）",
   },
   backgroundImage: "/koushi-jon-photo.webp",

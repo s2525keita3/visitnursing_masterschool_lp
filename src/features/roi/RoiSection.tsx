@@ -265,6 +265,10 @@ const RoiSection = () => {
           {/* 右側：5つの根拠リスト */}
           <BenefitList />
         </div>
+
+        <p className="mt-8 text-center text-xs text-brand-muted">
+          ※効果を仮定した試算であり、成果を保証するものではありません
+        </p>
       </div>
     </Section>
   );

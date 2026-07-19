@@ -100,7 +100,7 @@ const Benefits = () => {
         size="large"
         className="w-full max-w-md animate-shake-slow"
       >
-        無料セミナーに申し込む
+        無料個別相談に申し込む
       </CTAButton>
     </div>
     {/* 受講生の成果：Video Wallスタイル */}

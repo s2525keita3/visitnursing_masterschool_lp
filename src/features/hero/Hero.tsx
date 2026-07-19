@@ -11,7 +11,7 @@ const Hero = () => {
         {/* サブキャッチ */}
         <div className="animate-fade-up">
           <p className="text-lg font-black tracking-tighter text-brand-orange sm:text-2xl md:text-3xl">
-            <span className="inline-block text-brand-dark">直営5拠点・年商5億・</span>
+            <span className="inline-block text-brand-dark">直営6拠点・年商5億・</span>
             <span className="inline-block text-brand-dark">コンサル50社超の</span>
             <br className="sm:hidden" />
             <span className="inline-block">現役経営者が教える</span>
@@ -21,7 +21,7 @@ const Hero = () => {
         {/* メインキャッチ */}
         <div className="mt-4 animate-fade-up md:mt-6" style={{ animationDelay: "0.1s" }}>
           <h1 className="text-3xl font-black leading-[1.2] tracking-tighter text-brand-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="inline-block text-brand-orange">【勝率94.1%】</span>
+            <span className="inline-block text-brand-orange">【黒字化達成率94.1%】</span>
             <br className="md:hidden" />
             <span className="inline-block">訪問看護</span>
             <span className="inline-block">「黒字化」の全戦略</span>
@@ -34,8 +34,8 @@ const Hero = () => {
             <div className="absolute -top-6 left-1/2 h-8 w-px -translate-x-1/2 rotate-45 bg-brand-orange"></div>
             <div className="flex flex-row items-center justify-center gap-2 divide-x divide-brand-orange/20 sm:gap-8">
               <div className="flex flex-col items-center px-2 sm:px-0">
-                <span className="inline-block text-lg font-black text-brand-orange sm:text-2xl md:text-4xl">勝率94.1%</span>
-                <span className="inline-block text-[8px] font-bold text-brand-dark sm:text-[10px] md:text-xs whitespace-nowrap">黒字化達成率</span>
+                <span className="inline-block text-lg font-black text-brand-orange sm:text-2xl md:text-4xl">94.1%</span>
+                <span className="inline-block text-[8px] font-bold text-brand-dark sm:text-[10px] md:text-xs whitespace-nowrap">黒字化達成率（受講生実績）</span>
               </div>
               <div className="flex flex-col items-center px-2 sm:px-0 sm:pl-8">
                 <span className="inline-block text-lg font-black text-brand-orange sm:text-2xl md:text-4xl">50社以上</span>

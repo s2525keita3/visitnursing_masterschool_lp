@@ -38,8 +38,8 @@ const Problems = () => {
           </p>
           <div className="mt-4 inline-block border-y-4 border-red-600 py-3 md:py-4">
             <p className="text-xl font-black leading-tight text-red-600 sm:text-2xl md:text-4xl lg:text-5xl">
-              9割の開業者が陥る<br className="sm:hidden" />「破滅へのカウントダウン」は、<br className="hidden sm:block" />
-              すでに始まっています。
+              多くの開業者が、<br className="sm:hidden" />同じ「6つの落とし穴」で<br className="hidden sm:block" />
+              つまずいています。
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@ const Problems = () => {
       {/* 問題提起（フック） */}
       <div className="mb-6 animate-fade-up text-center md:mb-8" style={titleAnimationStyle}>
         <h2 className="mb-4 text-center font-sans text-3xl font-black leading-[1.1] tracking-tight text-brand-dark md:text-4xl lg:text-5xl">
-          開業前に潰すべき<span className="text-red-600 underline decoration-red-600/30 underline-offset-8">6つの致命傷</span>
+          開業前に潰すべき<span className="text-red-600 underline decoration-red-600/30 underline-offset-8">6つの落とし穴</span>
         </h2>
       </div>
 

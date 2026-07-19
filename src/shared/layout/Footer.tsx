@@ -98,7 +98,7 @@ const Footer = () => {
                 href="#seminar"
                 className="block text-sm text-brand-muted transition-colors hover:text-brand-orange md:text-base"
               >
-                無料セミナー
+                無料個別相談
               </a>
             </nav>
           </div>
